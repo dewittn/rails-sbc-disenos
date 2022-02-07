@@ -1,8 +1,8 @@
-.float-right
+.float-left
   - if @diseno.image.exists?
     #image_div.results
       = image_tag image_url(@diseno)
-.float-right
+.float-left
   - if @diseno.original.exists?
     .results
       = image_tag original_url(@diseno)
