@@ -1,5 +1,5 @@
 %p.letters
   - for letter in @letters
     .letter-box
-      = image_tag event.subject.image.url(:small)
+      = image_tag letter.url(:small)
       = link_to_unless params[:id] == letter.char.downcase, letter.char, letter
