@@ -8,6 +8,7 @@ class ColoresController < ApplicationController
   
   def edit
     @color = Color.find(params[:id])
+    render :new
   end
   
   def update
@@ -30,6 +31,7 @@ class ColoresController < ApplicationController
       redirect_to colores_path
     else
       flash[:error]="Color not created"
+      render :new
     end
   end
 end

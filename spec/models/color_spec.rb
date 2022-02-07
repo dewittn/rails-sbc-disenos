@@ -21,4 +21,18 @@ describe Color do
       Marca.count.should == 0
     end
   end
+  
+  describe "valid color" do
+    it "should have an error when missing nombre" do
+      @color = Color.new(Color.plan(:nombre => ""))
+      @color.save
+      @color.should have(1).error_on(:nombre)
+    end
+    
+    it "should have an error when missing codigo" do
+      @color = Color.new(Color.plan(:codigo => ""))
+      @color.save
+      @color.should have(1).error_on(:codigo)
+    end
+  end
 end

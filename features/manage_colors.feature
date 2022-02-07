@@ -3,14 +3,28 @@ Feature: Create and edit, colors and marcas
   As a admin
   I want to be able to create and edit those values
 
-  Scenario: Create color
+  Scenario Outline: Create a valid color
     Given I have no colors
     And I am on the colors page
     When I follow "Nuevo =>"
-    And I fill in the form
+    And <action>
     And I press "Submit" 
-    Then I should see "Color created"
-    And I should have 1 color
+    Then I should see <text>
+    And I should have <count> color
+
+  Examples:
+    | action                   | text                | count |
+    | I fill in the form       | "Color created"     | 1     |
+    | I'm missing the "nombre" | "Color not created" | 0     |
+    | I'm missing the "codigo" | "Color not created" | 0     |
+
+  Scenario: Edit color
+    Given I have 1 color
+    And I am on the colors page
+    When I follow "edit"
+    And I fill in "color[nombre]" with "Red"
+    And I press "Submit"
+    Then I should see "Red"
   
   
   
