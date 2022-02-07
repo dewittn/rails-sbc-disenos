@@ -6,8 +6,13 @@ class JavascriptsController < ApplicationController
     end
   end
   
-  def edit_colores
-    @diseno = Diseno.find(params[:id])
+  def add_hilos
+    if params[:id]
+      @diseno = Diseno.find(params[:id])
+      @diseno.attributes = params[:diseno]
+    else
+      @diseno = Diseno.new(params[:diseno])
+    end
     @diseno.hilos.build 
     render :colores
   end
@@ -21,7 +26,7 @@ class JavascriptsController < ApplicationController
       @marca = Marca.find(params[:id]) 
       @marca.attributes = params[:marca]
     else
-      Marca.new(params[:marca])
+      @marca = Marca.new(params[:marca])
     end
     @marca.colors.build
   end
