@@ -14,4 +14,4 @@ ActionMailer::Base.smtp_settings = {
 
 ExceptionNotifier.exception_recipients = %w(dewittn@cotosolutions.com)
 ExceptionNotifier.sender_address = %("Exception Notifier" <exception.notifier@cotosolutions.com>)
-ExceptionNotifier.email_prefix ="[ERROR] Landscaping: "
+ExceptionNotifier.email_prefix ="[ERROR] #{APP_CONFIG['app_title']}: "
