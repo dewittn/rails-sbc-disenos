@@ -50,7 +50,9 @@ a:hover { color: #fff; background-color:#000; }
 /* End Search Results Style */
 
 /* Top Bar */
-#top-bar { padding:5px; }
+#top-bar { 
+  text-align: center;
+  padding:2px; }
 
 .float-left{ float:left; }
 
