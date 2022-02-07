@@ -26,9 +26,6 @@ Event.addBehavior({
   '#email_submit:click': function(e){
     this.hide();
     $('email_cancel').hide();
-    $('email_subject').disabled = true;
-    $('email_body').disabled = true;
-    $('email_to').disabled = true;
   },
   
   '#email_cancel:click': function(e){
