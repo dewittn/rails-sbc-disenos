@@ -9,7 +9,7 @@ class DisenosController < ApplicationController
   end
   
   def edit
-    
+    @diseno = Diseno.find(params[:id], :include => :hilos)
   end
   
   def show
@@ -21,6 +21,9 @@ class DisenosController < ApplicationController
     if @diseno.update_attributes(params[:diseno])
       flash[:notice] = "Successfully updated..." 
       redirect_to diseno_path(params[:id])
+    else
+      flash[:notice] = "Not updated"
+      render :edit
     end
   end
   

@@ -1,2 +1,2 @@
-page.replace_html "hilos", :partial => 'application/hilo'
+page.replace_html "hilos", :partial => 'disenos/hilo'
 page << "select_colors();"
