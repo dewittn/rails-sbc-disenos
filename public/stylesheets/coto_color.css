@@ -1,77 +1,77 @@
 .show-item {
   background-color: #c3d9ff;
-  border: #000080 1px solid; }
+  border: navy 1px solid; }
 
 .results {
-  background-color: #ffffff;
-  border: #000080 1px solid; }
+  background-color: white;
+  border: navy 1px solid; }
   .results tr th {
-    color: #ffffff;
-    background-color: #000000; }
+    color: white;
+    background-color: black; }
 
 .timeline {
-  background-color: #ffffff;
-  border: #000080 1px solid; }
+  background-color: white;
+  border: navy 1px solid; }
 
 #top-bar {
   background-color: #c3d9ff;
-  border: #000080 1px solid; }
+  border: navy 1px solid; }
 
 #por_sacar {
   background-color: #c3d9ff;
-  border: #000080 1px solid; }
+  border: navy 1px solid; }
 
 .footer {
   background-color: #c3d9ff;
-  border: #000080 1px solid; }
+  border: navy 1px solid; }
 
 .pagination a {
   background-color: #c3d9ff;
-  border: #000080 1px solid; }
+  border: navy 1px solid; }
 
 .three {
   background-color: #c3d9ff;
-  border: #000080 1px solid; }
+  border: navy 1px solid; }
 
 .show-item tr {
-  color: #000000;
+  color: black;
   background-color: #c3d9ff; }
 
 .even {
-  color: #000000;
+  color: black;
   background-color: #c3d9ff; }
 
 .odd {
-  color: #000000;
-  background-color: #ffffff; }
+  color: black;
+  background-color: white; }
 
 .pagination a:hover {
-  color: #000000;
-  background-color: #ffffff; }
+  color: black;
+  background-color: white; }
 .pagination a:active {
-  color: #000000;
-  background-color: #ffffff; }
+  color: black;
+  background-color: white; }
 
 .three:hover {
-  color: #000000;
-  background-color: #ffffff; }
+  color: black;
+  background-color: white; }
 
 #busy {
   font-weight: bold;
-  color: #000000;
+  color: black;
   background-color: #c3d9ff; }
 
 .title {
-  color: #ffffff;
-  background-color: #000000; }
+  color: white;
+  background-color: black; }
 
 a {
-  color: #000000; }
+  color: black; }
   a:visited {
     color: #666666; }
   a:hover {
-    color: #fff;
-    background-color: #000000; }
+    color: white;
+    background-color: black; }
 
 #error {
   color: white;

@@ -14,5 +14,5 @@
         - if color_field.object.new_record?
           = link_to_function t('thread.new.delete'), "this.up().up().remove()"
         - else
-          = color_field.label :_delete, t('thread.new.delete')
-          = color_field.check_box :_delete
+          = color_field.label :_destroy, t('thread.new.delete')
+          = color_field.check_box :_destroy

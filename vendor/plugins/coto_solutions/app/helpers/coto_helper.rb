@@ -26,13 +26,20 @@ module CotoHelper
        end
      end
 
-   #Generates links accross left side of top bar
-   def create_top_links(*controllers)
+   #Generates controller links accross left side of top bar
+   def create_top_links_for_controllers(*controllers)
      controllers.each do |controller|
        content_for :top_link do
           params[:controller] == controller.downcase ? "<b>#{controller.titlecase}</b>&nbsp;" : link_to( controller.titlecase, url_for(:controller => controller.downcase, :action => 'index') ) + "&nbsp;"
         end
      end
+   end
+   
+   #Generate action links accross left side of top bar
+   def create_top_links_for_path(title,path)
+     content_for :top_link do
+       link_to title,path
+      end
    end
 
    #Create Logout on right side of top bar

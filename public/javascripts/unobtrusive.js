@@ -16,7 +16,7 @@ Event.addBehavior({
       var busy = $div({id:'busy',style: "display:none;"}, "Carcando...");
       var search = $div({id:'top-search'},'Buscar:',$input({id: 'search', name:'search', type:'text'}), $div({id:'results'}));
       document.body.appendChild(busy);
-      document.body.appendChild(search);
+      $('top-bar').down().next().appendChild(search);
   },
   
   '#search': function(e){

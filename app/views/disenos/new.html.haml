@@ -8,10 +8,6 @@
     %table
       %tr
         %td
-          = f.label :cantidad_del_colores, t('design.new.number_of_colors')
-          = f.text_field :cantidad_del_colores,:size => 3
-      %tr
-        %td
           = f.label :nombre_de_orden, t('design.new.name_field')
           = f.text_field :nombre_de_orden
       %tr
@@ -30,6 +26,10 @@
         %td 
           = t('design.new.pes')
           = f.file_field "archivo_pes"
+      %tr
+        %td 
+          = t('design.new.names')
+          = f.file_field "names"
       %tr
         %td
           = t('design.new.notes')

@@ -47,6 +47,7 @@ Rails::Initializer.run do |config|
   config.gem 'chronic', :lib => "chronic", :version => ">=0.2.3"
   config.gem 'javan-whenever', :lib => "whenever", :source => 'http://gems.github.com'
   config.gem "giraffesoft-timeline_fu", :lib => "timeline_fu", :source => "http://gems.github.com"
+  config.gem 'thinking-sphinx', :version => '1.4.4', :lib => 'thinking_sphinx'
 
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information

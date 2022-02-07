@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090701230225) do
+ActiveRecord::Schema.define(:version => 20110421200512) do
 
   create_table "colors", :force => true do |t|
     t.string   "nombre"
@@ -40,6 +40,9 @@ ActiveRecord::Schema.define(:version => 20090701230225) do
     t.string   "original_content_type"
     t.integer  "original_file_size"
     t.datetime "original_updated_at"
+    t.string   "names_file_name"
+    t.string   "names_content_type"
+    t.string   "names_file_size"
   end
 
   create_table "hilos", :force => true do |t|
