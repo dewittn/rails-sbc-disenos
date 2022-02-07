@@ -234,6 +234,9 @@ pre {
   border-spacing: 0px;
   padding: 5px; }
 
+#search {
+  border: #000080 1px solid; }
+
 .timeline {
   width: 400px;
   border-spacing: 0px;
