@@ -3,6 +3,7 @@ class DisenosController < ApplicationController
   caches_page :index, :new, :show, :if => Proc.new { |c| !c.request.format.js? }
   
   def index
+    expires_in 1.hour unless request.format.js?
     @disenos = Diseno.search(params[:search],:match_mode => :any) if params[:search]
   end
   
@@ -17,6 +18,7 @@ class DisenosController < ApplicationController
   
   def show
     @diseno = Diseno.find(params[:id])
+    fresh_when(:etag => @diseno)
   end
   
   def update

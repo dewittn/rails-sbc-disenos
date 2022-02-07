@@ -2,7 +2,7 @@ class Color < ActiveRecord::Base
   acts_as_cached
   
   belongs_to :marca
-  has_many :disenos, :dependent => :delete
+  has_many :disenos, :dependent => :destroy
   attr_accessor :nuevo_marca
   
   before_save :create_marca_from_text
