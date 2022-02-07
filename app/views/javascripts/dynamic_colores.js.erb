@@ -3,9 +3,9 @@ var colores = new Array();
   colores.push(new Array(<%= color.marca_id %>, '<%=h color.nombre %>', <%= color.id %>));
 <% end -%>
 
-function marcaSelected(domid) {
-  marca_id = $('marca_'+ domid).getValue();
-  options = $('marca_' + domid).up('#hilo').down('#diseno_hilo_attributes__color_id').options;
+function marcaSelected(eliment) {
+  marca_id = eliment.getValue();
+  options = eliment.next().options;
   options.length = 1;
   colores.each(function(color) {
     if (color[0] == marca_id) {
@@ -13,8 +13,8 @@ function marcaSelected(domid) {
     }
   });
   if (options.length == 1) {
-    $('marca_' + domid).up('#hilo').down('#diseno_hilo_attributes__color_id').hide();
+    eliment.next().hide();
   } else {
-    $('marca_' + domid).up('#hilo').down('#diseno_hilo_attributes__color_id').show();
+    eliment.next().show();
   }
 } 

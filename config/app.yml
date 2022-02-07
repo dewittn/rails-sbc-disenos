@@ -1,11 +1,11 @@
 development:
-    app_title: Brown Boys Inc.
-    page_title: Welcome
+    app_title: Hilos
+    page_title: Benvinido
 
 test:
-    app_title: Brown Boys Inc.
+    app_title: Hilos
     page_title: Welcome
   
 production:
-    app_title: Brown Boys Inc.
+    app_title: Hilos
     page_title: Welcome

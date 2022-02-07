@@ -48,13 +48,13 @@ module CotoHelper
     end
    end 
    
-   def javascripts(file)
+   def javascripts(*file)
     content_for :javascripts do
       javascript_include_tag file
     end
    end
    
-   def stylesheets(file)
+   def stylesheets(*file)
      content_for :stylesheets do
        stylesheet_link_tag file
      end
