@@ -1,5 +1,5 @@
 # This file is auto-generated from the current state of the database. Instead of editing this file, 
-# please use the migrations feature of ActiveRecord to incrementally modify your database, and
+# please use the migrations feature of Active Record to incrementally modify your database, and
 # then regenerate this schema definition.
 #
 # Note that this schema.rb definition is the authoritative source for your database schema. If you need
@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 7) do
+ActiveRecord::Schema.define(:version => 20090515180253) do
 
   create_table "colors", :force => true do |t|
     t.string   "nombre"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 7) do
     t.string   "archivo_pes_file_name"
     t.string   "archivo_pes_content_type"
     t.string   "archivo_pes_file_size"
+    t.boolean  "delta"
   end
 
   create_table "hilos", :force => true do |t|
