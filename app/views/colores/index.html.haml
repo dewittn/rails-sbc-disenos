@@ -7,8 +7,8 @@
       %th
     - for color in @colores do
       %tr{ :class => cycle(:odd, :even) }
-        %td= h color.marca.nombre
-        %td= h color.nombre
-        %td= h color.codigo
+        %td=h color.marca.nombre rescue ""
+        %td=h color.nombre
+        %td=h color.codigo
         %td= link_to "editar", edit_colore_path(color)
 - button_2 "Nuevo =>",new_colore_path

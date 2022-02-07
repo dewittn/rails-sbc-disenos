@@ -6,9 +6,11 @@ Feature: Create and edit, colors and marcas
   Scenario: Create color
     Given I have no colors
     And I am on the colors page
-    When I follow "Nueveo =>"
-    And I fill in
-    Then I should have 1 color
+    When I follow "Nuevo =>"
+    And I fill in the form
+    And I press "Submit" 
+    Then I should see "Color created"
+    And I should have 1 color
   
   
   

@@ -11,6 +11,9 @@ module NavigationHelpers
     when /the homepage/
       '/'
     
+    when /the colors page/
+      colores_path
+    
     # Add more mappings here.
     # Here is a more fancy example:
     #
