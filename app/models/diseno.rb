@@ -9,4 +9,8 @@ class Diseno < ActiveRecord::Base
       hilos.build(attributes)
     end
   end
+  
+  define_index do
+    indexes nombre_de_orden, :sorable => true
+  end
 end
