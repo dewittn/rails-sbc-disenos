@@ -53,9 +53,9 @@ task :update_repo do
   system "git push coto"
 end
 
-after "deploy", "gem_install"
-before "deploy:create_db", "gem_install"
-after "deploy:migrations", "gem_install"
+after "deploy:symlink", "gem_install"
+# before "deploy:create_db", "gem_install"
+# after "deploy:migrations", "gem_install"
 task :gem_install do
   rake_setup
   run "cd #{@directory}; sudo #{@rake} RAILS_ENV=#{@rails_env} #{@migrate_env} gems:install"
