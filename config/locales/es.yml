@@ -4,6 +4,7 @@ es:
     index:
       title: "Hilos"
       new: "Nuevo =>"
+      name: Nombre
     new:
       title: "Nuevo Hilo"
       name: "Nombre"

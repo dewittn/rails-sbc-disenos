@@ -5,6 +5,9 @@
 .results {
   background-color: #ffffff;
   border: #000080 1px solid; }
+  .results tr th {
+    color: #ffffff;
+    background-color: #000000; }
 
 .timeline {
   background-color: #ffffff;
