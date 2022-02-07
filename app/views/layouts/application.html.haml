@@ -1,0 +1,29 @@
+- app_title
+!!!
+%html{ "xml:lang" => "en", :lang => "en", :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %meta{ :content => "text/html;charset=UTF-8", "http-equiv" => "content-type" }
+    %title
+      = yield :app_title
+      = yield(:title) || defualt_title
+    = stylesheet_link_tag('application')
+    = yield :stylesheets
+    = javascript_include_tag(:defaults, :unobtrusive, :cache => "all_with_unobtrusive")
+    = yield :javascripts
+  %body
+    .wrapper
+      - create_top_links("disenos","colores")
+      -# create_logout
+      = render :partial => 'application/top_links'
+      %p{ :style => "color: green" }
+        = flash[:notice]
+      = yield
+      %br
+      %table
+        %tr
+          = yield :button1
+          %td= link_to("<div class='three'><center>Home</center></div>", root_path)
+          = yield :button2
+      .push
+    .footer
+      = render :partial => 'application/footer'
