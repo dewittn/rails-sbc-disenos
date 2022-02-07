@@ -11,4 +11,9 @@ Event.addBehavior({
       {asynchronous:true, evalScripts:true, parameters:Form.serialize(document.forms[0]) });
     e.stop();
     },
+  
+  '.hex_link:click': function(e){
+    this.next().value = $('cp1_Hex').value; 
+    e.stop();
+  }
 });
