@@ -55,6 +55,7 @@ es:
     show: 
       edit: Editar
       file: "Archivo:"
+      notes: Notas
     color: Color
     index: 
       new: Nuevo =>
