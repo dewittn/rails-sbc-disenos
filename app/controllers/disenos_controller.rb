@@ -1,4 +1,7 @@
 class DisenosController < ApplicationController
+  cache_sweeper :diseno_sweeper, :only => [:update, :create, :destory]
+  caches_page :index, :new, :show, :if => Proc.new { |c| !c.request.format.js? }
+  
   def index
     @disenos = Diseno.search(params[:search],:match_mode => :any) if params[:search]
   end
