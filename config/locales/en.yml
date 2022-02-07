@@ -1,4 +1,9 @@
 en:
+  email:
+    subject: Test email
+    body: This is a test email.
+    success: Email was sent successfuly.
+    failure: Email could not be sent.
   application:
     title: "Threads"
     home: "Home"
