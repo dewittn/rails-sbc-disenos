@@ -41,6 +41,7 @@ Rails::Initializer.run do |config|
     :secret      => ***REMOVED***
   }
 
+  config.gem "haml"
   config.gem "mysql"
   config.gem "thoughtbot-paperclip", :lib => "paperclip"
 
