@@ -81,6 +81,11 @@ a {
   margin-left: auto;
   margin-right: auto; }
 
+#top-search {
+  position: absolute;
+  top: 8px;
+  right: 10px; }
+
 .clear {
   clear: both; }
 
