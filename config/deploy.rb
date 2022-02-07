@@ -19,6 +19,7 @@ set :scm, :git
 
 # set :local_scm_command, "/usr/local/bin/git"
 # set :scm_command, "/usr/bin/git"
+set :deploy_via, :remote_cache
 
 role :app, domain
 role :web, domain
