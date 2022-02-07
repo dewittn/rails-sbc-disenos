@@ -10,7 +10,7 @@ describe LettersController do
 
   describe "GET 'show'" do
     it "should be successful" do
-      get 'show'
+      get 'show', :id => 'b'
       response.should be_success
     end
   end
