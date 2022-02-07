@@ -6,7 +6,7 @@ class DisenosController < ApplicationController
     expires_in 1.day unless request.format.js?
     if params[:search]
       begin
-        @disenos = Diseno.search(params[:search],:match_mode => :any)
+        #@disenos = Diseno.search(params[:search],:match_mode => :any)
       rescue
         render :partial => 'search_error'
       end

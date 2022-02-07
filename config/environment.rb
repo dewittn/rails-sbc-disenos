@@ -40,14 +40,14 @@ Rails::Initializer.run do |config|
     :session_key => '_DesignColors_session',
     :secret      => ***REMOVED***
   }
-  config.gem "test-unit", :version => "1.2.3"
+#  config.gem "test-unit", :version => "1.2.3"
   config.gem "haml"
   config.gem "mysql"
   config.gem "paperclip"
   config.gem 'chronic', :lib => "chronic", :version => ">=0.2.3"
   config.gem 'whenever'
   config.gem "giraffesoft-timeline_fu", :lib => "timeline_fu", :source => "http://gems.github.com"
-  config.gem 'thinking-sphinx', :version => '1.4.4', :lib => 'thinking_sphinx'
+  #config.gem 'thinking-sphinx', :version => '1.4.4', :lib => 'thinking_sphinx'
 
   # Use the database for sessions instead of the cookie-based default,
   # which shouldn't be used to store highly confidential information
