@@ -1,0 +1,63 @@
+es:
+  application:
+    title: "Hilos"
+    home: "Inicio"
+  design:
+    design: "Diseño"
+    spindel: "Hilos"
+    brand: "Marca"
+    color: "Color"
+    id: "Codígo"
+    missing_name: "No Tenia Nombre"
+    index:
+      title: "Buscar Diseños"
+      search: "Buscar"
+      new: "Nuevo =>"
+    edit:
+      title: "Editar Diseño"
+      name_field: "Nombre De Diseno"
+      image: "Image:"
+      dst: "Archivo de DST:"
+      pes: "Archivo de PES:"
+      delete: "Eliminar:"
+      save: "Guardar =>"
+    new:
+      title: "Nuevo Diseño"
+      design: "Diseño"
+      number_of_colors: "Cambios De Colores"
+      name_field: "Nombre De Diseno"
+      image: "Imagen:"
+      dst: "Archivo de DST:"
+      pes: "Archivo de PES:"
+      delete: "Eliminar:"
+      save: "Crear =>"
+    show:
+      edit: "Editar"
+      file: "Archivo:"
+    flash:
+      updated: "Actualizado..."
+      not_updated: "No fue guardado..."
+      created: "Nos se pudo guardar..."
+      not_created: "No se pudo crear..."
+  color:
+    design: "Diseño"
+    spindel: "Hilos"
+    brand: "Marca"
+    color: "Color"
+    id: "Codígo"
+    index:
+      title: "Colores"
+      edit: "editar"
+      new: "Nuevo =>"
+    new:
+      title: "Nuevo color"
+      save: "Crear =>"
+      saving: "Cargando"
+    edit:
+      title: "Editar color"
+      save: "Guadar =>"
+    flash:
+      updated: "Actualizado..."
+      not_updated: "No fue guardado..."
+      created: "Nos se pudo guardar..."
+      not_created: "No se pudo crear..."

@@ -1,28 +1,28 @@
 - javascripts "dynamic_colores", "diseno_edit"
-- page_title "Editar Diseño"
+- page_title t('design.edit.title')
 %h1= yield :title
 #orden.results
   - form_for @diseno,:html => { :multipart => true }  do |f|
     = f.error_messages
     = f.hidden_field :id
-    %h2 Diseño:
+    %h2= t('design.design')
     %table
       %tr
         %td
-          = f.label :nombre_de_orden, "Nombre De Diseno"
-          = f.text_field :nombre_de_orden
+          =f.label :nombre_de_orden, t('design.edit.name_field')
+          =f.text_field :nombre_de_orden
       %tr
         %td
-          Image:
-          = f.file_field "image"
+          =t('design.edit.image')
+          =f.file_field "image"
       %tr
         %td
-          Archivo de DST:
-          = f.file_field "archivo_dst"
+          =t('design.edit.dst')
+          =f.file_field "archivo_dst"
       %tr
         %td 
-          Archivo de PES:
+          =t('design.edit.pes')
           = f.file_field "archivo_pes"
-    %h2 Hilos:
+    %h2= t('design.spindel')
     #hilos=render 'hilo'
-- button_2 "Crear =>",'#',:onclick => "document.forms[0].submit()"
+- button_2 create_save_text,'#',:onclick => "document.forms[0].submit()"

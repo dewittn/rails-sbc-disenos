@@ -7,4 +7,12 @@ class ApplicationController < ActionController::Base
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
   # protect_from_forgery # :secret => '7a36b02ff1b42d06eeba661106d5fb66'
+  
+  before_filter :set_default_language
+  
+  private
+  
+  def set_default_language
+    # I18n.locale = 'es'
+  end
 end

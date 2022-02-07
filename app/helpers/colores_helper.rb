@@ -1,6 +1,6 @@
 module ColoresHelper
   def button_text
-    new_path? ? "Crear =>" : "guadar"
+    new_path? ? t('color.new.save') : t('color.edit.save')
   end
   
   def action_path
@@ -8,7 +8,7 @@ module ColoresHelper
   end
   
   def title_text
-    new_path? ? "Nuevo color" : "Editar color"
+    new_path? ? t('color.new.title') : t('color.edit.title')
   end
   
   def new_path?
