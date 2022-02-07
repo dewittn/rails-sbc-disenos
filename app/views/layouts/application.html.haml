@@ -8,7 +8,7 @@
       = yield(:title) || defualt_title
     = stylesheet_link_tag('application')
     = yield :stylesheets
-    = javascript_include_tag(:defaults, :unobtrusive,:path_prefix, :cache => "all_with_unobtrusive")
+    = javascript_include_tag(:defaults, :unobtrusive,:coto_solutions, :cache => "all_with_unobtrusive")
     = yield :javascripts
   %body
     .wrapper
