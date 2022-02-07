@@ -10,7 +10,7 @@
     - @diseno.hilos.each_with_index do |hilo,row|
       %tr{ :class => cycle(:odd,:even) }
         %td= (row + 1)
-        %td{ :id => "hilo_color_#{hilo.color.id}_marca" }= hilo.color.marca.nombre unless hilo.color.blank?
+        %td= hilo.color.marca.nombre unless hilo.color_id.blank?
         %td= hilo.color.nombre unless hilo.color.blank?
         %td= hilo.color.codigo unless hilo.color.blank?
   %br

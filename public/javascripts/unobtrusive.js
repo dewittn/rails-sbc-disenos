@@ -10,3 +10,10 @@ Ajax.Responders.register({
       Effect.Fade('busy',{duration:1.0,queue:'end'});
   }    
 });
+
+Event.addBehavior({
+  'body': function(){
+      var busy = $div({id:'busy',style: "display:none;"}, "Carcando...");
+      document.body.appendChild(busy);
+  },
+});

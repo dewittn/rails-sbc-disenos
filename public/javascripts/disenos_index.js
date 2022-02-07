@@ -10,9 +10,4 @@ Event.addBehavior({
   'input[type=submit]': function(){
     this.hide();
   },
-  
-  'body': function(){
-      var busy = $div({id:'busy',style: "display:none;"}, "Carcando...");
-      document.body.appendChild(busy);
-  },
 });
