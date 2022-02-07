@@ -1,4 +1,6 @@
-- if @diseno.image.exists?
-  .results= image_tag image_url(@diseno)
-- if @diseno.original.exists?
-  .restuls= image_tag original_url(@diseno)
+.float-right
+  - if @diseno.image.exists?
+    .results= image_tag image_url(@diseno)
+.float-right
+  - if @diseno.original.exists?
+    .restuls= image_tag original_url(@diseno)
