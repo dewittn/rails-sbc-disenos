@@ -1,0 +1,25 @@
+- page_title "Diseno: " + diseno_nombre
+%h1= h yield :title
+.float-left
+  %table.results
+    %tr.title
+      %th Hilo
+      %th Marca
+      %th Color
+      %th codigo
+    - @diseno.hilos.each_with_index do |hilo,row|
+      %tr{ :class => cycle :odd,:even }
+        %td= (row + 1)
+        %td= hilo.color.marca.nombre unless hilo.color.blank?
+        %td= hilo.color.nombre unless hilo.color.blank?
+        %td= hilo.color.codigo unless hilo.color.blank?
+  %br
+  Archivo:
+  = link_to_if @diseno.archivo_dst.exists?, "DST", @diseno.archivo_dst.url
+  %br
+  Archivo:
+  = link_to_if @diseno.archivo_pes.exists?, "PES", @diseno.archivo_dst.url
+.float-right
+  - if @diseno.image.exists?
+    .results= image_tag @diseno.image.url
+.clear
