@@ -4,8 +4,7 @@ class DisenosController < ApplicationController
   end
   
   def new
-    @diseno = Diseno.new
-    #3.times { @diseno.hilos.build }
+    @diseno = Diseno.new()
   end
   
   def edit
@@ -28,8 +27,10 @@ class DisenosController < ApplicationController
     @diseno = Diseno.new(params[:diseno])
     if @diseno.save
       flash[:notice] = "Successfully created..."
+      redirect_to(diseno_path(@diseno))
     else
       flash[:error] = "not created"
+      render :new
     end
   end
 end

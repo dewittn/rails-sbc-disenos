@@ -9,7 +9,24 @@
       %tr
         %td= f.text_field :nombre_de_orden
         %td= f.text_field :cantidad_del_colores,:size => 3
-        = observe_field :diseno_cantidad_del_colores, :url => formatted_colores_javascripts_path(:js), :frequency => 0.25, :with => "cantidad"
+        = observe_field :diseno_cantidad_del_colores, :url => colores_javascripts_path(:js), :frequency => 0.25, :with => "cantidad"
+      %tr
+        %td
+          Image:
+          = f.file_field "image"
+      %tr
+        %td
+          Archivo de DST:
+          = f.file_field "archivo_dst"
+      %tr
+        %td 
+          Archivo de PES:
+          = f.file_field "archivo_pes"
     %ol
-      #hilos= render :partial => 'application/hilo', :collection => @diseno.hilos unless @diseno.hilos.blank?
+      #hilos
+      - f.fields_for :hilos do |hilo|
+        %li#hilo
+          = collection_select :marca, hilo.object_id.id, Marca.find(:all), :id, :nombre, :prompt => "Marca"
+          = hilo.collection_select :color_id,Color.find(:all), :id, :nombre, :prompt => "Color",:html => {:class => "test"}
+        = observe_field "marca_#{hilo.object_id}", :function => "marcaSelected(#{hilo.object_id})", :frequency => 0.5, :with => "cantidad"
 - button_2 "Crear =>",'#',:onclick => "document.forms[0].submit()"
