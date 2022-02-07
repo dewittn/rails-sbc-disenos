@@ -44,7 +44,7 @@ Rails::Initializer.run do |config|
   config.gem "haml"
   config.gem "mysql"
   config.gem "thoughtbot-paperclip", :lib => "paperclip"
-  config.gem 'chronic', :lib => "chronic", :source => 'http://gems.github.com', :version => ">=0.2.3"
+  config.gem 'chronic', :lib => "chronic", :version => ">=0.2.3"
   config.gem 'javan-whenever', :lib => "whenever", :source => 'http://gems.github.com'
 
   # Use the database for sessions instead of the cookie-based default,
