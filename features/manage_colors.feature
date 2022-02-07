@@ -29,7 +29,7 @@ Feature: Create and edit, colors and marcas
     And I am on the colors page
     When I follow "edit"
     And I fill in <field> with <text>
-    And I press "Guadar =>"
+    And I press "Guadar"
     Then I should see <text>
   
   Examples:
