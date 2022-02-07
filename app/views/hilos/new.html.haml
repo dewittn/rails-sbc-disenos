@@ -1,0 +1,21 @@
+- page_title t('thread.new.title')
+%h1= yield :title
+#hilo.results
+  - form_for @marca, :url => hilos_path do |f|
+    %h2= t('thread.new.brand')
+    %table
+      %tr
+        %td= f.label :nombre, t('thread.new.name')
+        %td= f.text_field :nombre
+    %h2= t('thread.new.colors')
+    %table
+      - f.fields_for :colors do |color_field|
+        %tr
+          %td
+            = color_field.label :nombre, t('thread.new.name')
+            = color_field.text_field :nombre
+          %td
+            = color_field.label :codigo, t('thread.new.id')
+            = color_field.text_field :codigo
+    = f.submit t('thread.new.create'), :disable_with => 'Submiting...'
+- button_2 t('thread.new.create'), '#', :onclick => "document.forms[0].submit; return false;"
