@@ -8,7 +8,8 @@
       = yield(:title) || defualt_title
     = stylesheet_link_tag('application')
     = yield :stylesheets
-    = javascript_include_tag(:defaults, :unobtrusive, "hilos/javascripts/path_prefix.js", :cache => "all_with_unobtrusive")
+    = javascript_include_tag(:defaults, :unobtrusive, :cache => "all_with_unobtrusive")
+    = javascript_include_tag "path_prefix"
     = yield :javascripts
   %body
     .wrapper
