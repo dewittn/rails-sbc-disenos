@@ -1,0 +1,62 @@
+!app_background = #C3D9FF
+!app_border = navy
+!app_text = black
+!app_inverse = white
+!link = #000
+!link_visited = #666
+
+=standard_background
+  :background-color = !app_background
+  :border = !app_border 1px solid
+
+=even
+  :color = !app_text
+  :background-color = !app_background
+
+=odd
+  :color = !app_text
+  :background-color = !app_inverse
+
+.show-item
+  +standard_background
+.results
+  :background-color = !app_inverse
+  :border = !app_border 1px solid
+#top-bar
+  +standard_background
+#por_sacar
+  +standard_background
+.footer
+  +standard_background
+.pagination a
+  +standard_background
+.three
+  +standard_background
+
+.show-item tr
+  +even
+.even
+  +even
+
+.odd
+  +odd
+.pagination
+  a
+    &:hover
+      +odd
+    &:active
+      +odd
+.three:hover
+  +odd
+
+.title
+  :color = !app_inverse
+  :background-color = !app_text
+a 
+  :color = !link
+  
+  &:visited 
+    :color = !link_visited
+  &:hover 
+    :color #fff 
+    :background-color = !link

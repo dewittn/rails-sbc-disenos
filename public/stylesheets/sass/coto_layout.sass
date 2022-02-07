@@ -1,0 +1,125 @@
+=padding
+  :padding 5px
+=center_text
+  :text-align center
+=fonts
+  :font-family verdana, arial, helvetica, sans-serif
+  :font-size 13px
+  :line-height 18px
+
+// Top Bar
+#top-bar
+  :padding 2px
+  +center_text
+
+.float-left
+  :float left
+
+.float-right
+  :float right
+
+.clear 
+  :clear both
+// End Top Bar 
+
+// Search Results Style 
+.results 
+  :border-spacing 0px
+  +padding
+
+.title
+  :font-style italic
+  +center_text
+  th 
+    :padding 10px
+      
+.even
+  +center_text
+  td
+    +padding
+
+.odd 
+  +center_text
+  td
+    +padding
+// End Search Results Style
+
+// Footer 
+html
+  :height 99%
+body 
+  :height 99% 
+.wrapper
+  :min-height 100%
+  :height auto !important
+  :height 100%
+  :margin 0 auto -20px
+.footer 
+  :padding 2px
+  +center_text
+  :width auto
+  .push 
+    :height 20px
+// End Footer
+
+// Default Syling options
+body 
+  :background-color #fff
+  :color #333
+  :background-image url(/images/SBC.jpg)
+  :background-attachment fixed
+  :background-position top
+  :background-repeat no-repeat
+  +fonts
+p
+  +fonts
+ol
+  +fonts
+ul
+  +fonts
+td
+  +fonts
+
+div
+  .three
+    :float left
+    :font-weight bold
+    :width 113px
+    :height 25px
+
+pre
+  :background-color #eee
+  :padding 10px
+  :font-size 11px
+
+.fieldWithErrors
+  :padding 2px
+  :background-color red
+  :display table
+
+#errorExplanation
+  :width 400px
+  :border 2px solid red
+  :padding 7px
+  :padding-bottom 12px
+  :margin-bottom 20px
+  :background-color #f0f0f0
+
+  h2
+    :text-align left
+    :font-weight bold
+    :padding 5px 5px 5px 15px
+    :font-size 12px
+    :margin -7px
+    :background-color #c00
+    :color #fff
+
+  p
+    :color #333
+    :margin-bottom 0
+    :padding 5px
+
+  ul 
+    li
+      :font-size 12px
+      :list-style square

@@ -1,0 +1,62 @@
+.show-item {
+  background-color: #c3d9ff;
+  border: #000080 1px solid; }
+
+.results {
+  background-color: #ffffff;
+  border: #000080 1px solid; }
+
+#top-bar {
+  background-color: #c3d9ff;
+  border: #000080 1px solid; }
+
+#por_sacar {
+  background-color: #c3d9ff;
+  border: #000080 1px solid; }
+
+.footer {
+  background-color: #c3d9ff;
+  border: #000080 1px solid; }
+
+.pagination a {
+  background-color: #c3d9ff;
+  border: #000080 1px solid; }
+
+.three {
+  background-color: #c3d9ff;
+  border: #000080 1px solid; }
+
+.show-item tr {
+  color: #000000;
+  background-color: #c3d9ff; }
+
+.even {
+  color: #000000;
+  background-color: #c3d9ff; }
+
+.odd {
+  color: #000000;
+  background-color: #ffffff; }
+
+.pagination a:hover {
+  color: #000000;
+  background-color: #ffffff; }
+.pagination a:active {
+  color: #000000;
+  background-color: #ffffff; }
+
+.three:hover {
+  color: #000000;
+  background-color: #ffffff; }
+
+.title {
+  color: #ffffff;
+  background-color: #000000; }
+
+a {
+  color: #000000; }
+  a:visited {
+    color: #666666; }
+  a:hover {
+    color: #fff;
+    background-color: #000000; }
