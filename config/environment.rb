@@ -41,6 +41,7 @@ Rails::Initializer.run do |config|
     :secret      => 'db2906790813e6dd612817c0a4690fbc6f88e1532dd181a5b86eadd3fded3a347dcc4d18c35df62a3cbeab48bfd098805c2615eaacf13d7516b486d0121d1d65'
   }
 
+  config.gem "haml"
   config.gem "mysql"
   config.gem "thoughtbot-paperclip", :lib => "paperclip"
 
