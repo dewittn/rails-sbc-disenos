@@ -24,5 +24,9 @@ role :web, domain
 role :db,  domain, :primary => true
 
 set :rails_env, "production"
-set :sphinx, true
+set :sphinx, "true"
 #cat ~/.ssh/id_rsa.pub | ssh git@coto "cat >> .ssh/authorized_keys2"
+
+after "deploy:cold", "ts_start"
+after "deploy", "ts_index"
+after "deploy:migrations", "ts_index"

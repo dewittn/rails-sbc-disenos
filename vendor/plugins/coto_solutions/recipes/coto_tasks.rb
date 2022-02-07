@@ -55,12 +55,6 @@ task :gem_install do
   rake_setup
   run "cd #{@directory}; sudo #{@rake} RAILS_ENV=#{@rails_env} #{@migrate_env} gems:install"
 end
-if fetch(:sphinx, false)
-  after "deploy:create_db", "ts_index"
-  after "deploy:cold", "ts_start"
-  after "deploy", "ts_index"
-  after "deploy:migrations", "ts_index"
-end
 
 task :pro_log do
   stream "tail -f #{deploy_to}/current/log/production.log"
