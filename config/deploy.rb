@@ -28,6 +28,5 @@ set :sphinx, "true"
 #cat ~/.ssh/id_rsa.pub | ssh git@coto "cat >> .ssh/authorized_keys2"
 
 after "deploy:cold", "ts_start"
-after "deploy", "ts_index"
-after "deploy:migrations", "ts_index"
+after "deploy:symlink", "ts_index"
 after "gem_install", "deploy:update_crontab"
