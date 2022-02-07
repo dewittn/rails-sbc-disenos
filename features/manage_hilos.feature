@@ -11,8 +11,12 @@ Feature: Create and edit, colors and marcas
     And I fill in "marca_nombre" with "Ra"
     And I fill in "marca_colors_attributes_0_nombre" with "Rojo"
     And I fill in "marca_colors_attributes_0_codigo" with "AB12"
+    And I fill in "marca_colors_attributes_1_nombre" with "Rojo"
+    And I fill in "marca_colors_attributes_1_codigo" with "AB12"
+    And I fill in "marca_colors_attributes_2_nombre" with "Rojo"
+    And I fill in "marca_colors_attributes_2_codigo" with "AB12"
     And I press "Crear =>"
     Then I should see "Nos se pudo guardar..." 
     And I should have 1 marca
-    And I should have 1 color
+    And I should have 3 color
   
