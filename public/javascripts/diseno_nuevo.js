@@ -10,7 +10,7 @@ function select_colors(){
       },
     
     '#diseno_cantidad_del_colores:change': function(){
-      new Ajax.Request('/javascripts/colores.js', 
+      new Ajax.Request('../javascripts/colores.js', 
         {asynchronous:true, evalScripts:true, parameters:'cantidad=' + encodeURIComponent(this.value) });
       },
   });
