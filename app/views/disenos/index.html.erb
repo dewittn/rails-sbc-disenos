@@ -1,0 +1,5 @@
+<div class="search">
+	<h1>Buscar</h1>
+	<%= text_field_with_auto_complete :diseno,:nombre_de_orden ,{},{ :url => formatted_disenos_path(:js), :method => :get, :with => "'search=' + element.value" } %>
+</div>
+<% button_2("Nuevo =>",new_diseno_path) %>

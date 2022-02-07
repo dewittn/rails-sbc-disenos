@@ -1,0 +1,23 @@
+<% page_title "Nuevo Diseno"  %>
+<h1><%= yield :title %></h1>
+<div class="results" id="orden">
+	<% form_for @diseno,:multipart => true  do |f| -%>
+	<table>
+		<tr>
+			<th><%= f.label :nombre_de_orden, "Nombre De Diseno" %></th>
+			<th><%= f.label :cantidad_del_colores, "Cantidad De Colores" %></th>
+		</tr>
+		<tr>
+			<td><%= f.text_field :nombre_de_orden %></td>
+			<td><%= f.text_field :cantidad_del_colores,:size => 3 %></td>
+			<%= observe_field :diseno_cantidad_del_colores, :url => formatted_colores_javascripts_path(:js), :frequency => 0.25, :with => "cantidad" %>
+		</tr>
+	</table>
+	<ol>
+		<div id="hilos">
+			<%= render :partial => 'application/hilo', :collection => @diseno.hilos unless @diseno.hilos.blank? %>
+		</div>
+	</ol>
+	<% end -%>
+</div>
+<% button_2 "Crear =>",'#',:onclick => "document.forms[0].submit()" %>

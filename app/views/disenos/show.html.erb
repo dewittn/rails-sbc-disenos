@@ -1,0 +1,27 @@
+<% page_title "Diseno: " + diseno_nombre %>
+<h1><%=h yield :title %></h1>
+<div class="float-left">
+	<table class="results">
+		<tr class="title">
+			<th>Hilo</th>
+			<th>Marca</th>
+			<th>Color</th>
+			<th>codigo</th>
+		</tr>
+	<% @diseno.hilos.each_with_index do |hilo,row| %>
+		<tr class="<%= cycle :odd,:even %>">
+			<td><%= (row + 1) %></td>
+			<td><%= hilo.color.marca.nombre unless hilo.color.blank? %></td>
+			<td><%= hilo.color.nombre unless hilo.color.blank? %></td>
+			<td><%= hilo.color.codigo unless hilo.color.blank? %></td>
+		</tr>
+	<% end %>
+	</table>
+	<br>
+	Archivo: <%= link_to_unless @diseno.archivo_dst.blank?, "DST",url_for_file_column( @diseno, "archivo_dst")  %><br>
+	Archivo: <%= link_to_unless @diseno.archivo_pes.blank?, "PES",url_for_file_column( @diseno, "archivo_pes")  %>
+</div>
+<div class="float-right">
+	<div class="results"><%= image_tag url_for_file_column( @diseno, "image") unless @diseno.image.blank? %></div>
+</div>
+<div class="clear"></div>	
