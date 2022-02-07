@@ -17,7 +17,12 @@ class JavascriptsController < ApplicationController
   end
   
   def add_colors
-    @marca = Marca.new(params[:marca])
+    if params[:id]
+      @marca = Marca.find(params[:id]) 
+      @marca.attributes = params[:marca]
+    else
+      Marca.new(params[:marca])
+    end
     @marca.colors.build
   end
 end
