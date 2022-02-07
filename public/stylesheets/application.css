@@ -252,4 +252,5 @@ pre {
 .letter-box {
   width: 300px;
   height: 350px;
-  font-size: large; }
+  font-size: large;
+  text-align: center; }
