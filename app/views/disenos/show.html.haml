@@ -20,7 +20,6 @@
   = t('design.show.file')
   = link_to_if @diseno.archivo_pes.exists?, "PES", @diseno.archivo_dst.url, :disposition => 'attachment'
 .float-right
-  - if @diseno.image.exists?
-    .results= image_tag image_url(@diseno)
+  = render 'images'
 .clear
 - button_2 t('design.show.edit'), edit_diseno_path(@diseno)
