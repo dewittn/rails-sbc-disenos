@@ -40,3 +40,29 @@ Given /^I have ([0-9]+) color$/ do |count|
     Color.make(:marca_id => @marca.id)
   end
 end
+
+Then /^I should see the important field$/ do
+  Then "The page should contain", table(%{
+  | text     |
+  | "Marca"  |
+  | "Color"  |
+  | "Codigo" |
+  })
+end
+
+Then /^I should see the color's info$/ do
+  @color = Color.first
+  Then "The page should contain", table(%{
+  | text     |
+  | "#{@color.marca.nombre}"  |
+  | "#{@color.nombre}"  |
+  | "#{@color.codigo}" |
+  })
+end
+
+Then /^The page should contain$/ do |table|
+  table.hashes.each do |hash|
+    Then "I should see #{hash[:text]}"
+  end
+end
+

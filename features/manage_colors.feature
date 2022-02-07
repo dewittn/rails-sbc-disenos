@@ -3,6 +3,12 @@ Feature: Create and edit, colors and marcas
   As a admin
   I want to be able to create and edit those values
 
+  Scenario: View existing colors
+    Given I have 1 color
+    And I am on the colors page
+    Then I should see the important field
+    And I should see the color's info
+
   Scenario Outline: Create a valid color
     Given I have no colors
     And I am on the colors page
