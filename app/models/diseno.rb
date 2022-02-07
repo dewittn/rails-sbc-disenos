@@ -12,6 +12,6 @@ class Diseno < ActiveRecord::Base
   define_index do
     indexes nombre_de_orden, :sorable => true
     
-    #set_property :delta => true
+    set_property :delta => true
   end
 end
