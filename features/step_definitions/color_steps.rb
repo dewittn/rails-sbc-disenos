@@ -46,7 +46,7 @@ Then /^I should see the important field$/ do
   | text     |
   | "Marca"  |
   | "Color"  |
-  | "Codigo" |
+  | "Codígo" |
   })
 end
 
