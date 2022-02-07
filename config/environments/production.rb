@@ -21,3 +21,5 @@ config.action_controller.relative_url_root = "/hilos"
 config.cache_store = :mem_cache_store
 
 config.gem "newrelic_rpm"
+
+config.middleware.use "PathPrefix", "/hilos"
