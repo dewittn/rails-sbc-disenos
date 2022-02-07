@@ -1,4 +1,4 @@
-set :application, "inventario"
+set :application, "Hilos"
 set :user, "deploy"
 set :repository,  "git@coto:repos/#{application}.git"
 
@@ -24,9 +24,5 @@ role :web, domain
 role :db,  domain, :primary => true
 
 set :rails_env, "production"
-
+set :sphinx, true
 #cat ~/.ssh/id_rsa.pub | ssh git@coto "cat >> .ssh/authorized_keys2"
-after "deploy:cold", "ts_index"
-after "deploy:cold", "ts_start"
-after "deploy", "ts_index"
-after "deploy:migrations", "ts_index"

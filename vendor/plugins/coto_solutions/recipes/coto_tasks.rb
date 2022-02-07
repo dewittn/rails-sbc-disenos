@@ -23,7 +23,7 @@ namespace :deploy do
   
   task :create_db do
     rake_setup
-    run "cd #{@directory}; #{@rake} RAILS_ENV=#{@rails_env} #{@migrate_env} db:schema:load"
+    run "cd #{@directory}; sudo #{@rake} RAILS_ENV=#{@rails_env} #{@migrate_env} db:schema:load"
   end
   
   def rake_setup
@@ -49,11 +49,17 @@ task :update_repo do
 end
 
 after "deploy", "gem_install"
-after "deploy:cold", "gem_install"
+before "deploy:create_db", "gem_install"
 after "deploy:migrations", "gem_install"
 task :gem_install do
   rake_setup
-  run "cd #{@directory}; #{@rake} RAILS_ENV=#{@rails_env} #{@migrate_env} gems:install"
+  run "cd #{@directory}; sudo #{@rake} RAILS_ENV=#{@rails_env} #{@migrate_env} gems:install"
+end
+if fetch(:sphinx, false)
+  after "deploy:create_db", "ts_index"
+  after "deploy:cold", "ts_start"
+  after "deploy", "ts_index"
+  after "deploy:migrations", "ts_index"
 end
 
 task :pro_log do

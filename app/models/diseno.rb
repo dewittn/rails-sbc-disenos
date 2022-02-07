@@ -9,9 +9,9 @@ class Diseno < ActiveRecord::Base
   
   accepts_nested_attributes_for :hilos, :allow_destroy => true
 
-  define_index do
-    indexes nombre_de_orden, :sorable => true
-    
-    #set_property :delta => true
-  end
+  # define_index do
+  #   indexes nombre_de_orden, :sorable => true
+  #   
+  #   #set_property :delta => true
+  # end
 end
