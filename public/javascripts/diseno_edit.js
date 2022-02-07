@@ -12,7 +12,7 @@ function select_colors(){
       },
       
     '#add_hilo:click': function(e){
-      new Ajax.Request('/javascripts/edit_colores.js', 
+      new Ajax.Request(path_prefix + '/javascripts/edit_colores.js', 
         {asynchronous:true, evalScripts:true, parameters:'id=' + $('diseno_id').value });
       e.stop();
       },
