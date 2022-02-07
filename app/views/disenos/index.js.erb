@@ -1,1 +1,4 @@
-<%= auto_complete_result @disenos, :nombre_de_orden %>
+<% for diseno in @disenos %>	   
+    <%= link_to diseno.nombre_de_orden , diseno_path(diseno) %><br>
+<% end %>
+

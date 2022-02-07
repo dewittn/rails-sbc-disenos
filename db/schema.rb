@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 5) do
+ActiveRecord::Schema.define(:version => 7) do
 
   create_table "colors", :force => true do |t|
     t.string   "nombre"
@@ -21,12 +21,18 @@ ActiveRecord::Schema.define(:version => 5) do
 
   create_table "disenos", :force => true do |t|
     t.string   "nombre_de_orden"
-    t.string   "image"
     t.integer  "cantidad_del_colores"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "archivo_dst"
-    t.string   "archivo_pes"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.string   "image_file_size"
+    t.string   "archivo_dst_file_name"
+    t.string   "archivo_dst_content_type"
+    t.string   "archivo_dst_file_size"
+    t.string   "archivo_pes_file_name"
+    t.string   "archivo_pes_content_type"
+    t.string   "archivo_pes_file_size"
   end
 
   create_table "hilos", :force => true do |t|

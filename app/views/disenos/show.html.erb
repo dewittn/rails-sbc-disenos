@@ -18,10 +18,13 @@
 	<% end %>
 	</table>
 	<br>
-	Archivo: <%= link_to_unless @diseno.archivo_dst.blank?, "DST",url_for_file_column( @diseno, "archivo_dst")  %><br>
-	Archivo: <%= link_to_unless @diseno.archivo_pes.blank?, "PES",url_for_file_column( @diseno, "archivo_pes")  %>
+	Archivo: <%= link_to_if @diseno.archivo_dst.exists?, "DST", @diseno.archivo_dst.url  %><br>
+	Archivo: <%= link_to_if @diseno.archivo_pes.exists?, "PES", @diseno.archivo_dst.url  %>
 </div>
 <div class="float-right">
-	<div class="results"><%= image_tag url_for_file_column( @diseno, "image") unless @diseno.image.blank? %></div>
+	<%  if @diseno.image.exists?  %>
+	<div class="results"><%= image_tag @diseno.image.url%></div>
+	<% end %>
 </div>
 <div class="clear"></div>	
+
