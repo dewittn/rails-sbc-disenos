@@ -15,12 +15,12 @@
         %td= hilo.color.codigo unless hilo.color.blank?
   %br
   Archivo:
-  = link_to_if @diseno.archivo_dst.exists?, "DST", @diseno.archivo_dst.url
+  = link_to_if @diseno.archivo_dst.exists?, "DST", @diseno.archivo_dst.url, :disposition => 'attachment'
   %br
   Archivo:
-  = link_to_if @diseno.archivo_pes.exists?, "PES", @diseno.archivo_dst.url
+  = link_to_if @diseno.archivo_pes.exists?, "PES", @diseno.archivo_dst.url, :disposition => 'attachment'
 .float-right
   - if @diseno.image.exists?
-    .results= image_tag @diseno.image.url
+    .results= image_tag @diseno.image.url(:medium)
 .clear
 - button_2 "Editar", edit_diseno_path(params[:id])
