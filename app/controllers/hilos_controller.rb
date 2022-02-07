@@ -12,6 +12,14 @@ class HilosController < ApplicationController
   end
 
   def create
+    @marca = Marca.new(params[:marca])
+    if @marca.save
+      flash[:notice] = t('thread.flash.created')
+      redirect_to(hilos_path)
+    else
+      flash[:error] = t('thread.flash.not_created')
+      render :new
+    end
   end
 
   def edit

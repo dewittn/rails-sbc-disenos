@@ -2,6 +2,7 @@
 %h1= yield :title
 #hilo.results
   - form_for @marca, :url => hilos_path do |f|
+    = f.error_messages
     %h2= t('thread.new.brand')
     %table
       %tr
