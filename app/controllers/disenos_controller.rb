@@ -1,7 +1,7 @@
 class DisenosController < ApplicationController
 
   def index
-    @disenos = Diseno.find(:all, :conditions => ['nombre_de_orden LIKE ?', "%#{params[:search]}%"])
+    @disenos = Diseno.search(params[:search])
   end
   
   def new
@@ -33,6 +33,4 @@ class DisenosController < ApplicationController
       flash[:error] = "not created"
     end
   end
-  
- 
 end

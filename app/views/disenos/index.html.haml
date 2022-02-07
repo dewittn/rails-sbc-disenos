@@ -1,6 +1,6 @@
 .search
   %h1 Buscar
   = text_field_tag :nombre_de_orden
-  = observe_field :nombre_de_orden,:update => "results", :frequency => 0.5,:url => formatted_disenos_path(:js), :method => :get, :with => "'search=' + element.value"
+  = observe_field :nombre_de_orden,:update => "results", :frequency => 0.5,:url => disenos_path(:js), :method => :get, :with => "'search=' + element.value"
 #results
 - button_2("Nuevo =>",new_diseno_path)
