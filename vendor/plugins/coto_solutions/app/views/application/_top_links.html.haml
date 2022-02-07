@@ -1,7 +1,8 @@
 #top-bar
   .float-left= yield :top_link
+  .center-text
+    = yield :app_title
+    \:
+    = yield(:title) || defualt_title
   .float-right= yield :logout
-  = yield :app_title
-  \:
-  = yield(:title) || defualt_title
   .clear
