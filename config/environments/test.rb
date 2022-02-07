@@ -21,10 +21,11 @@ config.action_controller.allow_forgery_protection    = false
 # ActionMailer::Base.deliveries array.
 config.action_mailer.delivery_method = :test
 
-config.gem "mocha"
+#config.gem "mocha"
 config.gem "faker"
 config.gem "rspec", :lib => false, :version => ">=1.2.2"
 config.gem "rspec-rails", :lib => false, :version => ">=1.2.2"
 config.gem "webrat", :lib => false, :version => ">=0.4.3"
 config.gem "cucumber", :lib => false, :version => ">=0.2.2"
-config.gem "notahat-machinist", :lib => "machinist", :source =>  "http://gems.github.com"
+config.gem "notahat-machinist", :lib => "machinist", :source =>  "http://gems.github.com", :version => "0.3.1"
+config.gem "Selenium"
