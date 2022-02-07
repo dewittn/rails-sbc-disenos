@@ -3,3 +3,4 @@ log/*
 tmp/*
 config/*.sphinx.conf
 db/sphinx/*
+public/diseno/*
