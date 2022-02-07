@@ -25,4 +25,11 @@ class JavascriptsController < ApplicationController
     end
     @marca.colors.build
   end
+  
+  def timeline
+    @events = TimelineEvent.all(:limit => 10, :order => 'created_at DESC', :include => :subject)
+    render :update do |page| 
+      page[:timeline].replace_html :partial => 'timeline'
+    end
+  end
 end

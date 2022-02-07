@@ -1,5 +1,5 @@
 Event.addBehavior({
-  'input[type=submit]': function(){
-    this.hide();
+  'body': function(){
+    new Ajax.Request(path_prefix + '/javascripts/timeline', {evalScripts:true});
   },
 });
