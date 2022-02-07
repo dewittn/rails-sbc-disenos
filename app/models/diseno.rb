@@ -1,5 +1,5 @@
 class Diseno < ActiveRecord::Base
-  has_many :hilos
+  has_many :hilos, :dependent => :delete
   has_attached_file :image
   has_attached_file :archivo_dst
   has_attached_file :archivo_pes
