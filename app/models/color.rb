@@ -2,7 +2,7 @@ class Color < ActiveRecord::Base
   acts_as_cached
   
   belongs_to :marca
-  has_many :disenos, :dependent => :destroy
+  has_many :hilos, :dependent => :destroy
   
   validates_presence_of :nombre, :codigo
   
