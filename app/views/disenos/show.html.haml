@@ -23,4 +23,4 @@
   - if @diseno.image.exists?
     .results= image_tag @diseno.image.url(:medium)
 .clear
-- button_2 "Editar", edit_diseno_path(params[:id])
+- button_2 "Editar", edit_diseno_path(@diseno)
