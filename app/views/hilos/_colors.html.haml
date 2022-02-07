@@ -8,6 +8,8 @@
         = color_field.label :codigo, t('thread.new.id')
         = color_field.text_field :codigo
       %td
+        = picky_color :colors,:hex
+      %td
         - if color_field.object.new_record?
           = link_to_function t('thread.new.delete'), "this.up().up().remove()"
         - else

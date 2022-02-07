@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090628144930) do
+ActiveRecord::Schema.define(:version => 20090701230225) do
 
   create_table "colors", :force => true do |t|
     t.string   "nombre"
@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20090628144930) do
     t.integer  "marca_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "hex"
   end
 
   create_table "disenos", :force => true do |t|
