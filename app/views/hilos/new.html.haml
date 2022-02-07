@@ -17,4 +17,6 @@
         = render 'colors'
     #add_color
     = f.submit button_text, :disable_with => 'Submiting...', :id => "submit_button"
+- unless hilos_new
+  - button_2 t('thread.new.delete'), hilo_path(@marca), :confirm => t('thread.new.delete_message'), :method => :delete
 - button_2 button_text, '#', :onclick => "document.forms[0].submit(); return false;"

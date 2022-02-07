@@ -3,9 +3,6 @@ class HilosController < ApplicationController
     @marcas = Marca.all
   end
 
-  def show
-  end
-
   def new
     @marca = Marca.new()
     3.times { @marca.colors.build }
@@ -38,6 +35,7 @@ class HilosController < ApplicationController
   end
 
   def destroy
+    Marca.destroy(params[:id])
+    redirect_to(hilos_path)
   end
-
 end

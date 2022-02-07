@@ -15,6 +15,7 @@ es:
       create: Crear =>
       delete: Elminar
       save: Guadar
+      delete_message: "Te va a elnimar el hilos y los colores. Estas Seguro?"
     flash: 
       not_updated: No fue guardado...
       not_created: No se pudo crear...
