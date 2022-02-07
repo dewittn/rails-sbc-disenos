@@ -1,8 +1,8 @@
-set :application, "hilos"
+set :application, "Hilos"
 set :user, "deploy"
 set :repository,  "nelsonde@nelsondewitt.com:repos/#{application}.git"
 
-if EVN['stagingi']
+if ENV['staging']
   set :domain, "staging"
 else
   set :domain, "sbc"
@@ -27,16 +27,21 @@ role :db,  domain, :primary => true
 set :rails_env, "production"
 
 #cat ~/.ssh/id_rsa.pub | ssh nelsonde@nelsondewitt.com "cat >> .ssh/authorized_keys2"
- 
 namespace :deploy do
   desc "Restarting mod_rails with restart.txt"
-  task :restart, :roles => :app, :except => { :no_release => true } do 
+  task :restart, :roles => :app, :except => { :no_release => true } do
     run "touch #{current_path}/tmp/restart.txt"
-  end 
-  [:start, :stop].each do |t| 
+  end
+  [:start, :stop].each do |t|
     desc "#{t} task is a no-op with mod_rails"
-    task t, :roles => :app do ; end 
-  end 
+    task t, :roles => :app do ; end
+  end
+  
+  task :setup, :except => { :no_release => true } do
+    dirs = [deploy_to, releases_path, shared_path]
+    dirs += shared_children.map { |d| File.join(shared_path, d) }
+    run "mkdir -p #{dirs.join(' ')} && chmod g+w #{dirs.join(' ')}"
+  end
   
   task :cold do
     update
@@ -61,7 +66,7 @@ namespace :deploy do
   end
   
   before "deploy", "update_repo"
-
+  before "deploy:cold", "update_repo"
   task :update_repo do
     system "git push nelson"
   end
