@@ -1,7 +1,9 @@
 development:
-  port: 130100
+  port: 3314
+  enable_star: 1
+  min_infix_len: 1
 test:
-  port: 13001
+  port: 3314
 production:
   port: 3314
   bin_path: '/usr/local/bin'

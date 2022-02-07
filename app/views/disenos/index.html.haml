@@ -3,8 +3,5 @@
 .search
   %h1= yield :title
   = render :partial => 'letters'
-  - form_tag({},:method => :get) do
-    = text_field_tag :search, params[:search]
-    = submit_tag t('design.index.search')
-#results= render :partial => 'diseno', :collection => @disenos
+#result= render :partial => 'diseno', :collection => @disenos
 - button_2(t('design.index.new'),new_diseno_path)

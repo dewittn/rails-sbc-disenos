@@ -4,5 +4,6 @@
     = yield :app_title
     \:
     = yield(:title) || defualt_title
-  .float-right= yield :logout
+  .float-right
+    = yield :logout
   .clear
