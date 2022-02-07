@@ -7,7 +7,7 @@ class Diseno < ActiveRecord::Base
   validates_presence_of :nombre_de_orden
   validates_presence_of :cantidad_del_colores
   
-  accepts_nested_attributes_for :hilos
+  accepts_nested_attributes_for :hilos, :allow_destroy => true
 
   define_index do
     indexes nombre_de_orden, :sorable => true

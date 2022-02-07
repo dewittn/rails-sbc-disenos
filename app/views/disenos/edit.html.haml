@@ -1,4 +1,4 @@
-- javascripts "dynamic_colores", "diseno_nuevo"
+- javascripts "dynamic_colores", "diseno_edit"
 - page_title "Editar Diseño"
 %h1= yield :title
 #orden.results
@@ -6,10 +6,6 @@
     = f.error_messages
     %h2 Diseño:
     %table
-      %tr
-        %td
-          = f.label :cantidad_del_colores, "Cantidad De Colores"
-          = f.text_field :cantidad_del_colores,:size => 3
       %tr
         %td
           = f.label :nombre_de_orden, "Nombre De Diseno"

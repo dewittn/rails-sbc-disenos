@@ -4,3 +4,7 @@
       %li
         = hilo_form.collection_select :marca_id, Marca.all, :id, :nombre, {:include_blank => "Marca"}, {:class => "marca"}
         = hilo_form.collection_select :color_id, Color.all, :id, :nombre, {:include_blank => "Color"}, {:class => "color"}
+        -unless hilo_form.object.new_record?
+          = hilo_form.label :_delete, 'Eliminar:'
+          = hilo_form.check_box :_delete
+        
