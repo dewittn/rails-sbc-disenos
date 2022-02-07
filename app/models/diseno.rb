@@ -14,6 +14,8 @@ class Diseno < ActiveRecord::Base
   has_attached_file :archivo_pes, 
                     :url => "#{ActionController::Base.relative_url_root.to_s}/system/:attachment/:id/:style/:basename.:extension", 
                     :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension"
+  fires I18n.translate('design.timeline.new'), :on => :create
+  fires I18n.translate('design.timeline.edit'), :on => :update
   
   validates_presence_of :nombre_de_orden
   

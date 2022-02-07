@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090628134637) do
+ActiveRecord::Schema.define(:version => 20090628144930) do
 
   create_table "colors", :force => true do |t|
     t.string   "nombre"
@@ -50,6 +50,18 @@ ActiveRecord::Schema.define(:version => 20090628134637) do
 
   create_table "marcas", :force => true do |t|
     t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "timeline_events", :force => true do |t|
+    t.string   "event_type"
+    t.string   "subject_type"
+    t.string   "actor_type"
+    t.string   "secondary_subject_type"
+    t.integer  "subject_id"
+    t.integer  "actor_id"
+    t.integer  "secondary_subject_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

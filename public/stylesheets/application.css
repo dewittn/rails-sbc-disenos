@@ -6,6 +6,10 @@
   background-color: #ffffff;
   border: #000080 1px solid; }
 
+.timeline {
+  background-color: #ffffff;
+  border: #000080 1px solid; }
+
 #top-bar {
   background-color: #c3d9ff;
   border: #000080 1px solid; }
@@ -73,6 +77,13 @@ a {
 
 .notice {
   color: green; }
+
+.timeline {
+  width: 400px;
+  border-spacing: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px; }
 
 #top-bar {
   padding: 2px;
