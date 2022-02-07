@@ -2,9 +2,7 @@
 -page_title t('design.index.title')
 .search
   %h1= yield :title
-  %p
-    - for letter in @letters
-      = link_to letter.char, letter
+  = render :partial => 'letters'
   - form_tag({},:method => :get) do
     = text_field_tag :search, params[:search]
     = submit_tag t('design.index.search')
