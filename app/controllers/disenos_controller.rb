@@ -5,6 +5,7 @@ class DisenosController < ApplicationController
   def index
     expires_in 1.hour unless request.format.js?
     @disenos = Diseno.search(params[:search],:match_mode => :any) if params[:search]
+    @letters = Letter.all
   end
   
   def new

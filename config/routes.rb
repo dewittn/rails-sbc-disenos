@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
   map.resources :disenos, :colores
+  map.resources :letters, :only => :show
   map.resources :javascripts, :collection => { :edit_colores => :post, :colores => :post, :dynamic_colores => :get }
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
