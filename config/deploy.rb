@@ -65,10 +65,10 @@ namespace :deploy do
     run "cd #{directory}; #{rake} RAILS_ENV=#{rails_env} #{migrate_env} db:create"
   end
   
-  before "deploy", "update_repo"
-  before "deploy:cold", "update_repo"
-  task :update_repo do
-    system "git push nelson"
-  end
-  
+end
+
+before "deploy", "update_repo"
+before "deploy:cold", "update_repo"
+task :update_repo do
+  system "git push nelson"
 end
