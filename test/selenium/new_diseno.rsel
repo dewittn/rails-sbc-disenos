@@ -1,0 +1,33 @@
+# It's often a good idea to start the test with 'setup'.
+# See /selenium/setup for more info.
+
+require 'spec/blueprints.rb'
+setup
+Marca.delete_all
+Color.delete_all
+2.times do
+  @marca = Marca.make
+  Color.make(:marca_id => @marca.id)
+end
+open '/'
+#assert_title 'Hilos Buscar Diseños'
+click "link=Nuevo =>"
+wait_for_page_to_load(500)
+type "diseno_cantidad_del_colores", 4
+type "diseno_nombre_de_orden", Test
+select "diseno_hilos_attributes_0_marca_id", Marca.first.nombre
+select "diseno_hilos_attributes_0_color_id", Color.first.nombre
+select "diseno_hilos_attributes_1_marca_id", Marca.last.nombre
+select "diseno_hilos_attributes_1_color_id", Color.last.nombre
+select "diseno_hilos_attributes_2_marca_id", Marca.first.nombre
+select "diseno_hilos_attributes_2_color_id", Color.first.nombre
+select "diseno_hilos_attributes_3_marca_id", Marca.last.nombre
+select "diseno_hilos_attributes_3_color_id", Color.last.nombre
+
+# More information about the commands is available at:
+#   http://release.openqa.org/selenium-core/nightly/reference.html
+# See also the RDoc for SeleniumOnRails::TestBuilder.
+#
+# Point the browser to http://localhost:3000/selenium/tests/new_diseno.rsel to see
+# how this test is rendered, or to http://localhost:3000/selenium to
+# run the suite.
