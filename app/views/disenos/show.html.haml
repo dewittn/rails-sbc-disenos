@@ -21,6 +21,6 @@
   = link_to_if @diseno.archivo_pes.exists?, "PES", @diseno.archivo_dst.url, :disposition => 'attachment'
 .float-right
   - if @diseno.image.exists?
-    .results= image_tag @diseno.image.url(:medium)
+    .results= image_tag image_url(@diseno)
 .clear
 - button_2 "Editar", edit_diseno_path(@diseno)
