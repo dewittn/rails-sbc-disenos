@@ -1,14 +1,18 @@
 class DisenosController < ApplicationController
-  cache_sweeper :diseno_sweeper, :only => [:update, :destory]
+  cache_sweeper :diseno_sweeper, :only => [:update, :destory, :create]
   caches_page :index, :new, :show, :if => Proc.new { |c| !c.request.format.js? }
   
   def index
-    expires_in 1.hour unless request.format.js?
-    @letters = Letter.all unless params[:search]
-    begin
-      @disenos = Diseno.search(params[:search],:match_mode => :any) if params[:search]
-    rescue
-      render :partial => 'search_error'#, :status => 500 if params[:search]
+    # expires_in 30.minuets unless request.format.js?
+    if params[:search]
+      begin
+        @disenos = Diseno.search(params[:search],:match_mode => :any)
+      rescue
+        render :partial => 'search_error'
+      end
+    else
+      @letters = Letter.all 
+      @events = TimelineEvent.all(:limit => 10, :order => 'created_at DESC', :include => :subject)
     end
   end
   
@@ -31,6 +35,7 @@ class DisenosController < ApplicationController
     if @diseno.update_attributes(params[:diseno])
       flash[:notice] = t('design.flash.updated') 
       render :show
+      flash[:notice] = nil
     else
       flash[:notice] = t('design.flash.not_updated') 
       render :edit
@@ -42,6 +47,7 @@ class DisenosController < ApplicationController
     if @diseno.save
       flash[:notice] = t('design.flash.created') 
       render :show
+      flash[:notice] = nil
     else
       flash[:error] = t('design.flash.not_updated') 
       render :new

@@ -9,6 +9,9 @@ en:
     color: "Color"
     id: "ID"
     missing_name: "No name"
+    timeline:
+      new: "New Design"
+      edit: "Design Changed"
     index:
       title: "Search Designs"
       search: "Search"
