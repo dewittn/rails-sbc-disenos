@@ -27,7 +27,7 @@ common: &default_settings
   # on your home dashboard page. This setting does not prevent you from manually
   # defining applications.
   app_name: Hilos
-  apdex_t: 0.01
+  apdex_t: 0.015
 
   # the 'enabled' setting is used to turn on the NewRelic Agent.  When false,
   # your application is not instrumented and the Agent does not start up or
