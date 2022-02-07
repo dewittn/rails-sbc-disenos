@@ -10,6 +10,6 @@ class DisenoSweeper < ActionController::Caching::Sweeper
   end
   
   def expire_cache(diseno)
-    expire_page edit_diseno_path(diseno.id)
+    expire_page edit_diseno_path(diseno)
   end
 end
