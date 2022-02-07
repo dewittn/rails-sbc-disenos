@@ -12,9 +12,9 @@ every 2.hours do
 end
 
 every :reboot do
-  rake "thinking_sphinx:configure"
-  rake "ts:index"
-  rake "ts:start"
+  command "sudo rake RAILS_ENV=production ts:conf"
+  command "sudo rake RAILS_ENV=production ts:index"
+  command "sudo rake RAILS_ENV=production ts:start"
 end
 #
 # every 4.days do
