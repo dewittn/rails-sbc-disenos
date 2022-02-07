@@ -20,7 +20,7 @@ es:
       name: "Nombre"
       brand: "Marca"
       colors: "Colores"
-      hex: "Hex Color"
+      hex: "Aplicar Color"
       id: "Codígo"
       create: Crear =>
       delete: Elminar
