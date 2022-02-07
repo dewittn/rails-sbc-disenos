@@ -119,7 +119,7 @@ es:
     spindel: Hilos
     edit: 
       title: Editar color
-      save: Guadar =>
+      save: "Guadar =>"
     id: "Cod\xC3\xADgo"
     color: Color
     index: 
