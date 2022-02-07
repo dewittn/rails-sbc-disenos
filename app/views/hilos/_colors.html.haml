@@ -1,0 +1,12 @@
+- fields_for @marca do |f|
+  - f.fields_for :colors do |color_field|
+    %tr
+      %td
+        = color_field.label :nombre, t('thread.new.name')
+        = color_field.text_field :nombre
+      %td
+        = color_field.label :codigo, t('thread.new.id')
+        = color_field.text_field :codigo
+      %td
+        - if color_field.object.new_record?
+          = link_to_function t('thread.new.delete'), "this.up().up().remove()"

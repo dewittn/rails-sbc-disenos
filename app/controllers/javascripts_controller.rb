@@ -15,4 +15,9 @@ class JavascriptsController < ApplicationController
   def dynamic_colores
     @colores = Color.find(:all)
   end
+  
+  def add_colors
+    @marca = Marca.new(params[:marca])
+    @marca.colors.build
+  end
 end

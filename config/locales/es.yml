@@ -11,6 +11,7 @@ es:
       colors: "Colores"
       id: "Codígo"
       create: Crear =>
+      delete: Elminar
     flash: 
       not_updated: No fue guardado...
       not_created: No se pudo crear...
