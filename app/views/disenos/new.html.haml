@@ -1,16 +1,19 @@
 - javascripts "dynamic_colores", "diseno_nuevo"
-- page_title "Nuevo Diseno"
+- page_title "Nuevo Diseño"
 %h1= yield :title
 #orden.results
   - form_for @diseno,:multipart => true  do |f|
+    = f.error_messages
+    %h2 Diseño:
     %table
       %tr
-        %th= f.label :nombre_de_orden, "Nombre De Diseno"
-        %th= f.label :cantidad_del_colores, "Cantidad De Colores"
+        %td
+          = f.label :cantidad_del_colores, "Cantidad De Colores"
+          = f.text_field :cantidad_del_colores,:size => 3
       %tr
-        %td= f.text_field :nombre_de_orden
-        %td= f.text_field :cantidad_del_colores,:size => 3
-        = observe_field :diseno_cantidad_del_colores, :url => colores_javascripts_path(:js), :frequency => 0.25, :with => "cantidad"
+        %td
+          = f.label :nombre_de_orden, "Nombre De Diseno"
+          = f.text_field :nombre_de_orden
       %tr
         %td
           Image:
@@ -23,5 +26,6 @@
         %td 
           Archivo de PES:
           = f.file_field "archivo_pes"
-    #hilos=render :partial => 'application/hilo',:locals => { :object_name => f.object_name  }
+    %h2 Hilos:
+    #hilos=render 'application/hilo'
 - button_2 "Crear =>",'#',:onclick => "document.forms[0].submit()"
