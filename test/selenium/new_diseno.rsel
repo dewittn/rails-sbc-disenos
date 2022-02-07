@@ -5,6 +5,7 @@ require 'spec/blueprints.rb'
 setup
 Marca.delete_all
 Color.delete_all
+Hilo.delete_all
 2.times do
   @marca = Marca.make
   Color.make(:marca_id => @marca.id)
@@ -15,6 +16,7 @@ click "link=Nuevo =>"
 wait_for_page_to_load(500)
 type "diseno_cantidad_del_colores", 4
 type "diseno_nombre_de_orden", Test
+# click "diseno_image"
 select "diseno_hilos_attributes_0_marca_id", Marca.first.nombre
 select "diseno_hilos_attributes_0_color_id", Color.first.nombre
 select "diseno_hilos_attributes_1_marca_id", Marca.last.nombre
@@ -23,7 +25,10 @@ select "diseno_hilos_attributes_2_marca_id", Marca.first.nombre
 select "diseno_hilos_attributes_2_color_id", Color.first.nombre
 select "diseno_hilos_attributes_3_marca_id", Marca.last.nombre
 select "diseno_hilos_attributes_3_color_id", Color.last.nombre
-
+click "link=Crear =>"
+wait_for_page_to_load(500)
+assert_text "css=.notice","Successfully created..."
+# assert_text "hilo_#{Hilo.first.id}_marca", Marca.first.nombre
 # More information about the commands is available at:
 #   http://release.openqa.org/selenium-core/nightly/reference.html
 # See also the RDoc for SeleniumOnRails::TestBuilder.
