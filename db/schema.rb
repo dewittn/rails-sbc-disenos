@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090515180253) do
+ActiveRecord::Schema.define(:version => 20090628134637) do
 
   create_table "colors", :force => true do |t|
     t.string   "nombre"
@@ -34,6 +34,11 @@ ActiveRecord::Schema.define(:version => 20090515180253) do
     t.string   "archivo_pes_content_type"
     t.string   "archivo_pes_file_size"
     t.boolean  "delta"
+    t.text     "notas"
+    t.string   "original_file_name"
+    t.string   "original_content_type"
+    t.integer  "original_file_size"
+    t.datetime "original_updated_at"
   end
 
   create_table "hilos", :force => true do |t|
