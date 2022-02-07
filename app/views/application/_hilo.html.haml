@@ -2,5 +2,5 @@
   - fields_for @diseno do |diseno|
     - diseno.fields_for :hilos do |hilo_form|
       %li
-        = collection_select :marca, hilo.object_id, Marca.all, :id, :nombre, {:prompt => "Marca"}, {:class => "marca"}
-        = hilo_form.collection_select :color_id,Color.all, :id, :nombre, {:prompt => "Color"},{:class => "color"}
+        = hilo_form.collection_select :marca_id, Marca.all, :id, :nombre, {:include_blank => "Marca"}, {:class => "marca"}
+        = hilo_form.collection_select :color_id, Color.all, :id, :nombre, {:include_blank => "Color"}, {:class => "color"}

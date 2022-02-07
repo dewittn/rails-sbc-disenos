@@ -5,8 +5,14 @@ function select_colors(){
       },
   
     '.color': function(){
-      this.hide();
-    }
+      if (this.value == "")
+        { this.hide(); }
+      },
+    
+    '#diseno_cantidad_del_colores:change': function(){
+      new Ajax.Request('/javascripts/colores.js', 
+        {asynchronous:true, evalScripts:true, parameters:'cantidad=' + encodeURIComponent(this.value) });
+      },
   });
 }
 window.onload = select_colors;

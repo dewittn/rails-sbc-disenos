@@ -5,16 +5,19 @@ var colores = new Array();
 
 function marcaSelected(eliment) {
   marca_id = eliment.getValue();
-  options = eliment.next().options;
+  if (eliment.next().tagName == "SELECT")
+    { select = eliment.next(); }
+  else
+    { select = eliment.next().down(); }
+  options = select.options;
   options.length = 1;
   colores.each(function(color) {
     if (color[0] == marca_id) {
       options[options.length] = new Option(color[1], color[2]);
     }
   });
-  if (options.length == 1) {
-    eliment.next().hide();
-  } else {
-    eliment.next().show();
-  }
+  if (options.length == 1) 
+    { select.hide(); }
+  else 
+    { select.show(); }
 } 
