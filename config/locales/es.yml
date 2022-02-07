@@ -1,5 +1,16 @@
 --- 
-es: 
+es:
+  thread:
+    index:
+      title: "Hilos"
+      new: "Nuevo =>"
+    new:
+      title: "Nuevo Hilo"
+      name: "Nombre"
+      brand: "Marca"
+      colors: "Colores"
+      id: "Codígo"
+      create: Crear =>
   design: 
     new: 
       delete: Eliminar

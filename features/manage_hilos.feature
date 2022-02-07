@@ -6,8 +6,8 @@ Feature: Create and edit, colors and marcas
   Scenario: Create hilo
     Given I am on the hilos page
     When I follow "Nuevo =>"
-    And I fill in "marca_normbe" with "Ra"
-    And I fill in "marca_color" with "Rojo"
+    And I fill in "marca_nombre" with "Ra"
+    And I fill in "marca_colors_attributes_0_nombre" with "Rojo"
     And I press "Crear =>"
     Then I should have 1 marca and 1 color
   
