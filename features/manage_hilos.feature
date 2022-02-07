@@ -4,12 +4,15 @@ Feature: Create and edit, colors and marcas
   I want to be able to create and edit those values
   
   Scenario: Create hilo
-    Given I am on the hilos page
+    Given I have no marcas
+    And I have no colors 
+    And I am on the hilos page
     When I follow "Nuevo =>"
     And I fill in "marca_nombre" with "Ra"
     And I fill in "marca_colors_attributes_0_nombre" with "Rojo"
     And I fill in "marca_colors_attributes_0_codigo" with "AB12"
     And I press "Crear =>"
     Then I should see "Nos se pudo guardar..." 
-    And I should have 1 marca and 1 color
+    And I should have 1 marca
+    And I should have 1 color
   
