@@ -2,7 +2,7 @@
 - page_title "Editar Diseño"
 %h1= yield :title
 #orden.results
-  - form_for @diseno,:multipart => true  do |f|
+  - form_for @diseno,:html => { :multipart => true }  do |f|
     = f.error_messages
     = f.hidden_field :id
     %h2 Diseño:
