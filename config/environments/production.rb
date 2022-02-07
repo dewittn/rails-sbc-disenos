@@ -22,4 +22,4 @@ config.cache_store = :mem_cache_store
 
 config.gem "newrelic_rpm"
 
-config.middleware.use "PathPrefix", "/hilos"
+config.middleware.use "PathPrefix", "hilos"
