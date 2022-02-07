@@ -3,7 +3,7 @@ class DisenosController < ApplicationController
   caches_page :index, :new, :show, :if => Proc.new { |c| !c.request.format.js? }
   
   def index
-    # expires_in 30.minuets unless request.format.js?
+    expires_in 1.day unless request.format.js?
     if params[:search]
       begin
         @disenos = Diseno.search(params[:search],:match_mode => :any)
@@ -12,7 +12,6 @@ class DisenosController < ApplicationController
       end
     else
       @letters = Letter.all 
-      @events = TimelineEvent.all(:limit => 10, :order => 'created_at DESC', :include => :subject)
     end
   end
   

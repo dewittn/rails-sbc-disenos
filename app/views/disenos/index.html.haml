@@ -3,12 +3,6 @@
 .search
   %h1= yield :title
   = render :partial => 'letters'
-.timeline
-  - @events.each do |event|
-    %p
-      = "#{event.event_type} - #{link_to event.subject.nombre_de_orden, diseno_path(event.subject.id)}"
-      - if event.subject.image.exists?
-        = image_tag event.subject.image_url(:small)
-    
+#timeline.timeline
 #result= render :partial => 'diseno', :collection => @disenos
 - button_2(t('design.index.new'),new_diseno_path)
