@@ -1,7 +1,7 @@
 class DisenosController < ApplicationController
 
   def index
-    @disenos = Diseno.search(params[:search])
+    @disenos = Diseno.search(params[:search],:match_mode => :any) if params[:search]
   end
   
   def new
