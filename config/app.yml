@@ -1,0 +1,11 @@
+development:
+    app_title: Brown Boys Inc.
+    page_title: Welcome
+
+test:
+    app_title: Brown Boys Inc.
+    page_title: Welcome
+  
+production:
+    app_title: Brown Boys Inc.
+    page_title: Welcome
