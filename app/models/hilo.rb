@@ -2,7 +2,7 @@ class Hilo < ActiveRecord::Base
   belongs_to :diseno
   belongs_to :color
   
-  validates_presence_of :color_id, :message => "faltan"
+  # validates_presence_of :color_id, :message => "faltan"
   
   def marca_id
     @marca_id

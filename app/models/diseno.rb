@@ -5,7 +5,7 @@ class Diseno < ActiveRecord::Base
   has_attached_file :archivo_pes, :url => "#{ActionController::Base.relative_url_root.to_s}/system/:attachment/:id/:style/:basename.:extension", :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension"
   
   validates_presence_of :nombre_de_orden
-  validates_presence_of :cantidad_del_colores
+  # validates_presence_of :cantidad_del_colores
   
   accepts_nested_attributes_for :hilos, :allow_destroy => true
   

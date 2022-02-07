@@ -1,6 +1,6 @@
 function select_colors(){
   Event.addBehavior({
-    '.test:change': function(){
+    '#diseno_cantidad_del_colores:change': function(){
       new Ajax.Request(path_prefix + '/javascripts/colores.js', 
         {asynchronous:true, evalScripts:true, parameters:'cantidad=' + encodeURIComponent(this.value) });
       },
