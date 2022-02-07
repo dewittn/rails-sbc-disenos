@@ -25,10 +25,13 @@ Feature: Create and edit, colors and marcas
     And I am on the hilos page
     Then I should see the name of the marca
     
-  Scenario: View a hilo
+  Scenario: Edit a hilo
     Given I have 1 marca
+    And I am on the hilos page
     When I follow the marca's name
-    Then I should see the marca's details
+    And I fill in "marca_colors_attributes_0_nombre" with "Rojo"
+    And I press "Guadar"
+    Then I should see "Actualizado..."
   
   
   

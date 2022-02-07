@@ -7,12 +7,14 @@ es:
       name: Nombre
     new:
       title: "Nuevo Hilo"
+      edit_title: "Editar Hilo"
       name: "Nombre"
       brand: "Marca"
       colors: "Colores"
       id: "Codígo"
       create: Crear =>
       delete: Elminar
+      save: Guadar
     flash: 
       not_updated: No fue guardado...
       not_created: No se pudo crear...

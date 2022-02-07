@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :javascripts, :collection => { :edit_colores => :post, 
                                                :colores => :post, 
                                                :dynamic_colores => :get, 
-                                               :add_colors => :post }
+                                               :add_colors => [:post, :put] }
   Translate::Routes.translation_ui(map)
 
   map.root :controller => "disenos"

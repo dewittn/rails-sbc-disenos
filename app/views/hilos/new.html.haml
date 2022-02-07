@@ -1,9 +1,11 @@
 - javascripts "hilos_new"
-- page_title t('thread.new.title')
+- page_title title_text
 %h1= yield :title
 #hilo.results
-  - form_for @marca, :url => hilos_path do |f|
+  - form_for @marca, :url => form_url do |f|
     = f.error_messages
+    - unless hilos_new
+      = f.hidden_field :id, :name => "id"
     %h2= t('thread.new.brand')
     %table
       %tr
@@ -14,5 +16,5 @@
       %tbody#colors
         = render 'colors'
     #add_color
-    = f.submit t('thread.new.create'), :disable_with => 'Submiting...', :id => "submit_button"
-- button_2 t('thread.new.create'), '#', :onclick => "document.forms[0].submit(); return false;"
+    = f.submit button_text, :disable_with => 'Submiting...', :id => "submit_button"
+- button_2 button_text, '#', :onclick => "document.forms[0].submit(); return false;"
