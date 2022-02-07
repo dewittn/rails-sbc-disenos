@@ -14,7 +14,7 @@ Ajax.Responders.register({
 Event.addBehavior({
   'body': function(){
       var busy = $div({id:'busy',style: "display:none;"}, "Carcando...");
-      var search = $div({id:'top-search'},'Search:',$input({id: 'search', name:'search', type:'text'}), $div({id:'results'}));
+      var search = $div({id:'top-search'},'Buscar:',$input({id: 'search', name:'search', type:'text'}), $div({id:'results'}));
       document.body.appendChild(busy);
       document.body.appendChild(search);
   },

@@ -12,7 +12,7 @@ Event.addBehavior({
     $('email').show();
     $('email_submit').disabled = false;
     if ( $('email_subject').value == '' )
-      { $('email_subject').value = t.email.subject }
+      { $('email_subject').value = t.email.subject_text }
     if ($('email_body').value == '' ) 
       { $('email_body').value = t.email.body }
     e.stop();
