@@ -29,21 +29,21 @@ test:
   host: localhost
 staging:
   adapter: mysql
-  database: diseno_dev
+  database: hilos_dev
   username: postgres
   password: makaveli
   host: 172.16.0.5
 
 remote-production:
   adapter: mysql
-  database: diseno_pro
+  database: hilos_pro
   username: postgres
   password: makaveli
   host: 172.16.0.5
   
 production:
   adapter: mysql
-  database: diseno_pro
+  database: hilos_pro
   username: postgres
   password: makaveli
   host: localhost
