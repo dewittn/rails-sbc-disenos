@@ -8,14 +8,14 @@ class Diseno < ActiveRecord::Base
   validates_presence_of :cantidad_del_colores
   
   accepts_nested_attributes_for :hilos, :allow_destroy => true
+  
+  def relative_root
+    @relative_root ||= "#{ActionController::Base.relative_url_root.to_s}/system/:attachment/:id/:style/:filename"
+  end
 
   define_index do
     indexes nombre_de_orden, :sorable => true
     
     set_property :delta => true
-  end
-  
-  def relative_root
-    @relative_root ||= "#{ActionController::Base.relative_url_root.to_s}/system/:attachment/:id/:style/:filename"
   end
 end
