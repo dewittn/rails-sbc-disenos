@@ -2,4 +2,4 @@
   %p
     = "#{event.event_type} - #{link_to event.subject.nombre_de_orden, diseno_path(event.subject.id)}"
     - if event.subject.image.exists?
-      = image_tag event.subject.image_url(:small)
+      = image_tag event.subject.image.url(:small)
