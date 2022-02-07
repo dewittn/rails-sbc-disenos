@@ -32,4 +32,20 @@ class JavascriptsController < ApplicationController
       page[:timeline].replace_html :partial => 'timeline'
     end
   end
+  
+  def email_image
+    begin
+      @diseno = Diseno.find(params[:id])
+      DisenoMailer.deliver_email_image(@diseno, params[:email])
+      render :update do |page|
+        page[:email].hide()
+        page[:notice].replace_html "Email success!"
+      end
+    rescue
+        render :update do |page|
+          page[:email].hide()
+          page[:error].replace_html "Email failed..."
+        end
+      end
+  end
 end

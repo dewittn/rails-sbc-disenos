@@ -1,6 +1,10 @@
 .float-right
   - if @diseno.image.exists?
-    .results= image_tag image_url(@diseno)
+    #image_div.results
+      = image_tag image_url(@diseno)
 .float-right
   - if @diseno.original.exists?
-    .restuls= image_tag original_url(@diseno)
+    .restuls
+      = image_tag original_url(@diseno)
+     
+    

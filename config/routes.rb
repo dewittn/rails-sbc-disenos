@@ -1,8 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :disenos, :colores, :hilos
+  map.resources :disenos
+  map.resources :colores, :hilos
   map.resources :letters, :only => :show
   map.resources :javascripts, :collection => { :edit_colores => :post, 
                                                :colores => :post, 
+                                               :email_image => :post,
                                                :dynamic_colores => :get, 
                                                :add_colors => [:post, :put],
                                                :timeline => :post }

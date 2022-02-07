@@ -1,5 +1,9 @@
+- javascripts "diseno_show"
 - page_title "#{t('design.design')} - #{diseno_nombre}" 
 %h1= h yield :title
+.float-left
+  = render 'email'
+.clear
 .float-left
   %table.results
     %tr.title
