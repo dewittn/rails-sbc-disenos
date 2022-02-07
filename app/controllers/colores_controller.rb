@@ -1,4 +1,7 @@
 class ColoresController < ApplicationController
+  cache_sweeper :color_sweeper, :only => [:update, :create, :destory]
+  caches_page :index
+  
   def index
     @colores = Color.find(:all)
   end
