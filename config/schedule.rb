@@ -12,6 +12,8 @@ every 2.hours do
 end
 
 every :reboot do
+  rake "thinking_sphinx:configure"
+  rake "ts:index"
   rake "ts:start"
 end
 #
