@@ -30,7 +30,3 @@ set :sphinx, "true"
 after "deploy:cold", "ts_start"
 after "deploy", "ts_index"
 after "deploy:migrations", "ts_index"
-
-task :after_symlink do
-  run "ln -nfs #{shared_path}/images/disenos #{release_path}/public/images/"
-end
