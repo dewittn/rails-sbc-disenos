@@ -11,3 +11,9 @@ require 'cucumber/rails/rspec'
 require 'webrat/core/matchers'
 require 'machinist'
 require 'spec/blueprints.rb'
+
+Cucumber::Rails.use_transactional_fixtures
+require 'webrat'
+Webrat.configure do |config|
+  config.mode = :rails
+end
