@@ -16,11 +16,14 @@ es:
     edit:
       title: "Editar Diseño"
       name_field: "Nombre De Diseno"
-      image: "Image:"
+      image: "Imagen de diseño:"
       dst: "Archivo de DST:"
       pes: "Archivo de PES:"
       delete: "Eliminar:"
       save: "Guardar =>"
+      notes: "Notas"      
+      image: "Imagen de original:"
+      confirm: "Te va a elimininar el diseño, imagenes, y hilos. Estas seguro?"
     new:
       title: "Nuevo Diseño"
       design: "Diseño"
