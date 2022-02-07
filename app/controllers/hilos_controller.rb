@@ -31,6 +31,7 @@ class HilosController < ApplicationController
       redirect_to(hilos_path)
     else
       flash[:error] = t('thread.flash.not_updated')
+      render :new
     end
   end
 
