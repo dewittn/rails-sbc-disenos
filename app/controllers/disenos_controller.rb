@@ -25,6 +25,7 @@ class DisenosController < ApplicationController
   end
   
   def show
+    @letters = Letter.all 
     @diseno = Diseno.find(params[:id])
     image_send if params[:image_send]
     # fresh_when(:etag => @diseno)

@@ -31,8 +31,8 @@ es:
       not_created: No se pudo crear...
       created: Nos se pudo guardar...
       updated: Actualizado...
-  design: 
-    new: 
+  design:
+    new:
       delete: Eliminar
       design: "Dise\xC3\xB1o"
       title: "Nuevo Dise\xC3\xB1o"
@@ -43,9 +43,10 @@ es:
       pes: "Archivo de PES:"
       image: "Imagen de diseño:"
       original: "Imagen original:"
+      names: "Nombres:"
       name_field: Nombre De Diseno
     brand: Marca
-    design: "Dise\xC3\xB1o"
+    design: "Diseno"
     spindel: Hilos
     sample: Muestra
     edit: 
@@ -58,6 +59,7 @@ es:
       pes: "Archivo de PES:"
       image: "Imagen de diesño:"
       original: "Imagen original:"
+      names: "Nombres:"
       name_field: Nombre De Diseno
     missing_name: No Tenia Nombre
     id: "Cod\xC3\xADgo"

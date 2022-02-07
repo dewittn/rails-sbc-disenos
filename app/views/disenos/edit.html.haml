@@ -28,6 +28,10 @@
           =t('design.edit.pes')
           = f.file_field "archivo_pes"
       %tr
+        %td 
+          =t('design.edit.names')
+          = f.file_field "names"
+      %tr
         %td
           = t('design.new.notes')
           %p= f.text_area :notas, :size => "55x5"
@@ -35,5 +39,5 @@
     #hilos=render 'hilo'
 = render 'images'
 .clear
-- button_2 t('design.edit.delete'), diseno_path(@diseno), :confirm => t('design.edit.confirm'), :method => :delete
+-# button_2 t('design.edit.delete'), diseno_path(@diseno), :confirm => t('design.edit.confirm'), :method => :delete
 - button_2 create_save_text,'#',:onclick => "document.forms[0].submit()"

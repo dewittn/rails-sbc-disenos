@@ -8,16 +8,18 @@
       = yield(:title) || defualt_title
     = stylesheet_link_tag('application')
     = yield :stylesheets
-    = javascript_include_tag(:defaults, :unobtrusive, :cache => "all_with_unobtrusive")
+    = javascript_include_tag(:defaults, "float", :unobtrusive, :cache => "all_with_unobtrusive")
     = javascript_include_tag :coto_solutions
     = yield :javascripts
   %body
     .wrapper
-      - create_top_links("disenos","hilos")
+      - create_top_links_for_controllers("disenos","hilos")
+      - create_top_links_for_path(t('design.index.new'),new_diseno_path)
       -# create_logout
       = render :partial => 'application/top_links'
       #notice= flash[:notice]
       #error= flash[:error]
+      .push
       = yield
       %br
       %table

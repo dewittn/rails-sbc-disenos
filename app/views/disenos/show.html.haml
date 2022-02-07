@@ -27,7 +27,10 @@
   = link_to_if @diseno.archivo_dst.exists?, "DST", @diseno.archivo_dst.url, :disposition => 'attachment'
   %br
   = t('design.show.file')
-  = link_to_if @diseno.archivo_pes.exists?, "PES", @diseno.archivo_dst.url, :disposition => 'attachment'
+  = link_to_if @diseno.archivo_pes.exists?, "PES", @diseno.archivo_pes.url, :disposition => 'attachment'
+  %br
+  = t('design.show.file')
+  = link_to_if @diseno.names.exists?, "Nombres", @diseno.names.url, :disposition => 'attachment'
 = render 'images'
 .clear
 - button_2 t('design.show.edit'), edit_diseno_path(@diseno)
