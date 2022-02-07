@@ -1,0 +1,14 @@
+--- 
+design: 
+  edit: 
+    original: "Imagen original:"
+  sample: Muestra
+  show: 
+    notes: Notas
+thread: 
+  new: 
+    delete: Elminar
+email: 
+  message: "Message:"
+  subject_text: Test email
+  to: "To:"

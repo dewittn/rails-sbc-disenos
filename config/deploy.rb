@@ -30,3 +30,7 @@ set :sphinx, "true"
 after "deploy:cold", "ts_start"
 after "deploy:symlink", "ts_index"
 after "gem_install", "deploy:update_crontab"
+
+task :copy_translations do
+  system "scp -r #{user}@#{domain}:/var/www/apps/#{application}/current/config/locales ./config/locales/server/"
+end

@@ -1,0 +1,271 @@
+--- 
+en: 
+  search: 
+    error: Error...
+  design: 
+    new: 
+      delete: "Delete:"
+      design: Design
+      title: New Design
+      number_of_colors: "Number of Colors:"
+      notes: Notes
+      dst: "DST File:"
+      save: Create =>
+      pes: "PES File:"
+      image: "Design image:"
+      original: "Original image:"
+      name_field: "Name:"
+    brand: Brand
+    design: Design
+    spindel: Threads
+    sample: Sample
+    edit: 
+      delete: "Delete:"
+      confirm: This will remove the design, images and threads. Are you sure?
+      title: Edit Design
+      notes: Notes
+      dst: "DST File:"
+      save: Save =>
+      pes: "PES File:"
+      image: "Design image:"
+      original: Original Image
+      name_field: Design Name
+    missing_name: No name
+    id: ID
+    timeline: 
+      new: New Design
+      edit: Design Changed
+    index: 
+      new: New =>
+      search: Search
+      title: Search Designs
+    color: Color
+    show: 
+      edit: Edit
+      notes: Notes
+      file: "File:"
+    flash: 
+      not_updated: Not updated...
+      not_created: Not saved...
+      created: Successfully created...
+      updated: Successfully updated...
+  activerecord: 
+    errors: 
+      messages: 
+        taken: has already been taken
+        accepted: must be accepted
+        not_a_number: is not a number
+        greater_than_or_equal_to: must be greater than or equal to {{count}}
+        blank: can't be blank
+        less_than_or_equal_to: must be less than or equal to {{count}}
+        exclusion: is reserved
+        confirmation: doesn't match confirmation
+        odd: must be odd
+        invalid: is invalid
+        wrong_length: is the wrong length (should be {{count}} characters)
+        empty: can't be empty
+        too_short: is too short (minimum is {{count}} characters)
+        less_than: must be less than {{count}}
+        too_long: is too long (maximum is {{count}} characters)
+        even: must be even
+        equal_to: must be equal to {{count}}
+        inclusion: is not included in the list
+        greater_than: must be greater than {{count}}
+      template: 
+        body: "There were problems with the following fields:"
+        header: 
+          one: 1 error prohibited this {{model}} from being saved
+          other: "{{count}} errors prohibited this {{model}} from being saved"
+  time: 
+    am: am
+    formats: 
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+  number: 
+    format: 
+      separator: .
+      delimiter: ","
+      precision: 3
+    human: 
+      format: 
+        delimiter: ""
+        precision: 1
+      storage_units: 
+        format: "%n %u"
+        units: 
+          kb: KB
+          tb: TB
+          gb: GB
+          byte: 
+            one: Byte
+            other: Bytes
+          mb: MB
+    precision: 
+      format: 
+        delimiter: ""
+    percentage: 
+      format: 
+        delimiter: ""
+    currency: 
+      format: 
+        format: "%u%n"
+        unit: $
+        separator: .
+        delimiter: ","
+        precision: 2
+  thread: 
+    new: 
+      delete: Delete
+      name: Name
+      brand: Brand
+      title: New Thread
+      id: ID
+      hex: Apply Color
+      create: Create =>
+      edit_title: Edit Brand
+      save: Save
+      delete_message: You are about to delete this brand and its colors. Are you sure?
+      colors: Colors
+    index: 
+      new: New =>
+      name: Name
+      title: Threads
+    flash: 
+      not_updated: Thread could not be saved.
+      not_created: Thread could not be created...
+      created: Thread was created ...
+      updated: Thread saved
+  date: 
+    order: 
+    - :year
+    - :month
+    - :day
+    abbr_day_names: 
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    formats: 
+      default: "%Y-%m-%d"
+      long: "%B %d, %Y"
+      short: "%b %d"
+    day_names: 
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    month_names: 
+    - 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    abbr_month_names: 
+    - 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+  busy: Loading...
+  application: 
+    title: Threads
+    home: Home
+  color: 
+    new: 
+      title: New color
+      saving: Saving...
+      save: Create =>
+    brand: Brand
+    design: Design
+    spindel: Threads
+    edit: 
+      title: Edit color
+      save: Save =>
+    id: ID
+    index: 
+      new: New =>
+      title: Colors
+      edit: edit
+    color: Color
+    flash: 
+      not_updated: Not updated...
+      not_created: Not saved...
+      created: Successfully created...
+      updated: Successfully updated...
+  support: 
+    array: 
+      words_connector: ", "
+      last_word_connector: ", and "
+      two_words_connector: " and "
+  datetime: 
+    distance_in_words: 
+      less_than_x_minutes: 
+        one: less than a minute
+        other: less than {{count}} minutes
+      x_days: 
+        one: 1 day
+        other: "{{count}} days"
+      x_seconds: 
+        one: 1 second
+        other: "{{count}} seconds"
+      x_minutes: 
+        one: 1 minute
+        other: "{{count}} minutes"
+      about_x_hours: 
+        one: about 1 hour
+        other: about {{count}} hours
+      less_than_x_seconds: 
+        one: less than 1 second
+        other: less than {{count}} seconds
+      x_months: 
+        one: 1 month
+        other: "{{count}} months"
+      about_x_months: 
+        one: about 1 month
+        other: about {{count}} months
+      about_x_years: 
+        one: about 1 year
+        other: about {{count}} years
+      over_x_years: 
+        one: over 1 year
+        other: over {{count}} years
+      half_a_minute: half a minute
+    prompts: 
+      month: Month
+      second: Seconds
+      minute: Minute
+      hour: Hour
+      day: Day
+      year: Year
+  email: 
+    message: "Message:"
+    body: This is a test email.
+    subject_text: Test email
+    subject: Test email
+    to: "To:"
+    success: Email was sent successfuly.
+    failure: Email could not be sent.
