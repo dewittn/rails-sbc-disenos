@@ -1,0 +1,3 @@
+unless @diseno.blank?
+  page.replace_html "hilos", :partial => 'application/hilo', :collection => @diseno.hilos
+end

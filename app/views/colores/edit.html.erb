@@ -1,0 +1,4 @@
+<% form_for @color, :url => colore_path(@color) do |f| -%>
+	<%= render :partial => 'color',:locals => {:f => f } %>
+<% end -%>
+<% button_2 "guadar",'#',:onclick => "document.forms[0].submit()" %>

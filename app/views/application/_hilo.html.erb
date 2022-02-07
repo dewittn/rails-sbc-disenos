@@ -1,0 +1,10 @@
+<% fields_for "diseno[hilo_attributes][]",hilo do |hilo_form| %>
+<li id="hilo">
+	<%= collection_select :marca, hilo.object_id, Marca.find(:all), :id, :nombre, :prompt => "Marca" %>
+	<%= hilo_form.collection_select :color_id,Color.find(:all), :id, :nombre, :prompt => "Color",:html => {:class => "test"} %>
+</li>
+<script language="JavaScript">$('marca_<%= hilo.object_id %>').up('#hilo').down('#diseno_hilo_attributes__color_id').hide();</script>
+<%= observe_field "marca_#{hilo.object_id}", :function => "marcaSelected(#{hilo.object_id})",
+ 				  :frequency => 0.5, :with => "cantidad" %>
+<% end %>
+
