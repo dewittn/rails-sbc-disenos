@@ -1,5 +1,5 @@
 function select_colors(){
-  var link = $p($a({href:'',id:'add_hilo'},'Add Hilo'));
+  var link = $p($a({href:'',id:'add_hilo'},'Agregar Hilo'));
   $('hilos').appendChild(link);
   Event.addBehavior({
     '.marca:change': function(e){

@@ -49,7 +49,7 @@ class DisenosController < ApplicationController
       render :show
       flash[:notice] = nil
     else
-      flash[:error] = t('design.flash.not_updated') 
+      flash[:error] = t('design.flash.not_created') 
       render :new
     end
   end
