@@ -2,10 +2,10 @@ set :application, "Hilos"
 set :user, "deploy"
 set :repository,  "nelsonde@nelsondewitt.com:repos/#{application}.git"
 
-if ENV['staging']
-  set :domain, "staging"
-else
+if ENV['production']
   set :domain, "sbc"
+else
+  set :domain, "staging"
 end
 
 # If you aren't deploying to /u/apps/#{application} on the target
@@ -17,8 +17,6 @@ set :deploy_to, "/var/www/apps/#{application}"
 # your SCM below:
 set :scm, :git
 
-# set :local_scm_command, "/usr/local/bin/git"
-# set :scm_command, "/usr/bin/git"
 set :deploy_via, :remote_cache
 
 role :app, domain
@@ -38,15 +36,15 @@ namespace :deploy do
     task t, :roles => :app do ; end
   end
   
-  task :setup, :except => { :no_release => true } do
-    dirs = [deploy_to, releases_path, shared_path]
-    dirs += shared_children.map { |d| File.join(shared_path, d) }
-    run "mkdir -p #{dirs.join(' ')} && chmod g+w #{dirs.join(' ')}"
-  end
+   task :setup, :except => { :no_release => true } do
+     dirs = [deploy_to, releases_path, shared_path]
+     dirs += shared_children.map { |d| File.join(shared_path, d) }
+     run "mkdir -p #{dirs.join(' ')} && chmod g+w #{dirs.join(' ')}"
+   end
   
   task :cold do
     update
-    create_db
+    # create_db
     migrate
     start
   end
