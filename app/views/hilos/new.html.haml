@@ -1,7 +1,9 @@
+- javascripts "color_picker/colormethods", "color_picker/colorvaluepicker", "color_picker/slider", "color_picker/colorpicker"#, :cache => "color_picker"
 - javascripts "hilos_new"
 - page_title title_text
 %h1= yield :title
-#hilo.results
+
+#hilo.results.float-left
   - form_for @marca, :url => form_url do |f|
     = f.error_messages
     - unless hilos_new
@@ -17,6 +19,9 @@
         = render 'colors'
     #add_color
     = f.submit button_text, :disable_with => 'Submiting...', :id => "submit_button"
+.float-right
+  = render 'color_picker'
+.clear
 - unless hilos_new
   - button_2 t('thread.new.delete'), hilo_path(@marca), :confirm => t('thread.new.delete_message'), :method => :delete
 - button_2 button_text, '#', :onclick => "document.forms[0].submit(); return false;"
