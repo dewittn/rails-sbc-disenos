@@ -2,7 +2,7 @@
 - page_title "Nuevo Diseño"
 %h1= yield :title
 #orden.results
-  - form_for @diseno,:multipart => true  do |f|
+  - form_for @diseno,:html => { :multipart => true }  do |f|
     = f.error_messages
     %h2 Diseño:
     %table
