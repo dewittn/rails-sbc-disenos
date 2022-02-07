@@ -1,31 +1,31 @@
 - javascripts "dynamic_colores", "diseno_nuevo"
-- page_title "Nuevo Diseño"
+- page_title t('design.new.title')
 %h1= yield :title
 #orden.results
   - form_for @diseno,:html => { :multipart => true }  do |f|
     = f.error_messages
-    %h2 Diseño:
+    %h2= t('design.design')
     %table
       %tr
         %td
-          = f.label :cantidad_del_colores, "Cambios De Colores"
-          = f.text_field :cantidad_del_colores,:size => 3, :class => "test"
+          = f.label :cantidad_del_colores, t('design.new.number_of_colors')
+          = f.text_field :cantidad_del_colores,:size => 3
       %tr
         %td
-          = f.label :nombre_de_orden, "Nombre De Diseno"
+          = f.label :nombre_de_orden, t('design.new.name_field')
           = f.text_field :nombre_de_orden
       %tr
         %td
-          Image:
+          = t('design.new.image')
           = f.file_field "image"
       %tr
         %td
-          Archivo de DST:
+          = t('design.new.dst')
           = f.file_field "archivo_dst"
       %tr
         %td 
-          Archivo de PES:
+          = t('design.new.pes')
           = f.file_field "archivo_pes"
-    %h2 Hilos:
+    %h2= t('design.spindel')
     #hilos=render 'hilo'
-- button_2 "Crear =>",'#',:onclick => "document.forms[0].submit()"
+- button_2 create_save_text,'#',:onclick => "document.forms[0].submit()"

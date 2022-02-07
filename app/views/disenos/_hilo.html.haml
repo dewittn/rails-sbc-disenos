@@ -2,8 +2,8 @@
   - fields_for @diseno do |diseno|
     - diseno.fields_for :hilos do |hilo_form|
       %li
-        = hilo_form.select :marca_id, Marca.all_cached.collect{ |m| [m[:nombre], m[:id]] }, {:include_blank => "Marca"}, {:class => "marca"}
-        = hilo_form.select :color_id, Color.all_cached.collect{ |m| [m[:nombre], m[:id]] }, {:include_blank => "Color"}, {:class => "color"}
+        = hilo_form.select :marca_id, Marca.all_cached.collect{ |m| [m[:nombre], m[:id]] }, {:include_blank => t('design.brand')}, {:class => "marca"}
+        = hilo_form.select :color_id, Color.all_cached.collect{ |m| [m[:nombre], m[:id]] }, {:include_blank => t('design.color')}, {:class => "color"}
         -unless hilo_form.object.new_record?
-          = hilo_form.label :_delete, 'Eliminar:'
+          = hilo_form.label :_delete, t('design.edit.delete')
           = hilo_form.check_box :_delete

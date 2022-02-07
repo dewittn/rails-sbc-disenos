@@ -1,14 +1,16 @@
+- page_title t('color.index.title')
+%h1= yield :title
 - unless @colores.blank?
   %table.results
     %tr.title
-      %th Marca
-      %th Color
-      %th Codigo
+      %th= t('color.brand')
+      %th= t('color.color')
+      %th= t('color.id')
       %th
     - for color in @colores do
       %tr{ :class => cycle(:odd, :even) }
         %td=h color.marca.nombre rescue ""
         %td=h color.nombre
         %td=h color.codigo
-        %td= link_to "editar", edit_colore_path(color)
-- button_2 "Nuevo =>",new_colore_path
+        %td= link_to t('color.index.edit'), edit_colore_path(color)
+- button_2 t('color.index.new'),new_colore_path

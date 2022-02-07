@@ -25,10 +25,10 @@ class DisenosController < ApplicationController
   def update
     @diseno = Diseno.find(params[:id])
     if @diseno.update_attributes(params[:diseno])
-      flash[:notice] = "Successfully updated..." 
+      flash[:notice] = t('design.flash.updated') 
       render :show
     else
-      flash[:notice] = "Not updated"
+      flash[:notice] = t('design.flash.not_updated') 
       render :edit
     end
   end
@@ -36,10 +36,10 @@ class DisenosController < ApplicationController
   def create
     @diseno = Diseno.new(params[:diseno])
     if @diseno.save
-      flash[:notice] = "Successfully created..."
+      flash[:notice] = t('design.flash.created') 
       render :show
     else
-      flash[:error] = "not created"
+      flash[:error] = t('design.flash.not_updated') 
       render :new
     end
   end

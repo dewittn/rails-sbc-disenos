@@ -3,11 +3,11 @@
 - form_for @color, :url => action_path do |f|
   %table.results
     %tr
-      %th Marca
-      %th Color
-      %th Codigo
+      %th= t('color.brand')
+      %th= t('color.color')
+      %th= t('color.id')
     %tr
-      %td= f.collection_select :marca_id, Marca.find(:all), :id, :nombre, :prompt => "Marca"
+      %td= f.collection_select :marca_id, Marca.find(:all), :id, :nombre, :prompt => t('color.brand')
       %td
         = f.label :nombre, "Nombre"
         = f.text_field :nombre
@@ -19,5 +19,5 @@
         %p
           o nuevo marca:
           = f.text_field :nuevo_marca
-  = f.submit "Submit", :disable_with => 'Submiting...'
+  = f.submit button_text, :disable_with => t('color.new.saving')
 - button_2 button_text,'#',:onclick => "document.forms[0].submit()"

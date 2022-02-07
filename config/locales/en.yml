@@ -1,0 +1,63 @@
+en:
+  application:
+    title: "Threads"
+    home: "Home"
+  design:
+    design: "Design"
+    spindel: "Threads"
+    brand: "Brand"
+    color: "Color"
+    id: "ID"
+    missing_name: "No name"
+    index:
+      title: "Search Designs"
+      search: "Search"
+      new: "New =>"
+    edit:
+      title: "Edit Design"
+      name_field: "Design Name"
+      image: "Image:"
+      dst: "DST File:"
+      pes: "PES File:"
+      delete: "Delete:"
+      save: "Save =>"
+    new:
+      title: "New Design"
+      design: "Design"
+      number_of_colors: "Number of Colors:"
+      name_field: "Name:"
+      image: "Image:"
+      dst: "DST File:"
+      pes: "PES File:"
+      delete: "Delete:"
+      save: "Create =>"
+    show:
+      edit: "Edit"
+      file: "File:"
+    flash:
+      updated: "Successfully updated..."
+      not_updated: "Not updated..."
+      created: "Successfully created..."
+      not_created: "Not saved..."
+  color:
+    design: "Design"
+    spindel: "Threads"
+    brand: "Brand"
+    color: "Color"
+    id: "ID"
+    index:
+      title: "Colors"
+      edit: "edit"
+      new: "New =>"
+    new:
+      title: "New color"
+      save: "Create =>"
+      saving: "Saving..."
+    edit:
+      title: "Edit color"
+      save: "Save =>"
+    flash:
+      updated: "Successfully updated..."
+      not_updated: "Not updated..."
+      created: "Successfully created..."
+      not_created: "Not saved..."

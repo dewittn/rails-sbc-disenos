@@ -1,12 +1,12 @@
 -javascripts "disenos_index"
--page_title "Buscar Diseños"
+-page_title t('design.index.title')
 .search
-  %h1 Buscar
+  %h1= yield :title
   %p
     - for letter in @letters
       = link_to letter.char, letter
   - form_tag({},:method => :get) do
     = text_field_tag :search, params[:search]
-    = submit_tag "Submit"
+    = submit_tag t('design.index.search')
 #results= render :partial => 'diseno', :collection => @disenos
-- button_2("Nuevo =>",new_diseno_path)
+- button_2(t('design.index.new'),new_diseno_path)
