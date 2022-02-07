@@ -3,7 +3,7 @@ set :user, "deploy"
 set :repository,  "git@coto:repos/#{application}.git"
 
 if ENV['production']
-  set :domain, "sbc.local"
+  set :domain, "sbc"
 else
   set :domain, "coto"
 end

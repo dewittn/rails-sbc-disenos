@@ -28,7 +28,7 @@ namespace :deploy do
   
   desc "Update the crontab file"
   task :update_crontab, :roles => :db do
-    run "cd #{release_path} && sudo /opt/ruby-enterprise/bin/whenever --update-crontab #{application}"
+    #run "cd #{release_path} && sudo whenever --update-crontab #{application}"
   end
   
   def rake_setup
