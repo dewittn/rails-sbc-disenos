@@ -12,7 +12,7 @@ class DisenoMailer < ActionMailer::Base
     recipients  message[:to]
     from        "ssch@sschpa.com"
     subject     message[:subject]
-    body        :diseno => diseno
+    body        message[:body]
     attachment  :content_type => "image/jpeg", :body => File.read(diseno.image.path)
   end
 end

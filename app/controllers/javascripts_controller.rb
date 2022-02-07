@@ -39,12 +39,12 @@ class JavascriptsController < ApplicationController
       DisenoMailer.deliver_email_image(@diseno, params[:email])
       render :update do |page|
         page[:email].hide()
-        page[:notice].replace_html "Email success!"
+        page[:notice].replace_html t('email.success')
       end
     rescue
         render :update do |page|
           page[:email].hide()
-          page[:error].replace_html "Email failed..."
+          page[:error].replace_html t('email.failure')
         end
       end
   end

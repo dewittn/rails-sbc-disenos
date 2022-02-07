@@ -1,5 +1,5 @@
 #email.results{ :style => "display:none;"}
-  - remote_form_for "email", :url => email_image_javascripts_path do |f|
+  - form_for "email", :url => email_image_javascripts_path, :html => { :id => 'email_form' } do |f|
     = hidden_field_tag :id, @diseno.id
     %table
       %tr
@@ -9,8 +9,9 @@
         %td= f.label :subject, "Subject:"
         %td= f.text_field :subject
     %p
-      = f.label :message, "Message:"
+      = f.label :body, "Message:"
     %p
-      = f.text_area :message
+      = f.text_area :body
     %p
-      = f.submit "Send", :onclick => "if (window.hiddenCommit) { window.hiddenCommit.setAttribute('value', this.value); }else { hiddenCommit = this.cloneNode(false);hiddenCommit.setAttribute('type', 'hidden');this.form.appendChild(hiddenCommit); }this.setAttribute('originalValue', this.value);this.disabled = true;this.value='Sending...';result = (this.form.onsubmit ? (this.form.onsubmit() ? this.form.submit() : false) : this.form.submit());if (result == false) { this.value = this.getAttribute('originalValue');this.disabled = false; }return result;"
+      = f.submit "Send"
+      = f.submit "Cancel", :id => "email_cancel"
