@@ -54,7 +54,7 @@ task :update_repo do
 end
 
 after "deploy:symlink", "gem_install"
-# before "deploy:create_db", "gem_install"
+before "deploy:migrate", "gem_install"
 # after "deploy:migrations", "gem_install"
 task :gem_install do
   rake_setup
