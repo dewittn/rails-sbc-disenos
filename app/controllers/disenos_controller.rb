@@ -26,7 +26,7 @@ class DisenosController < ApplicationController
     @diseno = Diseno.find(params[:id])
     if @diseno.update_attributes(params[:diseno])
       flash[:notice] = "Successfully updated..." 
-      redirect_to diseno_path(params[:id])
+      render :show
     else
       flash[:notice] = "Not updated"
       render :edit
@@ -37,7 +37,7 @@ class DisenosController < ApplicationController
     @diseno = Diseno.new(params[:diseno])
     if @diseno.save
       flash[:notice] = "Successfully created..."
-      redirect_to(diseno_path(@diseno))
+      render :show
     else
       flash[:error] = "not created"
       render :new
