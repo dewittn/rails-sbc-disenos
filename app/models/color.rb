@@ -3,6 +3,9 @@ class Color < ActiveRecord::Base
   
   belongs_to :marca
   has_many :disenos, :dependent => :destroy
+  
+  validates_presence_of :nombre, :codigo
+  
   attr_accessor :nuevo_marca
   
   before_save :create_marca_from_text
