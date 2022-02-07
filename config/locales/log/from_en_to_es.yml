@@ -1,0 +1,63 @@
+--- 
+design: 
+  new: 
+    delete: "Delete:"
+    design: Design
+    number_of_colors: "Number of Colors:"
+    title: New Design
+    dst: "DST File:"
+    save: Create =>
+    pes: "PES File:"
+    image: "Design image:"
+    name_field: "Name:"
+  brand: Brand
+  design: Design
+  edit: 
+    confirm: This will remove the design, images and threads. Are you sure?
+    delete: "Delete:"
+    title: Edit Design
+    dst: "DST File:"
+    notes: Notes
+    save: Save =>
+    pes: "PES File:"
+    image: "Design image:"
+    name_field: Design Name
+  missing_name: No name
+  id: ID
+  show: 
+    edit: Edit
+  index: 
+    new: New =>
+    search: Search
+    title: Search Designs
+  color: Color
+  flash: 
+    not_updated: Not updated...
+    not_created: Not saved...
+    created: Successfully created...
+    updated: Successfully updated...
+application: 
+  title: Threads
+  home: Home
+color: 
+  brand: Brand
+  new: 
+    title: New color
+    saving: Saving...
+    save: Create =>
+  design: Design
+  spindel: Threads
+  edit: 
+    title: Edit color
+    save: Save =>
+  id: ID
+  index: 
+    new: New =>
+    title: Colors
+    edit: edit
+  color: Color
+  flash: 
+    not_updated: Not updated...
+    not_created: Not saved...
+    created: Successfully created...
+    updated: Successfully updated...

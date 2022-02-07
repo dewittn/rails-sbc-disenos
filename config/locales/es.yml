@@ -1,66 +1,66 @@
-es:
-  application:
-    title: "Hilos"
-    home: "Inicio"
-  design:
-    design: "Diseño"
-    spindel: "Hilos"
-    brand: "Marca"
-    color: "Color"
-    id: "Codígo"
-    missing_name: "No Tenia Nombre"
-    index:
-      title: "Buscar Diseños"
-      search: "Buscar"
-      new: "Nuevo =>"
-    edit:
-      title: "Editar Diseño"
-      name_field: "Nombre De Diseno"
-      image: "Imagen de diseño:"
+--- 
+es: 
+  design: 
+    brand: Marca
+    new: 
+      delete: Eliminar
+      design: "Dise\xC3\xB1o"
+      title: "Nuevo Dise\xC3\xB1o"
+      number_of_colors: Cambios De Colores
       dst: "Archivo de DST:"
+      save: Crear =>
       pes: "Archivo de PES:"
-      delete: "Eliminar:"
-      save: "Guardar =>"
-      notes: "Notas"      
-      image: "Imagen de original:"
-      confirm: "Te va a elimininar el diseño, imagenes, y hilos. Estas seguro?"
-    new:
-      title: "Nuevo Diseño"
-      design: "Diseño"
-      number_of_colors: "Cambios De Colores"
-      name_field: "Nombre De Diseno"
       image: "Imagen:"
-      dst: "Archivo de DST:"
-      pes: "Archivo de PES:"
+      name_field: Nombre De Diseno
+    design: "Dise\xC3\xB1o"
+    spindel: Hilos
+    edit: 
       delete: "Eliminar:"
-      save: "Crear =>"
-    show:
-      edit: "Editar"
+      confirm: "Te va a elimininar el dise\xC3\xB1o, imagenes, y hilos. Estas seguro?"
+      title: "Editar Dise\xC3\xB1o"
+      notes: Notas
+      dst: "Archivo de DST:"
+      save: Guardar =>
+      pes: "Archivo de PES:"
+      image: "Imagen de original:"
+      name_field: Nombre De Diseno
+    missing_name: No Tenia Nombre
+    id: "Cod\xC3\xADgo"
+    color: Color
+    index: 
+      new: Nuevo =>
+      search: Buscar
+      title: "Buscar Dise\xC3\xB1os"
+    show: 
+      edit: Editar
       file: "Archivo:"
-    flash:
-      updated: "Actualizado..."
-      not_updated: "No fue guardado..."
-      created: "Nos se pudo guardar..."
-      not_created: "No se pudo crear..."
-  color:
-    design: "Diseño"
-    spindel: "Hilos"
-    brand: "Marca"
-    color: "Color"
-    id: "Codígo"
-    index:
-      title: "Colores"
-      edit: "editar"
-      new: "Nuevo =>"
-    new:
-      title: "Nuevo color"
-      save: "Crear =>"
-      saving: "Cargando"
-    edit:
-      title: "Editar color"
-      save: "Guadar =>"
-    flash:
-      updated: "Actualizado..."
-      not_updated: "No fue guardado..."
-      created: "Nos se pudo guardar..."
-      not_created: "No se pudo crear..."
+    flash: 
+      not_updated: No fue guardado...
+      not_created: No se pudo crear...
+      created: Nos se pudo guardar...
+      updated: Actualizado...
+  application: 
+    title: Hilos
+    home: Inicio
+  color: 
+    brand: Marca
+    new: 
+      title: Nuevo color
+      saving: Cargando
+      save: Crear =>
+    design: "Dise\xC3\xB1o"
+    spindel: Hilos
+    edit: 
+      title: Editar color
+      save: Guadar =>
+    id: "Cod\xC3\xADgo"
+    color: Color
+    index: 
+      new: Nuevo =>
+      title: Colores
+      edit: editar
+    flash: 
+      not_updated: No fue guardado...
+      not_created: No se pudo crear...
+      created: Nos se pudo guardar...
+      updated: Actualizado...
