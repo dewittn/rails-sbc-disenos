@@ -23,7 +23,20 @@ namespace :deploy do
   
   task :create_db do
     rake_setup
-    run "cd #{directory}; #{rake} RAILS_ENV=#{rails_env} #{migrate_env} db:schema:load"
+    run "cd #{@directory}; #{@rake} RAILS_ENV=#{@rails_env} #{@migrate_env} db:schema:load"
+  end
+  
+  def rake_setup
+    @rake = fetch(:rake, "rake")
+    @rails_env = fetch(:rails_env, "production")
+    @migrate_env = fetch(:migrate_env, "")
+    @migrate_target = fetch(:migrate_target, :latest)
+
+    @directory = case @migrate_target.to_sym
+      when :current then current_path
+      when :latest  then current_release
+      else raise ArgumentError, "unknown migration target #{@migrate_target.inspect}"
+      end
   end
   
 end
