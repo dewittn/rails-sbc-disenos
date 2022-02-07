@@ -20,10 +20,15 @@ Feature: Create and edit, colors and marcas
     And I should have 1 marca
     And I should have 3 color
   
-    Scenario: View hilos
-      Given I have 1 marcas 
-      And I am on the hilos page
-      Then I should see the name of the marca
+  Scenario: View hilos
+    Given I have 1 marcas 
+    And I am on the hilos page
+    Then I should see the name of the marca
     
-    
-    
+  Scenario: View a hilo
+    Given I have 1 marca
+    When I follow the marca's name
+    Then I should see the marca's details
+  
+  
+  
