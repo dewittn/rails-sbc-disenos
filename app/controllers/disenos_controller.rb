@@ -47,4 +47,9 @@ class DisenosController < ApplicationController
       render :new
     end
   end
+  
+  def destroy
+    Diseno.destroy(params[:id])
+    redirect_to(disenos_path)
+  end
 end

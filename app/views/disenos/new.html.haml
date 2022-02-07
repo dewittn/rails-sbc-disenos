@@ -16,6 +16,10 @@
           = f.text_field :nombre_de_orden
       %tr
         %td
+          = t('design.new.original')
+          = f.file_field "original"
+      %tr
+        %td
           = t('design.new.image')
           = f.file_field "image"
       %tr
@@ -26,6 +30,10 @@
         %td 
           = t('design.new.pes')
           = f.file_field "archivo_pes"
+      %tr
+        %td
+          = t('design.new.notes')
+          %p= f.text_area :notas, :size => "55x5"
     %h2= t('design.spindel')
     #hilos=render 'hilo'
 - button_2 create_save_text,'#',:onclick => "document.forms[0].submit()"
