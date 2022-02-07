@@ -1,9 +1,0 @@
-<div class="search">
-	<h1>Buscar</h1>
-	<%= text_field_tag :nombre_de_orden %>
-	<%= observe_field :nombre_de_orden,:update => "results", :frequency => 0.5,:url => formatted_disenos_path(:js), :method => :get, :with => "'search=' + element.value" %>
-</div>
-<div id="results">
-	
-</div>
-<% button_2("Nuevo =>",new_diseno_path) %>
