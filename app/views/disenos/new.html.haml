@@ -1,3 +1,4 @@
+- javascripts "dynamic_colores", "diseno_nuevo"
 - page_title "Nuevo Diseno"
 %h1= yield :title
 #orden.results
@@ -22,11 +23,5 @@
         %td 
           Archivo de PES:
           = f.file_field "archivo_pes"
-    %ol
-      #hilos
-      - f.fields_for :hilos do |hilo|
-        %li#hilo
-          = collection_select :marca, hilo.object_id.id, Marca.find(:all), :id, :nombre, :prompt => "Marca"
-          = hilo.collection_select :color_id,Color.find(:all), :id, :nombre, :prompt => "Color",:html => {:class => "test"}
-        = observe_field "marca_#{hilo.object_id}", :function => "marcaSelected(#{hilo.object_id})", :frequency => 0.5, :with => "cantidad"
+    #hilos=render :partial => 'application/hilo',:locals => { :object_name => f.object_name  }
 - button_2 "Crear =>",'#',:onclick => "document.forms[0].submit()"

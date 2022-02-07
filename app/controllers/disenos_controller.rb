@@ -5,6 +5,7 @@ class DisenosController < ApplicationController
   
   def new
     @diseno = Diseno.new()
+    3.times { @diseno.hilos.build }
   end
   
   def edit

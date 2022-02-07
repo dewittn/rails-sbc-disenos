@@ -6,7 +6,7 @@ class Diseno < ActiveRecord::Base
   
   accepts_nested_attributes_for :hilos
 
-  define_index dos
+  define_index do
     indexes nombre_de_orden, :sorable => true
     
     set_property :delta => true
