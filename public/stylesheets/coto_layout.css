@@ -11,6 +11,15 @@
 .clear {
   clear: both; }
 
+#busy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.2em 10em 0.2em 0.2em;
+  color: white;
+  font-weight: bold;
+  background-color: #C3D9FF; }
+
 .results {
   border-spacing: 0px;
   padding: 5px; }

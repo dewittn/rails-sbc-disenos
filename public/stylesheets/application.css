@@ -49,6 +49,11 @@
   color: #000000;
   background-color: #ffffff; }
 
+#busy {
+  font-weight: bold;
+  color: #000000;
+  background-color: #c3d9ff; }
+
 .title {
   color: #ffffff;
   background-color: #000000; }
@@ -73,6 +78,15 @@ a {
 
 .clear {
   clear: both; }
+
+#busy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.2em 10em 0.2em 0.2em;
+  color: white;
+  font-weight: bold;
+  background-color: #C3D9FF; }
 
 .results {
   border-spacing: 0px;

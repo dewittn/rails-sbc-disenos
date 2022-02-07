@@ -1,13 +1,12 @@
 // Replace these examples with your own code.
-Event.addBehavior({
-
-  '#my_id:click' : function(e) {
-    // TODO Javascript here
-    e.stop();
+Ajax.Responders.register({
+  onCreate: function() {
+    if($('busy') && Ajax.activeRequestCount > 0)
+      Effect.Appear('busy',{duration:0.5,queue:'end'});
   },
-
-  '#remote_form' : Remote.Form,
   
-  '#text_field_id' : DateSelector,
-
+  onComplete: function() {
+    if($('busy') && Ajax.activeRequestCount == 0)
+      Effect.Fade('busy',{duration:1.0,queue:'end'});
+  }    
 });
