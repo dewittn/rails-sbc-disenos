@@ -1,4 +1,6 @@
 class Color < ActiveRecord::Base
+  acts_as_cached
+  
   belongs_to :marca
   attr_accessor :nuevo_marca
   
