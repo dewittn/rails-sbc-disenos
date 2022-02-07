@@ -6,11 +6,11 @@ class DisenoMailer < ActionMailer::Base
       :domain => 'sschpa.com',
       :port => 587,
       :authentication => :plain,
-      :user_name            => 'ssch@sschpa.com',
+      :user_name            => 'disenos@sschpa.com',
       :password             => 'S$chadm1n'
     }
     recipients  message[:to]
-    from        "ssch@sschpa.com"
+    from        "disenos@sschpa.com"
     subject     message[:subject]
     body        message[:body]
     attachment  :content_type => "image/jpeg", :body => File.read(diseno.image.path)
