@@ -40,12 +40,12 @@ Rails::Initializer.run do |config|
     :session_key => '_DesignColors_session',
     :secret      => 'db2906790813e6dd612817c0a4690fbc6f88e1532dd181a5b86eadd3fded3a347dcc4d18c35df62a3cbeab48bfd098805c2615eaacf13d7516b486d0121d1d65'
   }
-
+  config.gem "test-unit", :version => "1.2.3"
   config.gem "haml"
   config.gem "mysql"
-  config.gem "thoughtbot-paperclip", :lib => "paperclip"
+  config.gem "paperclip"
   config.gem 'chronic', :lib => "chronic", :version => ">=0.2.3"
-  config.gem 'javan-whenever', :lib => "whenever", :source => 'http://gems.github.com'
+  config.gem 'whenever'
   config.gem "giraffesoft-timeline_fu", :lib => "timeline_fu", :source => "http://gems.github.com"
   config.gem 'thinking-sphinx', :version => '1.4.4', :lib => 'thinking_sphinx'
 
