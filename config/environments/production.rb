@@ -13,7 +13,7 @@ config.action_controller.perform_caching             = true
 #config.action_view.cache_template_loading            = true
 
 # Enable serving of images, stylesheets, and javascripts from an asset server
-# config.action_controller.relative_url_root = "/hilos"
+config.action_controller.relative_url_root = "/hilos"
 # config.action_controller.asset_host                  = "http://sbc/hilos"
 
 # Disable delivery errors, bad email addresses will be ignored
@@ -22,4 +22,4 @@ config.cache_store = :mem_cache_store
 
 config.gem "newrelic_rpm"
 
-config.middleware.use "PathPrefix", "/hilos"
+# config.middleware.use "PathPrefix", "/hilos"
