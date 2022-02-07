@@ -1,7 +1,11 @@
 --- 
 es:
+  busy: "Carcando..."
   email:
-    subject: Test email
+    to: "To:"
+    subject: "Subject:"
+    message: "Message:"
+    subject_text: Test email
     body: This is a test email.
     success: Email was sent successfuly.
     failure: Email could not be sent.

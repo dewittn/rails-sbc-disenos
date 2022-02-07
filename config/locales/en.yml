@@ -1,4 +1,5 @@
 en:
+  busy: "Loading..."
   email:
     subject: Test email
     body: This is a test email.

@@ -3,13 +3,13 @@
     = hidden_field_tag :id, @diseno.id
     %table
       %tr
-        %td= f.label :to, "To:"
+        %td= f.label :to, t('email.to')
         %td= f.text_field :to
       %tr
-        %td= f.label :subject, "Subject:"
+        %td= f.label :subject, t('email.subject')
         %td= f.text_field :subject
     %p
-      = f.label :body, "Message:"
+      = f.label :body, t('email.message')
     %p
       = f.text_area :body
     %p
