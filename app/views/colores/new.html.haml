@@ -1,0 +1,3 @@
+- form_for @color, :url => colores_path do |f|
+  = render :partial => 'color',:locals => {:f => f }
+- button_2 "Crear =>",'#',:onclick => "document.forms[0].submit()"
