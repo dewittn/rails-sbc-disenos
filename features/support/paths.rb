@@ -14,6 +14,9 @@ module NavigationHelpers
     when /the colors page/
       colores_path
     
+    when /the designs page/
+      disenos_path
+    
     # Add more mappings here.
     # Here is a more fancy example:
     #

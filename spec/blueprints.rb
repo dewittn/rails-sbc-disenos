@@ -16,3 +16,7 @@ end
 Marca.blueprint do
   nombre
 end
+
+Hilo.blueprint do
+  
+end
