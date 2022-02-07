@@ -28,6 +28,15 @@ select "diseno_hilos_attributes_3_color_id", Color.last.nombre
 click "link=Crear =>"
 wait_for_page_to_load(500)
 assert_text "css=.notice","Successfully created..."
+click "link=Editar"
+wait_for_page_to_load(500)
+fire_event "css=#add_hilo", "click"
+# wait_for_page_to_load(500)
+select "diseno_hilos_attributes_4_marca_id", Marca.last.nombre
+select "diseno_hilos_attributes_4_color_id", Color.last.nombre
+click_and_wait "link=Crear =>", 500
+assert_text "css=.notice","Successfully updated..."
+
 # assert_text "hilo_#{Hilo.first.id}_marca", Marca.first.nombre
 # More information about the commands is available at:
 #   http://release.openqa.org/selenium-core/nightly/reference.html
