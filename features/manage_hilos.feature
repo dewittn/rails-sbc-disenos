@@ -33,5 +33,29 @@ Feature: Create and edit, colors and marcas
     And I press "Guadar"
     Then I should see "Actualizado..."
   
+  Scenario Outline: Missing info
+  Given I have no marcas
+  And I have no colors 
+  And I am on the hilos page
+  When I follow "Nuevo =>"
+  And I fill in "marca_nombre" with <marca>
+  And I fill in "marca_colors_attributes_0_nombre" with <color_name>
+  And I fill in "marca_colors_attributes_0_codigo" with <color_codigo>
+  And I fill in "marca_colors_attributes_1_nombre" with "Rojo"
+  And I fill in "marca_colors_attributes_1_codigo" with "AB12"
+  And I fill in "marca_colors_attributes_2_nombre" with "Rojo"
+  And I fill in "marca_colors_attributes_2_codigo" with "AB12"
+  And I press "Crear =>"
+  Then I should see "No se pudo crear..." 
+  And I should have 0 marca
+  And I should have 0 color
+  
+  Examples:
+    | marca | color_name | color_codigo |
+    | "Ra"  | "Rojo"     | ""           |
+    | "Ra"  | ""         | "ABC123"     |
+    | ""    | "Rojo"     | "ABC123"     |
+
+  
   
   

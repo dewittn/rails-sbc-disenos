@@ -18,7 +18,7 @@
         %td= hilo.color.marca.nombre unless hilo.color_id.blank?
         %td= hilo.color.nombre unless hilo.color.blank?
         %td= hilo.color.codigo unless hilo.color.blank?
-        %td{ :style => "background-color:##{hilo.color.hex};" }
+        %td{ :style => "background-color:##{hilo.color.hex unless hilos.color.blank?};" }
   %br
   %h2= t('design.show.notes')
   %p.results
