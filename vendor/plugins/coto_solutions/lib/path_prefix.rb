@@ -14,6 +14,7 @@ class PathPrefix
   # :api: plugin
   def call(env)
     strip_path_prefix(env) 
+    # [200, {"Content Type" => "text/html"}, "#{@path_prefix}: #{@key} - #{@key_prefix}"]
     @app.call(env)
   end
 
@@ -23,7 +24,9 @@ class PathPrefix
       if env[path_key] =~ @path_prefix
         env[path_key].sub!(@path_prefix, "")
         env[path_key] = "/" if env[path_key].empty?
+        @key_prefix = env[path_key]
       end
+      @key = env[path_key]
     end
   end
 end
