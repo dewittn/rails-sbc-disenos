@@ -3,6 +3,7 @@ Event.addBehavior({
     var link = $p($a({href:'',id:'add_color'},'Add color'));
     $('add_color').appendChild(link);
     $('submit_button').hide();
+    cp1 = new Refresh.Web.ColorPicker('cp1',{startHex: 'ffcc00', startMode:'s'});
   },
   
   '#add_color:click': function(e){
