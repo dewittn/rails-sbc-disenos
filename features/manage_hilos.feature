@@ -8,6 +8,8 @@ Feature: Create and edit, colors and marcas
     When I follow "Nuevo =>"
     And I fill in "marca_nombre" with "Ra"
     And I fill in "marca_colors_attributes_0_nombre" with "Rojo"
+    And I fill in "marca_colors_attributes_0_codigo" with "AB12"
     And I press "Crear =>"
-    Then I should have 1 marca and 1 color
+    Then I should see "Nos se pudo guardar..." 
+    And I should have 1 marca and 1 color
   
