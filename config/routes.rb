@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :disenos, :colores
   map.resources :letters, :only => :show
   map.resources :javascripts, :collection => { :edit_colores => :post, :colores => :post, :dynamic_colores => :get }
+  Translate::Routes.translation_ui(map)
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   # Keep in mind you can assign values other than :controller and :action
