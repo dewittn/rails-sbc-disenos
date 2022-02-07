@@ -6,6 +6,12 @@ class JavascriptsController < ApplicationController
     end
   end
   
+  def edit_colores
+    @diseno = Diseno.find(params[:id])
+    @diseno.hilos.build 
+    render :colores
+  end
+  
   def dynamic_colores
     @colores = Color.find(:all)
   end

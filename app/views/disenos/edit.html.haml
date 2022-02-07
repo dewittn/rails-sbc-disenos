@@ -4,6 +4,7 @@
 #orden.results
   - form_for @diseno,:multipart => true  do |f|
     = f.error_messages
+    = f.hidden_field :id
     %h2 Diseño:
     %table
       %tr
