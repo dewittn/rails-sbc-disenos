@@ -73,12 +73,12 @@ a {
     color: #fff;
     background-color: #000000; }
 
-.error {
+#error {
   color: white;
   background-color: red;
   font-weight: bold; }
 
-.notice {
+#notice {
   color: green; }
 
 #top-bar {
@@ -243,3 +243,8 @@ pre {
   margin-left: auto;
   margin-right: auto;
   padding: 5px; }
+
+#email {
+  position: absolute;
+  left: 50%;
+  margin-left: -170px; }

@@ -26,7 +26,8 @@ class DisenosController < ApplicationController
   
   def show
     @diseno = Diseno.find(params[:id])
-    fresh_when(:etag => @diseno)
+    image_send if params[:image_send]
+    # fresh_when(:etag => @diseno)
   end
   
   def update

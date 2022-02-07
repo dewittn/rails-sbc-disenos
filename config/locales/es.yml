@@ -31,7 +31,7 @@ es:
       dst: "Archivo de DST:"
       save: Crear =>
       pes: "Archivo de PES:"
-      image: "Imagen:"
+      image: "Imagen de diseño:"
       original: "Imagen original:"
       name_field: Nombre De Diseno
     brand: Marca
@@ -45,7 +45,8 @@ es:
       dst: "Archivo de DST:"
       save: Guardar =>
       pes: "Archivo de PES:"
-      image: "Imagen de original:"
+      image: "Imagen de diesño:"
+      original: "Imagen original:"
       name_field: Nombre De Diseno
     missing_name: No Tenia Nombre
     id: "Cod\xC3\xADgo"
