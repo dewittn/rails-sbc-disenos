@@ -10,7 +10,11 @@ Event.addBehavior({
     $('notice').innerHTML = ''
     $('error').innerHTML = ''
     $('email').show();
-    $('email_submit').disabled = false;
+    $('email_cancel').show();
+    $('email_submit').show();
+    $('email_subject').disabled = false;
+    $('email_body').disabled = false;
+    $('email_to').disabled = false;
     if ( $('email_subject').value == '' )
       { $('email_subject').value = t.email.subject_text }
     if ($('email_body').value == '' ) 
@@ -19,7 +23,11 @@ Event.addBehavior({
     },
     
   '#email_submit:click': function(e){
-    this.disabled = true;
+    this.hide();
+    $('email_cancel').hide();
+    $('email_subject').disabled = true;
+    $('email_body').disabled = true;
+    $('email_to').disabled = true;
   },
   
   '#email_cancel:click': function(e){
