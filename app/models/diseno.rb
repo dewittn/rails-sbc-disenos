@@ -1,16 +1,12 @@
 class Diseno < ActiveRecord::Base
+  has_many :hilos
   has_attached_file :image
   has_attached_file :archivo_dst
   has_attached_file :archivo_pes
-  has_many :hilos
   
-  def hilo_attributes=(hilo_attributes)
-    hilo_attributes.each do |attributes|
-      hilos.build(attributes)
-    end
-  end
-  
-  define_index do
+  accepts_nested_attributes_for :hilos
+
+  define_index dos
     indexes nombre_de_orden, :sorable => true
     
     set_property :delta => true
