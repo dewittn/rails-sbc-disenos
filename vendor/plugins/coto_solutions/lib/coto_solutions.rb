@@ -39,3 +39,5 @@ end
 if Object.const_defined?("ActionController")
   ActionController::Base.send(:helper, CotoHelper)
 end
+
+ActionView::Helpers::AssetTagHelper.register_javascript_expansion(:coto_solutions => ["path_prefix"])
