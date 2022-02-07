@@ -47,6 +47,7 @@ es:
     brand: Marca
     design: "Dise\xC3\xB1o"
     spindel: Hilos
+    sample: Muestra
     edit: 
       delete: "Eliminar:"
       confirm: "Te va a elimininar el dise\xC3\xB1o, imagenes, y hilos. Estas seguro?"
