@@ -10,15 +10,10 @@ function select_colors(){
       if (this.value == "")
         { this.hide(); }
       },
-    
-    // '#diseno_cantidad_del_colores:change': function(){
-    //   new Ajax.Request(path_prefix + '/javascripts/colores.js', 
-    //     {asynchronous:true, evalScripts:true, parameters:'cantidad=' + encodeURIComponent(this.value) });
-    //   },
 
     '#add_hilo:click': function(e){
-      new Ajax.Request(path_prefix + '/javascripts/edit_colores.js', 
-        {asynchronous:true, evalScripts:true, parameters:'id=' + $('diseno_id').value });
+      new Ajax.Request(path_prefix + '/javascripts/add_hilos.js', 
+        {asynchronous:true, evalScripts:true, parameters:Form.serialize(document.forms[0]) });
       e.stop();
       },
   });

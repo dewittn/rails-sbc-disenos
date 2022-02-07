@@ -4,7 +4,7 @@
 #orden.results.float-left
   - form_for @diseno,:html => { :multipart => true }  do |f|
     = f.error_messages
-    = f.hidden_field :id
+    = hidden_field_tag :id, @diseno.id
     %h2= t('design.design')
     %table
       %tr
