@@ -26,6 +26,11 @@ namespace :deploy do
     run "cd #{@directory}; sudo #{@rake} RAILS_ENV=#{@rails_env} #{@migrate_env} db:schema:load"
   end
   
+  desc "Update the crontab file"
+  task :update_crontab, :roles => :db do
+    run "cd #{release_path} && whenever --update-crontab #{application}"
+  end
+  
   def rake_setup
     @rake = fetch(:rake, "rake")
     @rails_env = fetch(:rails_env, "production")
