@@ -61,3 +61,5 @@ en:
       not_updated: "Not updated..."
       created: "Successfully created..."
       not_created: "Not saved..."
+  search:
+    error: "Error..."

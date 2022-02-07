@@ -16,10 +16,8 @@
       - create_top_links("disenos","colores")
       -# create_logout
       = render :partial => 'application/top_links'
-      %div.notice{ :style => "color: green" }
-        = flash[:notice]
-      %div.error{ :style => "color: red" }
-        = flash[:error]
+      .notice= flash[:notice]
+      .error = flash[:error]
       = yield
       %br
       %table

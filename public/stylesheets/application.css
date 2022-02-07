@@ -66,6 +66,14 @@ a {
     color: #fff;
     background-color: #000000; }
 
+.error {
+  color: white;
+  background-color: red;
+  font-weight: bold; }
+
+.notice {
+  color: green; }
+
 #top-bar {
   padding: 2px;
   text-align: center; }
