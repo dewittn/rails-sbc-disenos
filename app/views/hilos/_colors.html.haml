@@ -7,7 +7,7 @@
       %td
         = color_field.label :codigo, t('thread.new.id')
         = color_field.text_field :codigo
-      %td
+      %td{ :style => "background-color:##{color_field.object.hex};" }
         = link_to t('thread.new.hex'), '#', :class => "hex_link"
         = color_field.text_field :hex, :size => 7
       %td

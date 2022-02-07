@@ -13,7 +13,9 @@ Event.addBehavior({
     },
   
   '.hex_link:click': function(e){
-    this.next().value = $('cp1_Hex').value; 
+    var color = $('cp1_Hex').value
+    this.next().value = color;
+    this.up().style.backgroundColor = '#' + color;
     e.stop();
   }
 });
