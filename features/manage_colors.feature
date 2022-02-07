@@ -18,13 +18,15 @@ Feature: Create and edit, colors and marcas
     | I'm missing the "nombre" | "Color not created" | 0     |
     | I'm missing the "codigo" | "Color not created" | 0     |
 
-  Scenario: Edit color
+  Scenario Outline: Edit color
     Given I have 1 color
     And I am on the colors page
     When I follow "edit"
-    And I fill in "color[nombre]" with "Red"
+    And I fill in <field> with <text>
     And I press "Submit"
-    Then I should see "Red"
+    Then I should see <text>
   
-  
-  
+  Examples:
+    | field           | text    |
+    | "color[nombre]" | "Red"   |
+    | "color[codigo]" | "ASJD1" |
