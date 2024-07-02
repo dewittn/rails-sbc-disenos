@@ -7,7 +7,7 @@
       %th= t('color.color')
       %th= t('color.id')
     %tr
-      %td= f.collection_select :marca_id, Marca.find(:all), :id, :nombre, :prompt => t('color.brand')
+      %td= f.collection_select :marca_id, Marca.all, :id, :nombre, :prompt => t('color.brand')
       %td
         = f.label :nombre, "Nombre"
         = f.text_field :nombre

@@ -1,9 +1,8 @@
-- javascripts "dynamic_colores", "diseno_edit"
 - page_title t('design.edit.title')
 %h1= yield :title
 #orden.results.float-left
-  - form_for @diseno,:html => { :multipart => true }  do |f|
-    = f.error_messages
+  = form_for @diseno do |f|
+    =# f.error_messages
     = hidden_field_tag :id, @diseno.id
     %h2= t('design.design')
     %table

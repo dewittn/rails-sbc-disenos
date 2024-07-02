@@ -13,24 +13,34 @@ module CotoHelper
   end
   
    #Renders button 1 on left of Home button
-   def button_1(text,path,options={})
-     content_for(:button1) do
-       "<td>#{link_to "<div class='three'><center>#{text}</center></div>", path, options }</td>"
-       end
-     end
+    def button_1(text,path,options={})
+        content_for(:button1) || "<td>#{link_to "<div class='three'><center>#{text}</center></div>", path, options }</td>"
+    end
 
    #Renders button 1 on left of Home button
-   def button_2(text,path,options={})
-     content_for(:button2) do
-       "<td>#{link_to "<div class='three'><center>#{text}</center></div>", path, options }</td>"
-       end
-     end
+    def button(id,text,path,options={})
+        content_for(id) do 
+            link_to(path, options) do
+                capture_haml do
+                  haml_tag "div", {:class => 'three'} do
+                    haml_tag "p", text
+                  end
+                end
+            end
+        end
+    end
 
    #Generates controller links accross left side of top bar
    def create_top_links_for_controllers(*controllers)
      controllers.each do |controller|
        content_for :top_link do
-          params[:controller] == controller.downcase ? "<b>#{controller.titlecase}</b>&nbsp;" : link_to( controller.titlecase, url_for(:controller => controller.downcase, :action => 'index') ) + "&nbsp;"
+          if params[:controller] == controller.downcase then 
+            capture_haml do
+              haml_tag "b", controller.titlecase + " "
+            end
+          else
+           link_to(controller.titlecase, url_for(:controller => controller.downcase, :action => 'index') ) + " "
+          end
         end
      end
    end

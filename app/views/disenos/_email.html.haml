@@ -1,5 +1,5 @@
 #email.results{ :style => "display:none;"}
-  - form_for "email", :url => email_image_javascripts_path, :html => { :id => 'email_form' } do |f|
+  = form_for "email", :url => email_image_javascripts_path, :html => { :id => 'email_form' } do |f|
     = hidden_field_tag :id, @diseno.id
     %table
       %tr

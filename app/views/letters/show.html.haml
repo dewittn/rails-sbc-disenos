@@ -1,5 +1,5 @@
 - page_title "#{t('design.design')} - #{@letter.char}"
-%h1= yield :title
-= render @letter.disenos
+.search
+  %h1= yield :title
+#results= render @letter.disenos
 .clear
-= render :partial => 'disenos/letters'

@@ -13,7 +13,7 @@ es:
     index:
       title: "Hilos"
       new: "Nuevo =>"
-      name: Nombre
+      name: "Nombre: "
     new:
       title: "Nuevo Hilo"
       edit_title: "Editar Hilo"

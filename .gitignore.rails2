@@ -1,0 +1,7 @@
+.DS_Store
+log/*
+tmp/*
+config/*.sphinx.conf
+db/sphinx/*
+public/diseno/*
+public/system/*

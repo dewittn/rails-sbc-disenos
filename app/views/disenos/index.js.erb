@@ -1,4 +1,1 @@
-<% for diseno in @disenos %>	   
-    <%= link_to diseno.nombre_de_orden , diseno_path(diseno) %><br>
-<% end %>
-
+$("#results").html("<%= escape_javascript(render(@disenos)) %>");

@@ -1,4 +1,6 @@
 class JavascriptsController < ApplicationController
+  respond_to :html, :js
+  
   def colores
     unless params[:cantidad].blank?
       @diseno = Diseno.new
@@ -13,35 +15,18 @@ class JavascriptsController < ApplicationController
     else
       @diseno = Diseno.new(params[:diseno])
     end
-    @diseno.hilos.build 
-    render :colores
-  end
-  
-  def dynamic_colores
-    @colores = Color.find(:all)
-  end
-  
-  def add_colors
-    if params[:id]
-      @marca = Marca.find(params[:id]) 
-      @marca.attributes = params[:marca]
-    else
-      @marca = Marca.new(params[:marca])
-    end
-    @marca.colors.build
+    @diseno.hilos.build
   end
   
   def timeline
-    @events = TimelineEvent.all(:limit => 10, :order => 'created_at DESC', :include => :subject)
-    render :update do |page| 
-      page[:timeline].replace_html :partial => 'timeline'
-    end
+    @disenos = Diseno.limit(5).order('updated_at')
+    render :partial => @disenos
   end
   
   def email_image
     begin
       @diseno = Diseno.find(params[:id])
-      DisenoMailer.deliver_email_image(@diseno, params[:email])
+      UserMailer.email_design(@diseno, params[:email])
       render :update do |page|
         page[:email].hide()
         page[:notice].replace_html t('email.success')
@@ -52,5 +37,9 @@ class JavascriptsController < ApplicationController
           page[:error].replace_html t('email.failure')
         end
       end
+  end
+  
+  def show
+    render :text => ""
   end
 end

@@ -1,11 +1,8 @@
-%ol
-  - fields_for @diseno do |diseno|
-    - diseno.fields_for :hilos do |hilo_form|
-      %li
+%ol#hilos_select
+  = fields_for @diseno do |diseno|
+    = diseno.fields_for :hilos do |hilo_form|
+      %li.pick_color
         = hilo_form.select :marca_id, Marca.all_cached.collect{ |m| [m[:nombre], m[:id]] }, {:include_blank => t('design.brand')}, {:class => "marca"}
-        = hilo_form.select :color_id, Color.all_cached.collect{ |m| [m[:nombre], m[:id]] }, {:include_blank => t('design.color')}, {:class => "color"}
-        - if hilo_form.object.new_record?
-          = link_to 'Eliminar','', :onclick => "this.up().remove();return false;"
-        - else
-          = hilo_form.label :_destroy, t('design.edit.delete')
-          = hilo_form.check_box :_destroy
+        = hilo_form.select :color_id, {}, {:include_blank => t('design.color')}, {:class => "color"}
+        = hilo_form.label :_destroy, t('design.edit.delete') if !hilo_form.object.new_record?
+        = hilo_form.check_box :_destroy

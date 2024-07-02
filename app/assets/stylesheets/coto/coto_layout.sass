@@ -1,0 +1,151 @@
+=padding
+  :padding 5px
+=center_text
+  :text-align center
+=fonts
+  :font-family verdana, arial, helvetica, sans-serif
+  :font-size 13px
+  :line-height 18px
+
+// Top Bar
+#top-bar
+  :position absolute
+  :border 1px solid black
+  :padding 2px
+  :width 99%
+  :left 0px
+  :z-index 100
+  +center_text
+
+.float-left
+  :float left
+
+.float-right
+  :float right
+
+.center-text
+  :width 550px
+  :margin-left auto
+  :margin-right auto
+
+#top-search
+  :position absolute
+  :top 0px
+  :right 10px
+
+.clear 
+  :clear both
+// End Top Bar 
+
+// AJAX Busy Div
+#busy
+  :position absolute
+  :top 0
+  :left 0
+  :padding 0.2em 10em 0.2em 0.2em
+// End AJAX Busy Div
+
+// Search Results Style 
+.results 
+  :border-spacing 0px
+  +padding
+
+.title
+  :font-style italic
+  +center_text
+  th 
+    :padding 10px
+      
+.even
+  +center_text
+  td
+    +padding
+
+.odd 
+  +center_text
+  td
+    +padding
+// End Search Results Style
+
+// Footer 
+*
+  :margin 0
+html, body
+  :height 100%
+.wrapper
+  min-height: 100%
+  height: auto !important
+  height: 100%
+  margin: 0px auto -28px
+.footer
+  :height 20px
+  +center_text
+  :width 99%
+.push
+  :height 35px
+.content
+  padding: 15px
+// End Footer
+
+// Default Syling options
+body 
+  :background-color #fff
+  :color #333
+  :background-image url(../assets/SBC.jpg)
+  :background-attachment fixed
+  :background-position top
+  :background-repeat no-repeat
+  +fonts
+p
+  +fonts
+ol
+  +fonts
+ul
+  +fonts
+td
+  +fonts
+
+div
+  .three
+    :float left
+    :font-weight bold
+    :width 113px
+    :height 25px
+    :text-align center
+
+pre
+  :background-color #eee
+  :padding 10px
+  :font-size 11px
+
+.fieldWithErrors
+  :padding 2px
+  :background-color red
+  :display table
+
+#errorExplanation
+  :width 400px
+  :border 2px solid red
+  :padding 7px
+  :padding-bottom 12px
+  :margin-bottom 20px
+  :background-color #f0f0f0
+
+  h2
+    :text-align left
+    :font-weight bold
+    :padding 5px 5px 5px 15px
+    :font-size 12px
+    :margin -7px
+    :background-color #c00
+    :color #fff
+
+  p
+    :color #333
+    :margin-bottom 0
+    :padding 5px
+
+  ul 
+    li
+      :font-size 12px
+      :list-style square

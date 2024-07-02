@@ -1,3 +1,7 @@
-ActionController::Routing::Routes.draw do |map|
-  map.resources :javascripts, :collection => { :path_prefix => :get }, :only => :path_prefix
+Hilos::Application.routes.draw do
+  resources :javascripts do
+    collection do
+      get 'path_prefix'
+    end
+  end
 end

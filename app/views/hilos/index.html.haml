@@ -7,4 +7,4 @@
     %tr
       %td{ :class => cycle(:odd,:even)}
         = link_to marca.nombre.titlecase, edit_hilo_path(marca)
-- button_2 t('thread.index.new'), new_hilo_path
+- button(:button2, t('thread.index.new'), new_hilo_path)

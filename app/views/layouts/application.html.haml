@@ -7,10 +7,13 @@
       = yield :app_title
       = yield(:title) || defualt_title
     = stylesheet_link_tag('application')
+    = stylesheet_link_tag('coto/default')
     = yield :stylesheets
-    = javascript_include_tag(:defaults, "float", :unobtrusive, :cache => "all_with_unobtrusive")
-    = javascript_include_tag :coto_solutions
-    = yield :javascripts
+    = javascript_include_tag("http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
+    = javascript_include_tag("application")
+    = javascript_include_tag("float", :unobtrusive)
+    = javascript_include_tag(:coto_solutions)
+    = content_for :javascripts
   %body
     .wrapper
       - create_top_links_for_controllers("disenos","hilos")
@@ -22,11 +25,11 @@
       .push
       = yield
       %br
-      %table
-        %tr
-          = yield :button1
-          %td= link_to("<div class='three'><center>#{t('application.home')}</center></div>", root_path)
-          = yield :button2
+      = content_for :button1
+      = link_to(root_path) do
+        .three
+          %p= t('application.home')
+      = content_for :button2
       .push
     .footer
       = render :partial => 'application/footer'

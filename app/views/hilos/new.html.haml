@@ -1,10 +1,9 @@
-- javascripts "color_picker/ColorMethods", "color_picker/ColorValuePicker", "color_picker/Slider", "color_picker/ColorPicker"#, :cache => "color_picker"
-- javascripts "hilos_new"
 - page_title title_text
 %h1= yield :title
-#hilo.results.float-left
-  - form_for @marca, :url => form_url do |f|
-    = f.error_messages
+%br
+#hilo.results
+  = form_for @marca, :url => form_url do |f|
+    =# f.error_messages
     - unless hilos_new
       = f.hidden_field :id, :name => "id"
     %h2= t('thread.new.brand')
@@ -13,14 +12,17 @@
         %td= f.label :nombre, t('thread.new.name')
         %td= f.text_field :nombre
     %h2= t('thread.new.colors')
-    %table
+    %table.results
+      %thead
+        %tr
+          %th= t('thread.new.name')
+          %th= t('thread.new.id')
+          %th= "Color"
+          %th= t('thread.new.delete')
       %tbody#colors
         = render 'colors'
     #add_color
     = f.submit button_text, :disable_with => 'Submiting...', :id => "submit_button"
-.float-right
-  = render 'color_picker'
-.clear
 - unless hilos_new
-  - button_2 t('thread.new.delete'), hilo_path(@marca), :confirm => t('thread.new.delete_message'), :method => :delete
-- button_2 button_text, '#', :onclick => "document.forms[0].submit(); return false;"
+  - button(:button1, t('thread.new.delete'), hilo_path(@marca), :confirm => t('thread.new.delete_message'), :method => :delete)
+- button(:button2, button_text, '#', :onclick => "document.forms[0].submit(); return false;")

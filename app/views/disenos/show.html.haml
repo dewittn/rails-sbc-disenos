@@ -1,4 +1,3 @@
-- javascripts "diseno_show"
 - page_title "#{t('design.design')} - #{diseno_nombre}" 
 %h1= h yield :title
 .float-left
@@ -30,7 +29,7 @@
   = link_to_if @diseno.archivo_pes.exists?, "PES", @diseno.archivo_pes.url, :disposition => 'attachment'
   %br
   = t('design.show.file')
-  = link_to_if @diseno.names.exists?, "Nombres", @diseno.names.url, :disposition => 'attachment'
+  =# link_to_if @diseno.names.exists?, "Nombres", @diseno.names.url, :disposition => 'attachment'
 = render 'images'
 .clear
 - button_2 t('design.show.edit'), edit_diseno_path(@diseno)

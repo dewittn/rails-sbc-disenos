@@ -1,12 +1,12 @@
 #top-bar
   .float-left
-    = yield :top_link
+    = content_for :top_link
     |
     - unless @letters.nil? 
       = render :partial => 'disenos/letters'
   .center-text
-    = yield :app_title
+    = content_for :app_title
     \:
-    = yield(:title) || defualt_title
+    = content_for(:title) || defualt_title
   .float-right= yield :logout
   .clear

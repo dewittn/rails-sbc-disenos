@@ -1,18 +1,12 @@
 class DisenosController < ApplicationController
+  respond_to :thml, :js
   cache_sweeper :diseno_sweeper, :only => [:update, :destory]
   caches_page :index, :new, :show, :if => Proc.new { |c| !c.request.format.js? }
   
   def index
     expires_in 1.day unless request.format.js?
-    if params[:search]
-      begin
-        #@disenos = Diseno.search(params[:search],:match_mode => :any)
-      rescue
-        render :partial => 'search_error'
-      end
-    else
-      @letters = Letter.all 
-    end
+    @disenos = Diseno.where("nombre_de_orden LIKE ?", "%#{params[:search]}%" ) #search(params[:search],:match_mode => :any)
+    @letters = Letter.all 
   end
   
   def new
@@ -21,7 +15,7 @@ class DisenosController < ApplicationController
   end
   
   def edit
-    @diseno = Diseno.find(params[:id], :include => :hilos)
+    @diseno = Diseno.includes(:hilos).find(params[:id])
   end
   
   def show

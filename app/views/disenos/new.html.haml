@@ -1,9 +1,9 @@
-- javascripts "dynamic_colores", "diseno_nuevo"
+- javascripts 'dynamic_colores'
 - page_title t('design.new.title')
 %h1= yield :title
 #orden.results
-  - form_for @diseno,:html => { :multipart => true }  do |f|
-    = f.error_messages
+  = form_for @diseno,:html => { :id => "disgn_form" }  do |f|
+    =# f.error_messages
     %h2= t('design.design')
     %table
       %tr
@@ -34,6 +34,12 @@
         %td
           = t('design.new.notes')
           %p= f.text_area :notas, :size => "50x5"
+      %tr
+        %td
+          = f.submit
+          
     %h2= t('design.spindel')
     #hilos=render 'hilo'
-- button_2 create_save_text,'#',:onclick => "document.forms[0].submit()"
+    - button(:button2, t('design.new.save'),'#',:onclick => "document.forms[0].submit()")
+      
+

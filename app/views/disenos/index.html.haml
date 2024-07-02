@@ -1,8 +1,6 @@
--javascripts "disenos_index"
--page_title t('design.index.title')
+- page_title t('design.index.title')
 .search
   %h1= yield :title
-  = render :partial => 'letters'
-#timeline.timeline
-#result= render :partial => 'diseno', :collection => @disenos
-- button_2(t('design.index.new'),new_diseno_path)
+#results
+.clear
+- button(:button2, t('design.index.new'), new_diseno_path)

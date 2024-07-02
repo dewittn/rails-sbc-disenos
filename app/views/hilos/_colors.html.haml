@@ -1,18 +1,14 @@
-- fields_for @marca do |f|
-  - f.fields_for :colors do |color_field|
-    %tr
+= fields_for @marca do |f|
+  = f.fields_for :colors do |color_field|
+    %tr.color_row{ :class => cycle(:odd, :even) }
       %td
-        = color_field.label :nombre, t('thread.new.name')
         = color_field.text_field :nombre
       %td
-        = color_field.label :codigo, t('thread.new.id')
-        = color_field.text_field :codigo
+        = color_field.text_field :codigo, :size => 7
       %td{ :style => "background-color:##{color_field.object.hex};" }
-        = link_to t('thread.new.hex'), '#', :class => "hex_link"
-        = color_field.text_field :hex, :size => 7
+        = color_field.text_field :hex, :size => 6, :maxlength => 6, :class => "hex_color"
       %td
         - if color_field.object.new_record?
           = link_to_function t('thread.new.delete'), "this.up().up().remove()"
         - else
-          = color_field.label :_destroy, t('thread.new.delete')
           = color_field.check_box :_destroy
