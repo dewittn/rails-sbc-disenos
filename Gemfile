@@ -1,27 +1,54 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 
-# Project gems
-gem 'sqlite3', '1.3.13'
-gem 'jquery-rails', "3.1.4"
-gem "paperclip", '4.2.2'
-gem "timeline_fu", '0.3.0'
-gem 'exception_notification_rails3', '1.2.0', :require => 'exception_notifier'
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# Asset template engines
-gem "haml", '4.0.4'
-gem 'sass', '3.1'
+gem 'sqlite3'
 
-# Breaking gems
-#gem 'coffee-script', '2.4.1'
-#gem 'uglifier', '3.2.0'
-#gem "mysql"
+# Use unicorn as the web server
+# gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# Other Gems
+# Asset template engines
+gem "haml", '4.0.4'
+gem 'sass', '3.1'
+gem 'coffee-script', '2.4.1'  
+gem 'uglifier', '3.2.0'
+  
+gem 'jquery-rails', "3.1.4"
+
+# Project gems
+# gem "mysql"
+gem "paperclip", '4.2.2'
+gem "timeline_fu", '0.3.0'
+gem 'exception_notification_rails3', :require => 'exception_notifier'
 # gem 'auto_complete'
 # gem 'thinking-sphinx', :require => 'thinking_sphinx'
 # gem 'meta_where'
+
+# group :production do
+#  gem "newrelic_rpm"
+#  gem 'chronic'
+#  gem 'whenever'
+# end
+
+# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
+# gem 'ruby-debug'
+# gem 'ruby-debug19', :require => 'ruby-debug'
+
+# Bundle the extra gems:
+# gem 'bj'
+# gem 'nokogiri'
+# gem 'sqlite3-ruby', :require => 'sqlite3'
+# gem 'aws-s3', :require => 'aws/s3'
+
+# Bundle gems for the local environment. Make sure to
+# put test-only gems in this group so their generators
+# and rake tasks are available in development mode:
+# group :development, :test do
+#   gem 'webrat'
+# end
