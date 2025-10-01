@@ -30,19 +30,19 @@ end
 
 module Searches
   def search(condistions={},order='id')
-    find :all, :conditions => condistions,:order => order
+    where(condistions).order(order)
   end
-  
+
   def pag_search(page,condistions={},order='id')
-    paginate :per_page => 10, :conditions => condistions,:order => order, :page => page     
+    where(condistions).order(order).paginate(:per_page => 10, :page => page)
   end
-  
+
   def search_xml(condistions ={})
-    find(:all,:conditions => condistions,:order => 'id')
+    where(condistions).order('id')
   end
-  
+
   def sort(column='descr')
-    find(:all,:order => "#{column} ASC")
+    order("#{column} ASC")
   end
 end
 
