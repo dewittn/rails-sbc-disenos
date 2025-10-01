@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(rake:*)",
+      "Bash(bundle exec rake:*)",
+      "Bash(find:*)",
+      "Bash(ruby:*)",
+      "Bash(git config:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nUpgrade Rails 3.1 to 4.2: configuration and template changes\n\n- Updated Gemfile to Rails 4.2.11.3 with compatibility gems\n- Added rails-observers, actionpack-page_caching, actionpack-action_caching, and protected_attributes\n- Updated environment configs with eager_load settings\n- Created config/secrets.yml for Rails 4.2 secret management\n- Converted RJS templates to .js.erb (colores, add_colors, email_image)\n- Removed deprecated render :update blocks from javascripts_controller\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)",
+      "Bash(bundle:*)",
+      "Bash(docker build:*)",
+      "Bash(gem list:*)",
+      "Bash(docker-compose up:*)",
+      "Bash(docker-compose build:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
