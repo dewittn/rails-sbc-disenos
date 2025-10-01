@@ -1,6 +1,6 @@
 class HilosController < ApplicationController
   def index
-    @marcas = Marca.scoped
+    @marcas = Marca.all
   end
 
   def new
