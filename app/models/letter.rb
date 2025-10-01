@@ -18,6 +18,6 @@ class Letter
   end
   
   def disenos
-    Diseno.find(:all, :conditions => ["nombre_de_orden LIKE ?", @char + '%'], :order => "nombre_de_orden")
+    Diseno.where("nombre_de_orden LIKE ?", @char + '%').order("nombre_de_orden")
   end
 end

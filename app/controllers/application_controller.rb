@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
-  before_filter :set_default_language
+
+  before_action :set_default_language
   
   private
   
