@@ -11,11 +11,21 @@ class JavascriptsController < ApplicationController
   def add_hilos
     if params[:id]
       @diseno = Diseno.find(params[:id])
-      @diseno.attributes = params[:diseno]
+      @diseno.attributes = diseno_params if params[:diseno]
     else
-      @diseno = Diseno.new(params[:diseno])
+      @diseno = Diseno.new(diseno_params) if params[:diseno]
     end
     @diseno.hilos.build
+  end
+
+  private
+
+  def diseno_params
+    params.require(:diseno).permit(
+      :nombre_de_orden, :notas,
+      :image, :original, :archivo_dst, :archivo_pes, :names,
+      hilos_attributes: [:id, :color_id, :marca_id, :_destroy]
+    )
   end
   
   def timeline

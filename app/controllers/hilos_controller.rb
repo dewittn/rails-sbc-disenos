@@ -9,7 +9,7 @@ class HilosController < ApplicationController
   end
 
   def create
-    @marca = Marca.new(params[:marca])
+    @marca = Marca.new(marca_params)
     if @marca.save
       flash[:notice] = t('thread.flash.created')
       redirect_to(hilos_path)
@@ -26,7 +26,7 @@ class HilosController < ApplicationController
 
   def update
     @marca = Marca.find(params[:id])
-    if @marca.update_attributes(params[:marca])
+    if @marca.update_attributes(marca_params)
       flash[:notice] = t('thread.flash.updated')
       redirect_to(hilos_path)
     else
@@ -38,5 +38,14 @@ class HilosController < ApplicationController
   def destroy
     Marca.destroy(params[:id])
     redirect_to(hilos_path)
+  end
+
+  private
+
+  def marca_params
+    params.require(:marca).permit(
+      :nombre,
+      colors_attributes: [:id, :nombre, :codigo, :hex, :marca_id, :nuevo_marca, :_destroy]
+    )
   end
 end

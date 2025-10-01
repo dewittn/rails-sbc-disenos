@@ -27,30 +27,40 @@ class DisenosController < ApplicationController
   
   def update
     @diseno = Diseno.find(params[:id])
-    if @diseno.update_attributes(params[:diseno])
-      flash[:notice] = t('design.flash.updated') 
+    if @diseno.update_attributes(diseno_params)
+      flash[:notice] = t('design.flash.updated')
       render :show
       flash[:notice] = nil
     else
-      flash[:notice] = t('design.flash.not_updated') 
+      flash[:notice] = t('design.flash.not_updated')
       render :edit
     end
   end
-  
+
   def create
-    @diseno = Diseno.new(params[:diseno])
+    @diseno = Diseno.new(diseno_params)
     if @diseno.save
-      flash[:notice] = t('design.flash.created') 
+      flash[:notice] = t('design.flash.created')
       render :show
       flash[:notice] = nil
     else
-      flash[:error] = t('design.flash.not_created') 
+      flash[:error] = t('design.flash.not_created')
       render :new
     end
   end
-  
+
   def destroy
     Diseno.destroy(params[:id])
     redirect_to(disenos_path)
+  end
+
+  private
+
+  def diseno_params
+    params.require(:diseno).permit(
+      :nombre_de_orden, :notas,
+      :image, :original, :archivo_dst, :archivo_pes, :names,
+      hilos_attributes: [:id, :color_id, :marca_id, :_destroy]
+    )
   end
 end
