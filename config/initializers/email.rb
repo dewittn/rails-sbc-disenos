@@ -12,6 +12,9 @@ ActionMailer::Base.smtp_settings = {
   :password => 'ApP3rRor5'
 }
 
-ExceptionNotifier.exception_recipients = %w(dewittn@cotosolutions.com)
-ExceptionNotifier.sender_address = %("Exception Notifier" <exception.notifier@cotosolutions.com>)
-ExceptionNotifier.email_prefix ="[ERROR] #{APP_CONFIG['app_title']}: "
+Rails.application.config.middleware.use ExceptionNotification::Rack,
+  email: {
+    email_prefix: "[ERROR] #{APP_CONFIG['app_title']}: ",
+    sender_address: %("Exception Notifier" <exception.notifier@cotosolutions.com>),
+    exception_recipients: %w(dewittn@cotosolutions.com)
+  }
