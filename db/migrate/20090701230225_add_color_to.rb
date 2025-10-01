@@ -1,9 +1,5 @@
 class AddColorTo < ActiveRecord::Migration
-  def self.up
+  def change
     add_column :colors, :hex, :string
-  end
-
-  def self.down
-    remove_column :hilos, :hex
   end
 end
