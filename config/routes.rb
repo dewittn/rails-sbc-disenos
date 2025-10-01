@@ -3,7 +3,7 @@ Hilos::Application.routes.draw do
   resources :colores, :hilos
   resources :letters, :only => :show
   resources :javascripts do
-    collection do 
+    collection do
       put 'add_hilos'
       post 'add_hilos'
       post 'colores'
@@ -11,6 +11,7 @@ Hilos::Application.routes.draw do
       put 'add_colors'
       post 'add_colors'
       get 'timeline'
+      get 'path_prefix'
     end
   end
 

@@ -46,4 +46,10 @@ class JavascriptsController < ApplicationController
   def show
     render :text => ""
   end
+
+  def path_prefix
+    respond_to do |format|
+      format.js { render template: 'vendor/plugins/coto_solutions/app/views/javascripts/path_prefix' }
+    end
+  end
 end
