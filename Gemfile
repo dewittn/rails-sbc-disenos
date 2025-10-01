@@ -8,10 +8,12 @@ gem 'rails', '4.2.11.3'
 gem 'sqlite3', '~> 1.3.6'
 
 # Rails 4.2 compatibility gems
-gem 'rails-observers'
-gem 'actionpack-page_caching'
 gem 'actionpack-action_caching'
+gem 'actionpack-page_caching'
+gem 'loofah', '2.19.1' # Pin loofah to version compatible with nokogiri 1.10.x
 gem 'protected_attributes'
+gem 'rails-observers'
+gem 'responders', '~> 2.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -20,18 +22,20 @@ gem 'protected_attributes'
 # gem 'capistrano'
 
 # Asset template engines
-gem "haml", '4.0.4'
-gem 'sass', '~> 3.4'
 gem 'coffee-script', '~> 2.4'
+gem 'erubis', '~> 2.7.0'
+gem 'haml', '4.0.4'
+gem 'sass', '~> 3.4'
+gem 'tilt', '~> 1.4.1'
 gem 'uglifier', '~> 4.1'
 
 gem 'jquery-rails', '~> 4.3'
 
 # Project gems
 # gem "mysql"
-gem "paperclip", '4.2.2'
-gem "timeline_fu", '0.3.0'
 gem 'exception_notification', '~> 4.2'
+gem 'kt-paperclip', '~> 6.4'
+gem 'timeline_fu', '0.3.0'
 # gem 'auto_complete'
 # gem 'thinking-sphinx', :require => 'thinking_sphinx'
 # gem 'meta_where'
