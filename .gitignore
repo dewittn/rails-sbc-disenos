@@ -5,3 +5,4 @@ config/*.sphinx.conf
 db/sphinx/*
 public/diseno/*
 public/system/*
+secrets.txt
