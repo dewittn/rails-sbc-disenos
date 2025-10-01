@@ -1,11 +1,17 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'rails', '3.1.0'
+gem 'rails', '4.2.11.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'sqlite3', '~> 1.3.6'
+
+# Rails 4.2 compatibility gems
+gem 'rails-observers'
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
+gem 'protected_attributes'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -15,17 +21,17 @@ gem 'sqlite3'
 
 # Asset template engines
 gem "haml", '4.0.4'
-gem 'sass', '3.1'
-gem 'coffee-script', '2.4.1'  
-gem 'uglifier', '3.2.0'
-  
-gem 'jquery-rails', "3.1.4"
+gem 'sass', '~> 3.4'
+gem 'coffee-script', '~> 2.4'
+gem 'uglifier', '~> 4.1'
+
+gem 'jquery-rails', '~> 4.3'
 
 # Project gems
 # gem "mysql"
 gem "paperclip", '4.2.2'
 gem "timeline_fu", '0.3.0'
-gem 'exception_notification_rails3', :require => 'exception_notifier'
+gem 'exception_notification', '~> 4.2'
 # gem 'auto_complete'
 # gem 'thinking-sphinx', :require => 'thinking_sphinx'
 # gem 'meta_where'

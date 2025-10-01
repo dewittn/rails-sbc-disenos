@@ -1,0 +1,6 @@
+$("#email").hide();
+<% if @success %>
+  $("#notice").html("<%= j t('email.success') %>");
+<% else %>
+  $("#error").html("<%= j t('email.failure') %>");
+<% end %>

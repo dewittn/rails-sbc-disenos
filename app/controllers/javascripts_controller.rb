@@ -27,16 +27,10 @@ class JavascriptsController < ApplicationController
     begin
       @diseno = Diseno.find(params[:id])
       UserMailer.email_design(@diseno, params[:email])
-      render :update do |page|
-        page[:email].hide()
-        page[:notice].replace_html t('email.success')
-      end
+      @success = true
     rescue
-        render :update do |page|
-          page[:email].hide()
-          page[:error].replace_html t('email.failure')
-        end
-      end
+      @success = false
+    end
   end
   
   def show

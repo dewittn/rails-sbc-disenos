@@ -1,1 +1,0 @@
-page[:colors].replace_html :partial => 'hilos/colors'

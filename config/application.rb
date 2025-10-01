@@ -38,8 +38,11 @@ module Hilos
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-    
+
     # Enable the asset pipeline
     config.assets.enabled = true
+
+    # Rails 4.2 configuration
+    config.active_record.raise_in_transactional_callbacks = true
   end
 end
