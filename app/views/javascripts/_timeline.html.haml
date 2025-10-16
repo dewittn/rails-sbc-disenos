@@ -1,5 +1,10 @@
-- @events.each do |event|
-  %p
-    = "#{event.event_type} - #{link_to event.subject.nombre_de_orden, diseno_path(event.subject.id)}"
-    - if event.subject.image.exists?
-      = image_tag event.subject.image.url(:small)
+- events ||= @events
+- if events && events.any?
+  - events.each do |event|
+    - if event.subject
+      %p
+        = "#{event.event_type} - #{link_to event.subject.nombre_de_orden, diseno_path(event.subject.id)}".html_safe
+        - if event.subject.image.exists?
+          = image_tag event.subject.image.url(:small)
+- else
+  %p No hay eventos recientes

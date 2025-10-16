@@ -3,16 +3,22 @@
   pathPrefix: ->
     $.getJSON '/colores.json', (data) -> $.appVariables.path_prefix = data
 
-  setupSearch: ->    
-    search_div = $ "<div/>", {id: "top-search", html: $ '<form/>', {action: '/disenos.js', id: 'search_form', submit: (e) ->
-          e.preventDefault()
-          $.get $(@).attr('action'), $(@).serialize(), null, "script" if ($ '#search').val().length > 3} }
-          .appendTo($('#top-bar .float-right'))
+  setupSearch: ->
+    search_form = $ '<form/>', {
+      action: '/disenos.js',
+      id: 'search_form',
+      submit: (e) ->
+        e.preventDefault()
+        $.get $(@).attr('action'), $(@).serialize(), null, "script" if ($ '#search').val().length > 3
+    }
 
     search_label = $ '<label/>', {id: 'search_label', html: 'Buscar: '}
-      .appendTo($('#search_form'))
+      .appendTo(search_form)
     search_box = $ '<input/>', {id: 'search', type: 'text', name: 'search'}
-      .appendTo($('#search_form'))
+      .appendTo(search_form)
+
+    search_div = $ "<div/>", {id: "top-search", html: search_form}
+      .appendTo($('#top-bar .float-right'))
     
   setupAjaxCallbacks: ->
     busy = $ 'div', {id: "busy", html: "Carcando...", style: "display: none;"}
@@ -163,24 +169,26 @@ pathLocation = (path) ->
     match = $('body').data('controller') == "#{contoller}##{action}" unless match == true
   match
 
-jQuery -> 
+jQuery ->
   # Global/Always load
-  app.pathPrefix
+  app.pathPrefix()
   app.setupAjaxCallbacks()
-  app.setupSearch()
-  
+
   # Hilos#edit/new
   app.editHilosSetup() if pathLocation("hilos#new/edit")
-  
-  # Diseno#edit/new
-  if pathLocation("diseno#edit/new")
+
+  # Disenos#edit/new
+  if pathLocation("disenos#edit/new")
     app.getColors()
     app.marcaSlecetSetup()
     app.editDisenoSetup()
-  
-  # Diseno#show
-  app.emailSetup() if pathLocation("Diseno#show")
-  
-  # Diseno#index
-  ($ '#results').load "/javascripts/timeline" if pathLocation("Disenos#index")
+
+  # Disenos#show
+  app.emailSetup() if pathLocation("disenos#show")
+
+  # Disenos#index - check for the search div or use data attribute
+  bodyController = $('body').data('controller')
+  if bodyController == "disenos#index" || $('.search').length > 0
+    app.setupSearch()
+    ($ '#timeline').load "/javascripts/timeline"
   

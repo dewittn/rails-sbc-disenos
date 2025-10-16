@@ -1,5 +1,5 @@
 class JavascriptsController < ApplicationController
-  respond_to :html, :js
+  skip_before_action :verify_authenticity_token, only: [:timeline]
   
   def colores
     unless params[:cantidad].blank?
@@ -18,6 +18,10 @@ class JavascriptsController < ApplicationController
     @diseno.hilos.build
   end
 
+  def timeline
+    @events = TimelineEvent.includes(:subject).limit(10).order('created_at DESC').to_a
+  end
+
   private
 
   def diseno_params
@@ -26,11 +30,6 @@ class JavascriptsController < ApplicationController
       :image, :original, :archivo_dst, :archivo_pes, :names,
       hilos_attributes: [:id, :color_id, :marca_id, :_destroy]
     )
-  end
-  
-  def timeline
-    @disenos = Diseno.limit(5).order('updated_at')
-    render :partial => @disenos
   end
   
   def email_image
