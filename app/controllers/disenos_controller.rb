@@ -1,5 +1,5 @@
 class DisenosController < ApplicationController
-  respond_to :thml, :js
+  respond_to :html, :js
   cache_sweeper :diseno_sweeper, :only => [:update, :destory]
   caches_page :index, :new, :show, :if => Proc.new { |c| !c.request.format.js? }
   
