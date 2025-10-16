@@ -9,6 +9,6 @@
         = color_field.text_field :hex, :size => 6, :maxlength => 6, :class => "hex_color"
       %td
         - if color_field.object.new_record?
-          = link_to_function t('thread.new.delete'), "this.up().up().remove()"
+          = link_to t('thread.new.delete'), '#', :onclick => "$(this).closest('tr').remove(); return false;"
         - else
           = color_field.check_box :_destroy

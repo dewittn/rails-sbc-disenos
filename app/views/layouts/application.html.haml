@@ -10,7 +10,6 @@
     = stylesheet_link_tag('coto/default')
     = yield :stylesheets
     = javascript_include_tag("application")
-    = javascript_include_tag("float", "unobtrusive")
     %script{src: path_prefix_javascripts_path, type: "text/javascript"}
     = content_for :javascripts
   %body
