@@ -17,6 +17,21 @@ module CotoHelper
         content_for(:button1) || "<td>#{link_to "<div class='three'><center>#{text}</center></div>", path, options }</td>"
     end
 
+   #Renders button 2 on right of Home button
+    def button_2(text,path,options={})
+        content_for(:button2) do
+            link_to(path, options) do
+                capture_haml do
+                  haml_tag "div", {:class => 'three'} do
+                    haml_tag "center" do
+                      haml_concat text
+                    end
+                  end
+                end
+            end
+        end
+    end
+
    #Renders button 1 on left of Home button
     def button(id,text,path,options={})
         content_for(id) do 
