@@ -1,5 +1,5 @@
 class JavascriptsController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:timeline]
+  skip_before_action :verify_authenticity_token, only: [:timeline, :path_prefix]
   
   def colores
     unless params[:cantidad].blank?
@@ -22,16 +22,6 @@ class JavascriptsController < ApplicationController
     @events = TimelineEvent.includes(:subject).limit(10).order('created_at DESC').to_a
   end
 
-  private
-
-  def diseno_params
-    params.require(:diseno).permit(
-      :nombre_de_orden, :notas,
-      :image, :original, :archivo_dst, :archivo_pes, :names,
-      hilos_attributes: [:id, :color_id, :marca_id, :_destroy]
-    )
-  end
-  
   def email_image
     begin
       @diseno = Diseno.find(params[:id])
@@ -41,14 +31,22 @@ class JavascriptsController < ApplicationController
       @success = false
     end
   end
-  
+
   def show
     render :text => ""
   end
 
   def path_prefix
-    respond_to do |format|
-      format.js { render template: 'vendor/plugins/coto_solutions/app/views/javascripts/path_prefix' }
-    end
+    render file: Rails.root.join('vendor', 'plugins', 'coto_solutions', 'app', 'views', 'javascripts', 'path_prefix.js.erb'), content_type: 'text/javascript'
+  end
+
+  private
+
+  def diseno_params
+    params.require(:diseno).permit(
+      :nombre_de_orden, :notas,
+      :image, :original, :archivo_dst, :archivo_pes, :names,
+      hilos_attributes: [:id, :color_id, :marca_id, :_destroy]
+    )
   end
 end

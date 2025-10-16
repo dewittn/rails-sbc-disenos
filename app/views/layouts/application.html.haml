@@ -10,7 +10,7 @@
     = stylesheet_link_tag('coto/default')
     = yield :stylesheets
     = javascript_include_tag("application")
-    %script{src: path_prefix_javascripts_path, type: "text/javascript"}
+    %script{src: path_prefix_javascripts_path(format: :js), type: "text/javascript"}
     = content_for :javascripts
   %body{ data: { controller: "#{controller_name}##{action_name}" } }
     .wrapper

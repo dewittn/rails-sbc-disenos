@@ -6,4 +6,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require colorpicker/eye
+//= require colorpicker/utils
+//= require colorpicker/colorpicker
+//= stub unobtrusive
 //= require_tree .
+//= require unobtrusive

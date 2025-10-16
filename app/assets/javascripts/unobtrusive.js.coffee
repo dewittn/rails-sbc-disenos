@@ -1,7 +1,11 @@
 
-@app =
+# Initialize global variables
+$.appVariables = {} unless $.appVariables?
+
+window.app =
   pathPrefix: ->
-    $.getJSON '/colores.json', (data) -> $.appVariables.path_prefix = data
+    # Path prefix no longer needed in Rails 4 asset pipeline
+    $.appVariables.path_prefix = ''
 
   setupSearch: ->
     search_form = $ '<form/>', {
@@ -43,7 +47,7 @@
           newHilo.find('input').first().focus()}}
           
     ($ '#hilos').append(add_hilo)
-    ($ document).on 'click', 'input[type=checkbox]', ->
+    ($ document).delegate 'input[type=checkbox]', 'click', ->
       if ($ @).prev('input').length != 0
         ($ @).parent().fadeOut()
       else
@@ -55,7 +59,7 @@
 
   marcaSlecetSetup: ->
     ($ '.color').hide()
-    ($ document).on "change", '.marca', ->  marcaSelected(this)
+    ($ document).delegate '.marca', 'change', ->  marcaSelected(this)
       
   editHilosSetup: ->
     add_color_link = $ '<p/>', {
@@ -64,7 +68,7 @@
         html: "Add Color",
         href: '',
         click: (e) ->
-          e.preventDefault() 
+          e.preventDefault()
           newColor = ($ '.color_row').last().clone()
           newColor.show()
           newColor.find('input[type=checkbox]').removeAttr('checked')
@@ -74,14 +78,14 @@
           inputEliments = newColor.find('input')
           updateIds inputEliments
           hex_color_input = newColor.find('.hex_color')
-          setColorPicker hex_color_input
+          colorPickerSetup hex_color_input
           ($ hex_color_input).parent().css('backgroundColor', '')
           ($ '#colors').append(newColor)
           newColor.find('input').first().focus()}}
     
     ($ '#add_color').append(add_color_link)
     ($ '#submit_button').hide()
-    ($ document).on 'click', 'input[type=checkbox]', ->
+    ($ document).delegate 'input[type=checkbox]', 'click', ->
       if ($ @).prev().length != 0
         ($ @).parent().parent().fadeOut()
       else
@@ -171,24 +175,28 @@ pathLocation = (path) ->
 
 jQuery ->
   # Global/Always load
-  app.pathPrefix()
-  app.setupAjaxCallbacks()
+  if window.app?
+    window.app.pathPrefix()
+    window.app.setupAjaxCallbacks()
+  else
+    console.error('window.app is not defined')
 
   # Hilos#edit/new
-  app.editHilosSetup() if pathLocation("hilos#new/edit")
+  window.app.editHilosSetup() if window.app? and pathLocation("hilos#new/edit")
 
   # Disenos#edit/new
-  if pathLocation("disenos#edit/new")
-    app.getColors()
-    app.marcaSlecetSetup()
-    app.editDisenoSetup()
+  if window.app? and pathLocation("disenos#edit/new")
+    window.app.getColors()
+    window.app.marcaSlecetSetup()
+    window.app.editDisenoSetup()
 
   # Disenos#show
-  app.emailSetup() if pathLocation("disenos#show")
+  window.app.emailSetup() if window.app? and pathLocation("disenos#show")
 
   # Disenos#index - check for the search div or use data attribute
-  bodyController = $('body').data('controller')
-  if bodyController == "disenos#index" || $('.search').length > 0
-    app.setupSearch()
-    ($ '#timeline').load "/javascripts/timeline"
+  if window.app?
+    bodyController = $('body').data('controller')
+    if bodyController == "disenos#index" || $('.search').length > 0
+      window.app.setupSearch()
+      ($ '#timeline').load "/javascripts/timeline"
   
