@@ -2,7 +2,7 @@
 - page_title t('design.new.title')
 %h1= yield :title
 #orden.results
-  = form_for @diseno,:html => { :id => "disgn_form" }  do |f|
+  = form_for @diseno, html: { id: "diseno_form" }, format: :html do |f|
     =# f.error_messages
     %h2= t('design.design')
     %table
@@ -40,6 +40,6 @@
           
     %h2= t('design.spindel')
     #hilos=render 'hilo'
-    - button(:button2, t('design.new.save'),'#',:onclick => "document.forms[0].submit()")
+    - button(:button2, t('design.new.save'),'#',:onclick => "document.getElementById('diseno_form').submit(); return false;")
       
 

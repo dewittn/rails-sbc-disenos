@@ -19,16 +19,19 @@
       - create_top_links_for_path(t('design.index.new'),new_diseno_path)
       -# create_logout
       = render :partial => 'application/top_links'
-      #notice= flash[:notice]
-      #error= flash[:error]
-      .push
-      = yield
+      .main-content
+        - if flash[:notice]
+          #notice= flash[:notice]
+        - if flash[:error]
+          #error= flash[:error]
+        = yield
       %br
       = content_for :button1
       = link_to(root_path) do
         .three
           %p= t('application.home')
       = content_for :button2
+      .clear
       .push
     .footer
       = render :partial => 'application/footer'

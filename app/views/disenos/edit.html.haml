@@ -1,7 +1,7 @@
 - page_title t('design.edit.title')
 %h1= yield :title
 #orden.results.float-left
-  = form_for @diseno do |f|
+  = form_for @diseno, html: { id: "diseno_form" }, format: :html do |f|
     =# f.error_messages
     = hidden_field_tag :id, @diseno.id
     %h2= t('design.design')
@@ -38,5 +38,5 @@
     #hilos=render 'hilo'
 = render 'images'
 .clear
--# button_2 t('design.edit.delete'), diseno_path(@diseno), :confirm => t('design.edit.confirm'), :method => :delete
-- button_2 create_save_text,'#',:onclick => "document.forms[0].submit()"
+-# button(:button2, t('design.edit.delete'), diseno_path(@diseno), :confirm => t('design.edit.confirm'), :method => :delete)
+- button(:button2, create_save_text,'#',:onclick => "document.getElementById('diseno_form').submit(); return false;")
