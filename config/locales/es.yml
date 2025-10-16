@@ -21,7 +21,7 @@ es:
       brand: "Marca"
       colors: "Colores"
       hex: "Aplicar Color"
-      id: "Codígo"
+      id: "Código"
       create: Crear =>
       delete: Elminar
       save: Guadar
@@ -34,8 +34,8 @@ es:
   design:
     new:
       delete: Eliminar
-      design: "Dise\xC3\xB1o"
-      title: "Nuevo Dise\xC3\xB1o"
+      design: "Diseño"
+      title: "Nuevo Diseño"
       number_of_colors: Cambios De Colores
       notes: Notas
       dst: "Archivo de DST:"
@@ -51,8 +51,8 @@ es:
     sample: Muestra
     edit: 
       delete: "Eliminar:"
-      confirm: "Te va a elimininar el dise\xC3\xB1o, imagenes, y hilos. Estas seguro?"
-      title: "Editar Dise\xC3\xB1o"
+      confirm: "Te va a elimininar el diseño, imagenes, y hilos. Estas seguro?"
+      title: "Editar Diseño"
       notes: Notas
       dst: "Archivo de DST:"
       save: Guardar =>
@@ -62,19 +62,19 @@ es:
       names: "Nombres:"
       name_field: Nombre De Diseno
     missing_name: No Tenia Nombre
-    id: "Cod\xC3\xADgo"
-    timeline: 
-      new: "Nuevo dise\xC3\xB1o"
-      edit: "Cambio de dise\xC3\xB1o"
+    id: "Código"
+    timeline:
+      new: "Nuevo diseño"
+      edit: "Cambio de diseño"
     show: 
       edit: Editar
       file: "Archivo:"
       notes: Notas
     color: Color
-    index: 
+    index:
       new: Nuevo =>
       search: Buscar
-      title: "Buscar Dise\xC3\xB1os"
+      title: "Buscar Diseños"
     flash: 
       not_updated: No fue guardado...
       not_created: No se pudo crear...
@@ -87,25 +87,25 @@ es:
       messages: 
         taken: ya se ha tenido
         accepted: debe ser aceptada
-        not_a_number: "no es un n\xC3\xBAmero"
+        not_a_number: "no es un número"
         blank: no puede estar en blanco
         greater_than_or_equal_to: debe ser mayor o igual a {{count}}
         less_than_or_equal_to: debe ser igual o inferior a {{count}}
-        exclusion: "est\xC3\xA1 reservada"
-        confirmation: "no coincide con la confirmaci\xC3\xB3n"
+        exclusion: "está reservada"
+        confirmation: "no coincide con la confirmación"
         odd: debe ser impar
-        invalid: "no es v\xC3\xA1lido"
-        too_short: "es demasiado corto (m\xC3\xADnimo es {{count}} caracteres)"
+        invalid: "no es válido"
+        too_short: "es demasiado corto (mínimo es {{count}} caracteres)"
         wrong_length: es la longitud del mal (debe ser {{count}} caracteres)
-        empty: "no puede estar vac\xC3\xADo"
+        empty: "no puede estar vacío"
         less_than: debe ser inferior a {{count}}
-        too_long: "es demasiado largo (el n\xC3\xBAmero m\xC3\xA1ximo es {{count}} caracteres)"
-        even: "debe ser a\xC3\xBAn"
+        too_long: "es demasiado largo (el número máximo es {{count}} caracteres)"
+        even: "debe ser aún"
         equal_to: debe ser igual a {{count}}
-        inclusion: "no est\xC3\xA1 incluido en la lista"
+        inclusion: "no está incluido en la lista"
         greater_than: debe ser mayor que {{count}}
-      template: 
-        body: "Hab\xC3\xADa problemas con los campos siguientes:"
+      template:
+        body: "Había problemas con los campos siguientes:"
         header: 
           one: 1 error {{model}} esta prohibido de ser guardado
           other: "{{count}} errores prohibido este modelo (()) de ser guardado"
@@ -151,12 +151,12 @@ es:
       saving: Cargando
       save: Crear =>
     brand: Marca
-    design: "Dise\xC3\xB1o"
+    design: "Diseño"
     spindel: Hilos
-    edit: 
+    edit:
       title: Editar color
       save: "Guadar =>"
-    id: "Cod\xC3\xADgo"
+    id: "Código"
     color: Color
     index: 
       new: Nuevo =>
@@ -177,9 +177,9 @@ es:
       less_than_x_minutes: 
         one: menos de un minuto
         other: menos de {{count}} minutos
-      x_days: 
-        one: "1 d\xC3\xADa"
-        other: "{{count}} d\xC3\xADas"
+      x_days:
+        one: "1 día"
+        other: "{{count}} días"
       x_seconds: 
         one: 1 segundo
         other: "{{count}} segundo"
@@ -198,17 +198,17 @@ es:
       about_x_months: 
         one: alrededor de 1 mes
         other: sobre {{count}} meses
-      about_x_years: 
-        one: "aproximadamente 1 a\xC3\xB1o"
-        other: "sobre {{count}} a\xC3\xB1os"
-      over_x_years: 
-        one: "m\xC3\xA1s de 1 a\xC3\xB1o"
-        other: "m\xC3\xA1s de {{count}} a\xC3\xB1os"
+      about_x_years:
+        one: "aproximadamente 1 año"
+        other: "sobre {{count}} años"
+      over_x_years:
+        one: "más de 1 año"
+        other: "más de {{count}} años"
       half_a_minute: medio minuto
     prompts: 
       month: Mes
       second: Segundos
       minute: Minuto
       hour: Hora
-      day: "D\xC3\xADa"
-      year: "A\xC3\xB1o"
+      day: "Día"
+      year: "Año"
