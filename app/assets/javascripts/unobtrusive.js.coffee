@@ -37,7 +37,7 @@
           newHilo.find('input').first().focus()}}
           
     ($ '#hilos').append(add_hilo)
-    ($ 'input[type=checkbox]').live 'click', -> 
+    ($ document).on 'click', 'input[type=checkbox]', ->
       if ($ @).prev('input').length != 0
         ($ @).parent().fadeOut()
       else
@@ -47,9 +47,9 @@
   hideColors: -> 
     color.hide() if color.value == "" for color in ($ '.color')
 
-  marcaSlecetSetup: -> 
+  marcaSlecetSetup: ->
     ($ '.color').hide()
-    ($ '.marca').live "change", ->  marcaSelected(this)
+    ($ document).on "change", '.marca', ->  marcaSelected(this)
       
   editHilosSetup: ->
     add_color_link = $ '<p/>', {
@@ -75,7 +75,7 @@
     
     ($ '#add_color').append(add_color_link)
     ($ '#submit_button').hide()
-    ($ 'input[type=checkbox]').live 'click', -> 
+    ($ document).on 'click', 'input[type=checkbox]', ->
       if ($ @).prev().length != 0
         ($ @).parent().parent().fadeOut()
       else
