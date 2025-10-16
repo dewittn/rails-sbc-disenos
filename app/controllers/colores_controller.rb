@@ -4,7 +4,7 @@ class ColoresController < ApplicationController
   caches_page :index
   
   def index
-    @colores = Color.scoped
+    @colores = Color.all
     respond_with(Color.select([:marca_id,:nombre,:id]))
   end
   
