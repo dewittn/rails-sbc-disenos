@@ -5,7 +5,7 @@ gem 'rails', '4.2.11.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3', '~> 1.3.6'
+gem 'mysql2', '~> 0.5.3'
 
 # Rails 4.2 compatibility gems
 gem 'actionpack-action_caching'

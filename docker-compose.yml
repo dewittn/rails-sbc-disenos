@@ -1,18 +1,81 @@
-version: '3.8'
+version: "3.8"
 
 services:
+  db:
+    image: mysql:8.0
+    platform: linux/amd64
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-password}
+      MYSQL_DATABASE: ${DB_NAME:-hilos_development}
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "root",
+          "-p${DB_PASSWORD:-password}",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - rails-network
+
   web:
     build: .
-    command: bundle exec rails server -b 0.0.0.0
+    command: bash -c "while ! mysqladmin ping -h db -u root -p${DB_PASSWORD:-password} --silent; do sleep 1; done && bundle exec rails server -b 0.0.0.0"
     volumes:
       - .:/app
       - bundle_cache:/usr/local/bundle
     ports:
-      - "3000:3000"
+      - "3001:3000"
     environment:
       - RAILS_ENV=development
+      - DB_HOST=db
+      - DB_USERNAME=${DB_USERNAME:-root}
+      - DB_PASSWORD=${DB_PASSWORD:-password}
+      - DB_NAME=${DB_NAME:-hilos_development}
+    depends_on:
+      db:
+        condition: service_healthy
     stdin_open: true
     tty: true
+    networks:
+      - rails-network
+    develop:
+      watch:
+        - action: sync
+          path: ./app
+          target: /app/app
+        - action: sync
+          path: ./config
+          target: /app/config
+        - action: sync
+          path: ./lib
+          target: /app/lib
+        - action: sync
+          path: ./vendor
+          target: /app/vendor
+        - action: rebuild
+          path: ./Gemfile
+        - action: rebuild
+          path: ./Gemfile.lock
+
+networks:
+  rails-network:
+    driver: bridge
 
 volumes:
   bundle_cache:
+  mysql_data:

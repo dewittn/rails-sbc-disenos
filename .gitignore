@@ -6,3 +6,5 @@ db/sphinx/*
 public/diseno/*
 public/system/*
 secrets.txt
+.env
+README.old

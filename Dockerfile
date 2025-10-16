@@ -11,7 +11,8 @@ RUN sed -i 's|http://deb.debian.org|http://archive.debian.org|g' /etc/apt/source
 # Install dependencies
 RUN apt-get update -o Acquire::AllowInsecureRepositories=true -qq && apt-get install -y \
   build-essential \
-  libsqlite3-dev \
+  default-libmysqlclient-dev \
+  default-mysql-client \
   nodejs \
   imagemagick \
   libmagickwand-dev \
