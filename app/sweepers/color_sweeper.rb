@@ -10,7 +10,8 @@ class ColorSweeper < ActionController::Caching::Sweeper
   end
   
   def expire_cache(color)
-    expire_page colores_path
-    expire_page new_diseno_path
+    return unless @controller
+    expire_page @controller.colores_path
+    expire_page @controller.new_diseno_path
   end
 end
