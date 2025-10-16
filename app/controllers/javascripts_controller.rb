@@ -38,7 +38,7 @@ class JavascriptsController < ApplicationController
       @diseno = Diseno.find(params[:id])
       UserMailer.email_design(@diseno, params[:email])
       @success = true
-    rescue
+    rescue StandardError => e
       @success = false
     end
   end
