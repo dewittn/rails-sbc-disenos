@@ -14,7 +14,13 @@
       "Bash(docker build:*)",
       "Bash(gem list:*)",
       "Bash(docker-compose up:*)",
-      "Bash(docker-compose build:*)"
+      "Bash(docker-compose build:*)",
+      "Bash(chmod:*)",
+      "Bash(docker-compose down:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs kill:*)",
+      "Bash(git rm:*)",
+      "Bash(docker-compose exec:*)"
     ],
     "deny": [],
     "ask": []
