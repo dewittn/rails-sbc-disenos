@@ -8,3 +8,5 @@ public/system/*
 secrets.txt
 .env
 README.old
+.claude/settings.local.json
+.claude/agents/
