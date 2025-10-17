@@ -1,16 +1,20 @@
-# Hilos - Embroidery Design Management System
+# Diseños - An Embroidery Design Management System
 
-A Rails application for managing embroidery designs (diseños) with thread colors (hilos), file attachments, and timeline tracking.
+This was a Rails 2.x application that I development while working with [SBC Panamá](https://nelsonroberto.com/portfolio/sbc-panama/) that made it easier for workers on the production line to track orders and setup their machines. Each order page featured a picture of the design (diseño) provided by the client, a picture of the resulting embroidery design, files to be used with the machines, and a breakdown of which threads (hilos) to use. The homepage had an interactive search feature and a timeline of recently modified designs/orders.
+
+I've used Claude Code to resurrect this project from the dead, migrating it to Rails 4.2, but the original application was designed, development and maintained by me.
 
 ## Overview
 
 This application helps manage embroidery designs by:
+
 - Tracking designs with multiple thread colors
 - Supporting file attachments (DST/PES embroidery formats, images)
 - Maintaining activity timelines for design changes
 - Organizing designs by brand and color
 
 **Tech Stack:**
+
 - Ruby 2.3.8
 - Rails 4.2.11.3
 - MySQL 8.0
@@ -67,6 +71,7 @@ docker-compose exec web bundle exec rake db:create db:migrate db:seed
 ### 5. Access the Application
 
 Open your browser and navigate to:
+
 ```
 http://localhost:3000
 ```
@@ -232,6 +237,7 @@ docker-compose logs db
 ### File Attachments
 
 Uses Paperclip (kt-paperclip gem) for handling:
+
 - Design images with multiple sizes (medium: 300x300, small: 100x100)
 - Original image files
 - Embroidery machine files (DST, PES formats)
@@ -246,6 +252,7 @@ Uses Paperclip (kt-paperclip gem) for handling:
 ## Docker Services
 
 ### Web Service (Rails)
+
 - **Port**: 3000
 - **Image**: Built from Dockerfile (Ruby 2.3.8, Rails 4.2.11.3)
 - **Volumes**:
@@ -253,6 +260,7 @@ Uses Paperclip (kt-paperclip gem) for handling:
   - Bundler cache for faster rebuilds
 
 ### Database Service (MySQL)
+
 - **Port**: 3307 (external) → 3306 (internal)
 - **Image**: mysql:8.0
 - **Volumes**:
@@ -264,14 +272,14 @@ Uses Paperclip (kt-paperclip gem) for handling:
 
 Configure these in your `.env` file:
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `DB_HOST` | `db` | Database hostname (use 'db' for Docker) |
-| `DB_USERNAME` | `root` | MySQL username |
-| `DB_PASSWORD` | `password` | MySQL password (change in production!) |
-| `DB_NAME` | `hilos_development` | Database name |
-| `RAILS_ENV` | `development` | Rails environment |
-| `RAILS_MAX_THREADS` | `5` | Database connection pool size |
+| Variable            | Default             | Description                             |
+| ------------------- | ------------------- | --------------------------------------- |
+| `DB_HOST`           | `db`                | Database hostname (use 'db' for Docker) |
+| `DB_USERNAME`       | `root`              | MySQL username                          |
+| `DB_PASSWORD`       | `password`          | MySQL password (change in production!)  |
+| `DB_NAME`           | `hilos_development` | Database name                           |
+| `RAILS_ENV`         | `development`       | Rails environment                       |
+| `RAILS_MAX_THREADS` | `5`                 | Database connection pool size           |
 
 ## Troubleshooting
 
@@ -345,23 +353,6 @@ docker-compose build --no-cache web
 docker-compose up -d
 ```
 
-## Migrating from SQLite to MySQL
-
-If you have existing SQLite data, see [MYSQL_MIGRATION_GUIDE.md](MYSQL_MIGRATION_GUIDE.md) for detailed migration instructions.
-
-## Production Deployment
-
-For production deployment:
-
-1. **Change Default Passwords**: Update all credentials in `.env`
-2. **Generate Secret Key**: Run `docker-compose exec web bundle exec rake secret`
-3. **Set SECRET_KEY_BASE**: Add to `.env` or environment
-4. **Use Managed Database**: Consider AWS RDS, Google Cloud SQL, or Azure Database
-5. **Configure SSL**: Enable SSL/TLS for database connections
-6. **Set Up Backups**: Implement automated database backup strategy
-7. **Use Production Web Server**: Configure Puma, Unicorn, or Passenger
-8. **Enable Asset Precompilation**: `docker-compose exec web bundle exec rake assets:precompile`
-
 ## Additional Resources
 
 - **[CLAUDE.md](CLAUDE.md)**: Detailed project documentation for AI assistants
@@ -410,6 +401,7 @@ docker-compose down
 ## Support
 
 For issues and questions:
+
 - Open an issue in the repository
 - Check the [MYSQL_MIGRATION_GUIDE.md](MYSQL_MIGRATION_GUIDE.md) for database-related issues
 - Review [CLAUDE.md](CLAUDE.md) for architecture details
