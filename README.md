@@ -4,6 +4,28 @@ This was a Rails 2.x application that I development while working with [SBC Pana
 
 I've used Claude Code to resurrect this project from the dead, migrating it to Rails 4.2, but the original application was designed, development and maintained by me.
 
+## Screenshots
+
+### Design Detail
+View individual designs with their thread color breakdown, including brand, color name, code, and color swatch.
+
+![Design Detail](doc/images/design-detail.png)
+
+### Design Gallery
+Browse designs alphabetically with a grid layout.
+
+![Design Gallery](doc/images/gallery.png)
+
+### New Design Form
+Create new designs with file uploads (DST/PES embroidery files) and thread color selection.
+
+![New Design Form](doc/images/new-design-form.png)
+
+### Timeline
+Track recent design activity and search across all designs.
+
+![Timeline](doc/images/timeline.png)
+
 ## Overview
 
 This application helps manage embroidery designs by:
