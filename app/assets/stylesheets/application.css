@@ -3,5 +3,16 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of thge compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require_tree . 
+ *= require_tree .
 */
+
+/* Constrain image sizes */
+.letter-box img {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+#images img, #image_div img, #images + .float-left .results img {
+  max-width: 300px;
+  max-height: 300px;
+}

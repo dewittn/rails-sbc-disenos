@@ -1,8 +1,8 @@
 .float-left#images
-  - if @diseno.image.exists?
+  - if @diseno.image_file_name.present?
     #image_div.results
-      = image_tag image_url(@diseno)
+      = image_tag image_url(@diseno), onerror: "this.onerror=null; this.src='/images/missing_design_medium.png';"
 .float-left
-  - if @diseno.original.exists?
+  - if @diseno.original_file_name.present?
     .results
-      = image_tag original_url(@diseno)
+      = image_tag original_url(@diseno), onerror: "this.onerror=null; this.src='/images/missing_original_medium.png';"

@@ -3,11 +3,13 @@ class Diseno < ActiveRecord::Base
   has_attached_file :image,
                     :url => "/system/:attachment/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension",
-                    :styles => { :medium => "300x300", :small => "100x100" }
+                    :styles => { :medium => "300x300", :small => "100x100" },
+                    :default_url => "/images/missing_design_:style.png"
   has_attached_file :original,
                     :url => "/system/:attachment/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension",
-                    :styles => { :medium => "300x300" }
+                    :styles => { :medium => "300x300" },
+                    :default_url => "/images/missing_original_:style.png"
   has_attached_file :archivo_dst,
                     :url => "/system/:attachment/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/system/:attachment/:id/:style/:basename.:extension"

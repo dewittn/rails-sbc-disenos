@@ -4,7 +4,7 @@
     - if event.subject
       %p
         = "#{event.event_type} - #{link_to event.subject.nombre_de_orden, diseno_path(event.subject.id)}".html_safe
-        - if event.subject.image.exists?
-          = image_tag event.subject.image.url(:small)
+        - if event.subject.image_file_name.present?
+          = image_tag event.subject.image.url(:small), onerror: "this.onerror=null; this.src='/images/missing_design_small.png';"
 - else
   %p No hay eventos recientes
