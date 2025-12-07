@@ -10,3 +10,4 @@ secrets.txt
 README.old
 .claude/settings.local.json
 .claude/agents/
+*.sql

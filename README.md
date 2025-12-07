@@ -1,6 +1,6 @@
 # Diseños - An Embroidery Design Management System
 
-This was a Rails 2.x application that I development while working with [SBC Panamá](https://nelsonroberto.com/portfolio/sbc-panama/) that made it easier for workers on the production line to track orders and setup their machines. Each order page featured a picture of the design (diseño) provided by the client, a picture of the resulting embroidery design, files to be used with the machines, and a breakdown of which threads (hilos) to use. The homepage had an interactive search feature and a timeline of recently modified designs/orders.
+This was a Rails 2.x application that I development while working with [SBC Panamá](https://nelsonroberto.com/portfolio/sbc-panama/), from 2007 to 2012, that made it easier for workers on the production line to track orders and setup their machines. Each order page featured a picture of the design (diseño) provided by the client, a picture of the resulting embroidery design, files to be used with the machines, and a breakdown of which threads (hilos) to use. The homepage had an interactive search feature and a timeline of recently modified designs/orders.
 
 I've used Claude Code to resurrect this project from the dead, migrating it to Rails 4.2, but the original application was designed, development and maintained by me.
 
@@ -33,7 +33,7 @@ This application helps manage embroidery designs by:
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/dewittn/rails-sbc-disenos
 cd rails-sbc-disenos
 ```
 
@@ -385,23 +385,3 @@ docker-compose exec db mysql -u root -ppassword hilos_development
 # Stop everything
 docker-compose down
 ```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-[Your License Here]
-
-## Support
-
-For issues and questions:
-
-- Open an issue in the repository
-- Check the [MYSQL_MIGRATION_GUIDE.md](MYSQL_MIGRATION_GUIDE.md) for database-related issues
-- Review [CLAUDE.md](CLAUDE.md) for architecture details
