@@ -11,3 +11,7 @@ README.old
 .claude/settings.local.json
 .claude/agents/
 *.sql
+
+# Seed data directory (keep .gitkeep)
+data/*
+!data/.gitkeep
