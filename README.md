@@ -1,8 +1,26 @@
-# Diseños - An Embroidery Design Management System
+# Diseños - Embroidery Design Management System
 
-This was a Rails 2.x application that I development while working with [SBC Panamá](https://nelsonroberto.com/portfolio/sbc-panama/), from 2007 to 2012, that made it easier for workers on the production line to track orders and setup their machines. Each order page featured a picture of the design (diseño) provided by the client, a picture of the resulting embroidery design, files to be used with the machines, and a breakdown of which threads (hilos) to use. The homepage had an interactive search feature and a timeline of recently modified designs/orders.
+From 2009 to 2011, I built Diseños as part of a business management suite for S.B.C. Panamá, my family's embroidery business in David, Panama.
 
-I've used Claude Code to resurrect this project from the dead, migrating it to Rails 4.2, but the original application was designed, development and maintained by me.
+Workers were spending 20+ minutes hunting for design files and machine setup instructions every time they started an order. They needed to find the right embroidery file (DST or PES format), figure out which thread colors to load, and print configuration sheets. When they couldn't find what they needed, they interrupted my brother, the production manager and lead designer. Every interruption meant designs stalled and production slowed.
+
+To solve this, I built a searchable database of embroidery designs with visual thread color breakdowns, attached machine files, and a custom JavaScript colorpicker for selecting thread colors visually rather than by code.
+
+The result: machine setup time dropped from 20+ minutes to under 1 minute. Workers could find everything themselves. The system also created a compounding effect: the design library became a cache for repeat customers, decoupling revenue growth from designer availability.
+
+The application ran in production for over 5 years and became the most actively developed component of the suite with 206 commits. It was part of a system that supported approximately $1.55M in total revenue over six years.
+
+Read the full [S.B.C. Panamá case study](https://nelsonroberto.com/portfolio/sbc-panama/).
+
+## What This Project Demonstrates
+
+**Product design focused on UI/UX.** I designed the entire system from problem discovery through interface design. Where Inventario required multiple iterations to get the workflow right, Diseños let me apply those lessons from the start and focus on UI/UX: how do workers identify designs visually? How do they select thread colors without memorizing codes? I integrated a JavaScript colorpicker for visual color selection, built thread breakdowns with color swatches, and designed the interface around what workers needed to fulfill production orders, by appearance rather than filename.
+
+**Sustained development intensity.** June 2009 saw 87 commits in a single month: Spanish/English internationalization (215 lines of translations), Cucumber BDD testing, timeline events for audit trails, email sharing functionality, and colorpicker integration. This was production engineering with comprehensive testing and localization, not just feature work.
+
+**Production-grade engineering.** The system ran in production for over five years serving a real business. It included full-text search with Thinking Sphinx, model-level caching, RESTful AJAX patterns, and complete bilingual support. I deployed and maintained it remotely from Boston via Hamachi VPN and Capistrano, with production monitoring through NewRelic.
+
+**Part of a larger system.** Diseños was one of five applications in the S.B.C. business management suite, totaling 15,400 lines of code and 441 commits across 42 months. I built and maintained all of it remotely while traveling between Boston and Panama.
 
 ## Screenshots
 
@@ -28,19 +46,14 @@ Track recent design activity and search across all designs.
 
 ## Overview
 
-This application helps manage embroidery designs by:
+This application manages embroidery designs with:
 
-- Tracking designs with multiple thread colors
-- Supporting file attachments (DST/PES embroidery formats, images)
-- Maintaining activity timelines for design changes
-- Organizing designs by brand and color
+- Multiple thread colors per design
+- File attachments (DST/PES embroidery formats, images)
+- Activity timelines for design changes
+- Visual thread color selection with JavaScript colorpicker
 
-**Tech Stack:**
-
-- Ruby 2.3.8
-- Rails 4.2.11.3
-- MySQL 8.0
-- Docker & Docker Compose
+**Tech Stack:** Ruby 2.3.8, Rails 4.2.11.3, MySQL 8.0, Docker & Docker Compose
 
 ## Prerequisites
 
@@ -98,312 +111,24 @@ Open your browser and navigate to:
 http://localhost:3000
 ```
 
-🎉 You're ready to go!
+## Development
 
-## Development Workflow
+See the [docs](./docs) folder for detailed documentation:
 
-### Starting the Application
+- **[Development Guide](./docs/development.md)** - Complete Docker workflow, database commands, testing
+- **[Architecture](./docs/architecture.md)** - Technical design, domain models, custom plugins
+- **[Business Impact Analysis](./docs/case-study.md)** - Detailed analysis of operational improvements
 
-```bash
-# Start all services in the background
-docker-compose up -d
+## AI Usage
 
-# View logs (follow mode)
-docker-compose logs -f web
+This repository includes retrospective work completed with AI assistance in 2024:
 
-# View logs for all services
-docker-compose logs -f
-```
+- **Docker containerization** (2024): Claude Code assisted with Dockerfile, docker-compose.yml, and MySQL 8 migration
+- **Documentation organization** (2024): Claude Code helped restructure README and create docs/ folder
+- **Data analysis** (2024): Claude Code performed forensic analysis of production database exports to quantify business impact
 
-### Stopping the Application
+The original application code (2009-2011) was written entirely without AI assistance.
 
-```bash
-# Stop all services
-docker-compose down
+## License
 
-# Stop and remove volumes (WARNING: This deletes database data!)
-docker-compose down -v
-```
-
-### Working with the Rails Console
-
-```bash
-# Open Rails console
-docker-compose exec web bundle exec rails console
-
-# Example usage:
-# Diseno.count
-# Color.all
-# exit
-```
-
-### Running Database Commands
-
-```bash
-# Create databases
-docker-compose exec web bundle exec rake db:create
-
-# Run migrations
-docker-compose exec web bundle exec rake db:migrate
-
-# Rollback migration
-docker-compose exec web bundle exec rake db:rollback
-
-# Seed database
-docker-compose exec web bundle exec rake db:seed
-
-# Reset database (drop, create, migrate, seed)
-docker-compose exec web bundle exec rake db:reset
-```
-
-### Running Tests
-
-```bash
-# Run all tests
-docker-compose exec web bundle exec rake test
-
-# Run specific test file
-docker-compose exec web bundle exec ruby -I test test/unit/diseno_test.rb
-
-# Run unit tests only
-docker-compose exec web bundle exec rake test:units
-
-# Run functional tests only
-docker-compose exec web bundle exec rake test:functionals
-```
-
-### Accessing the Database Directly
-
-```bash
-# Access MySQL console
-docker-compose exec db mysql -u root -ppassword hilos_development
-
-# Example SQL commands:
-# SHOW TABLES;
-# SELECT * FROM disenos LIMIT 5;
-# exit
-```
-
-### Installing New Gems
-
-```bash
-# Edit Gemfile locally
-# nano Gemfile
-
-# Rebuild the web container
-docker-compose build web
-
-# Restart the services
-docker-compose restart web
-```
-
-### Viewing Logs
-
-```bash
-# View logs for web service
-docker-compose logs web
-
-# Follow logs in real-time
-docker-compose logs -f web
-
-# View last 100 lines
-docker-compose logs --tail=100 web
-
-# View logs for database
-docker-compose logs db
-```
-
-## Project Structure
-
-```
-.
-├── app/
-│   ├── assets/          # JavaScript, CSS, images
-│   ├── controllers/     # Application controllers
-│   ├── helpers/         # View helpers
-│   ├── models/          # ActiveRecord models
-│   └── views/           # View templates (HAML)
-├── config/
-│   ├── database.yml     # Database configuration
-│   ├── routes.rb        # Application routes
-│   └── environments/    # Environment-specific configs
-├── db/
-│   ├── migrate/         # Database migrations
-│   └── seeds.rb         # Seed data
-├── docker/
-│   ├── mysql/
-│   │   └── init.sql     # MySQL initialization script
-│   └── db_setup.sh      # Database setup script
-├── lib/                 # Custom libraries
-├── public/              # Static files
-│   └── system/          # Uploaded files (Paperclip)
-├── test/                # Test files
-├── vendor/
-│   └── plugins/         # Custom plugins (coto_solutions, etc.)
-├── docker-compose.yml   # Docker Compose configuration
-├── Dockerfile           # Docker image definition
-├── Gemfile              # Ruby dependencies
-└── README.md            # This file
-```
-
-## Key Features
-
-### Domain Models
-
-- **Diseno (Design)**: Main entity with file attachments (images, DST/PES files)
-- **Hilo (Thread)**: Join model connecting designs to colors
-- **Color**: Thread colors with hex codes
-- **Marca (Brand)**: Thread manufacturers
-- **TimelineEvent**: Activity tracking using timeline_fu gem
-
-### File Attachments
-
-Uses Paperclip (kt-paperclip gem) for handling:
-
-- Design images with multiple sizes (medium: 300x300, small: 100x100)
-- Original image files
-- Embroidery machine files (DST, PES formats)
-- Name/label files
-
-### Custom Features
-
-- **acts_as_cached**: Model-level caching plugin (in vendor/plugins/coto_solutions)
-- **Timeline tracking**: Automatic activity logging for design changes
-- **AJAX endpoints**: Dynamic color and thread selection
-
-## Docker Services
-
-### Web Service (Rails)
-
-- **Port**: 3000
-- **Image**: Built from Dockerfile (Ruby 2.3.8, Rails 4.2.11.3)
-- **Volumes**:
-  - Application code mounted from `.` to `/app`
-  - Bundler cache for faster rebuilds
-
-### Database Service (MySQL)
-
-- **Port**: 3307 (external) → 3306 (internal)
-- **Image**: mysql:8.0
-- **Volumes**:
-  - Persistent data storage in `mysql_data` volume
-  - Initialization script mounted from `docker/mysql/init.sql`
-- **Health Check**: Ensures database is ready before Rails starts
-
-## Environment Variables
-
-Configure these in your `.env` file:
-
-| Variable            | Default             | Description                             |
-| ------------------- | ------------------- | --------------------------------------- |
-| `DB_HOST`           | `db`                | Database hostname (use 'db' for Docker) |
-| `DB_USERNAME`       | `root`              | MySQL username                          |
-| `DB_PASSWORD`       | `password`          | MySQL password (change in production!)  |
-| `DB_NAME`           | `hilos_development` | Database name                           |
-| `RAILS_ENV`         | `development`       | Rails environment                       |
-| `RAILS_MAX_THREADS` | `5`                 | Database connection pool size           |
-
-## Troubleshooting
-
-### Port Already in Use
-
-**Error**: "Bind for 0.0.0.0:3000 failed: port is already allocated"
-
-```bash
-# Find and kill process using port 3000
-lsof -ti:3000 | xargs kill -9
-
-# Or change the port in docker-compose.yml
-```
-
-**Error**: "Bind for 0.0.0.0:3307 failed: port is already allocated"
-
-```bash
-# Change the MySQL port mapping in docker-compose.yml
-# From: "3307:3306"
-# To:   "3308:3306"
-```
-
-### Container Won't Start
-
-```bash
-# Check container status
-docker-compose ps
-
-# View detailed logs
-docker-compose logs web
-docker-compose logs db
-
-# Rebuild containers
-docker-compose down
-docker-compose build --no-cache
-docker-compose up -d
-```
-
-### Database Connection Refused
-
-```bash
-# Ensure database is healthy
-docker-compose ps
-
-# Check database logs
-docker-compose logs db
-
-# Restart services
-docker-compose restart
-
-# If problems persist, recreate containers
-docker-compose down -v
-docker-compose up -d
-./docker/db_setup.sh
-```
-
-### Permission Issues with Uploaded Files
-
-```bash
-# Fix permissions on public/system directory
-docker-compose exec web chmod -R 755 public/system
-```
-
-### Gem Installation Failures
-
-```bash
-# Clear bundle cache and rebuild
-docker-compose down
-docker volume rm rails-sbc-disenos_bundle_cache
-docker-compose build --no-cache web
-docker-compose up -d
-```
-
-## Additional Resources
-
-- **[CLAUDE.md](CLAUDE.md)**: Detailed project documentation for AI assistants
-- **[MYSQL_MIGRATION_GUIDE.md](MYSQL_MIGRATION_GUIDE.md)**: MySQL 8 migration guide
-- [Rails Guides](https://guides.rubyonrails.org/v4.2/)
-- [Docker Documentation](https://docs.docker.com/)
-- [MySQL 8.0 Reference](https://dev.mysql.com/doc/refman/8.0/en/)
-
-## Common Tasks Quick Reference
-
-```bash
-# Start development
-docker-compose up -d
-
-# View logs
-docker-compose logs -f web
-
-# Rails console
-docker-compose exec web bundle exec rails console
-
-# Run migrations
-docker-compose exec web bundle exec rake db:migrate
-
-# Run tests
-docker-compose exec web bundle exec rake test
-
-# Access database
-docker-compose exec db mysql -u root -ppassword hilos_development
-
-# Stop everything
-docker-compose down
-```
+MIT
