@@ -1,10 +1,10 @@
-# Diseños - Embroidery Design Management System
+# Diseños - An Embroidery Design Management System
 
-From 2009 to 2011, I built Diseños as part of a business management suite for S.B.C. Panamá, my family's embroidery business in David, Panama.
+From 2008 to 2011, I built Diseños as part of a business management suite for S.B.C. Panamá, my family's embroidery business in David, Panama.
 
-Workers were spending 20+ minutes hunting for design files and machine setup instructions every time they started an order. They needed to find the right embroidery file (DST or PES format), figure out which thread colors to load, and print configuration sheets. When they couldn't find what they needed, they interrupted my brother, the production manager and lead designer. Every interruption meant designs stalled and production slowed.
+While building [Inventario](https://github.com/dewittn/rails-sbc-inventario) to solve the inventory chaos, I noticed a second bottleneck: workers were spending 20+ minutes hunting for design files and machine setup instructions every time they started an order. They needed to find the right embroidery file (DST or PES format), figure out which thread colors to load, and print configuration sheets. When they couldn't find what they needed, they interrupted my brother, the production manager and lead designer. Every interruption meant designs stalled and production slowed. He was spending hours each day being a human filing cabinet instead of running the business.
 
-To solve this, I built a searchable database of embroidery designs with visual thread color breakdowns, attached machine files, and a custom JavaScript colorpicker for selecting thread colors visually rather than by code.
+To solve this, I built a searchable database of embroidery designs with visual thread color breakdowns, attached machine files, and a custom JavaScript colorpicker for selecting thread colors visually rather than by code. The interface matched what workers needed to fulfill production orders: by appearance and color, not by filename or database ID.
 
 The result: machine setup time dropped from 20+ minutes to under 1 minute. Workers could find everything themselves. The system also created a compounding effect: the design library became a cache for repeat customers, decoupling revenue growth from designer availability.
 
@@ -46,78 +46,75 @@ Track recent design activity and search across all designs.
 
 ## Overview
 
-This application manages embroidery designs with:
+This application helps manage embroidery designs by:
 
-- Multiple thread colors per design
-- File attachments (DST/PES embroidery formats, images)
-- Activity timelines for design changes
-- Visual thread color selection with JavaScript colorpicker
+- Storing design files (DST/PES embroidery formats) with preview images
+- Tracking thread colors per design with visual color swatches
+- Recording design activity through timeline events
 
-**Tech Stack:** Ruby 2.3.8, Rails 4.2.11.3, MySQL 8.0, Docker & Docker Compose
+**Tech Stack:**
 
-## Prerequisites
-
-- [Docker](https://www.docker.com/get-started) (20.10 or higher)
-- [Docker Compose](https://docs.docker.com/compose/install/) (1.29 or higher)
-- Git
-
-**Note:** You don't need Ruby, Rails, or MySQL installed locally. Docker handles all dependencies.
+- Ruby 2.3.8
+- Rails 4.2.11.3
+- MySQL 8.0 (production/development), SQLite3 (test)
 
 ## Quick Start
 
-### 1. Clone the Repository
+**Prerequisites:** Docker and Docker Compose
 
-```bash
-git clone https://github.com/dewittn/rails-sbc-disenos
-cd rails-sbc-disenos
-```
+1. Clone the Repository
 
-### 2. Configure Environment Variables
+   ```bash
+   git clone https://github.com/dewittn/rails-sbc-disenos
+   cd rails-sbc-disenos
+   ```
 
-```bash
-# Copy the example environment file
-cp .env.example .env
+2. Configure Environment Variables
 
-# (Optional) Edit .env to customize database credentials
-# nano .env
-```
+   ```bash
+   # Copy the example environment file
+   cp .env.example .env
 
-### 3. Start the Application
+   # (Optional) Edit .env to customize database credentials
+   # nano .env
+   ```
 
-```bash
-# Build and start all services
-docker-compose up -d
+3. Start the Application
 
-# Wait for services to start (about 30 seconds)
-# Check service status
-docker-compose ps
-```
+   ```bash
+   # Build and start all services
+   docker-compose up -d
 
-### 4. Initialize the Database
+   # Wait for services to start (about 30 seconds)
+   # Check service status
+   docker-compose ps
+   ```
 
-```bash
-# Run the database setup script
-./docker/db_setup.sh
+4. Initialize the Database
 
-# Or manually run:
-docker-compose exec web bundle exec rake db:create db:migrate db:seed
-```
+   ```bash
+   # Run the database setup script
+   ./docker/db_setup.sh
 
-### 5. Access the Application
+   # Or manually run:
+   docker-compose exec web bundle exec rake db:create db:migrate db:seed
+   ```
 
-Open your browser and navigate to:
+5. Access the Application
 
-```
-http://localhost:3000
-```
+   Open your browser and navigate to:
 
-## Development
+   ```
+   http://localhost:3000
+   ```
 
-See the [docs](./docs) folder for detailed documentation:
+## Documentation
 
-- **[Development Guide](./docs/development.md)** - Complete Docker workflow, database commands, testing
-- **[Architecture](./docs/architecture.md)** - Technical design, domain models, custom plugins
-- **[Business Impact Analysis](./docs/case-study.md)** - Detailed analysis of operational improvements
+See the [docs](./docs) folder for detailed information:
+
+- **[Development Guide](./docs/development.md)** - Docker setup, database commands, testing workflow
+- **[Architecture](./docs/architecture.md)** - System design, domain models, custom plugins
+- **[Business Impact Analysis](./docs/case-study.md)** - Operational efficiency gains and revenue impact
 
 ## AI Usage
 

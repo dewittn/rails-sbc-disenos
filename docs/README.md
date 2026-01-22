@@ -17,17 +17,11 @@ New to this project? Start here:
 - **[Development Guide](development.md)** - Docker setup, database commands, testing, and development workflow
 - **[Architecture](architecture.md)** - System design, domain models, custom plugins, and technical decisions
 
-### Case Study
+### Case Study and Analysis
 
-- **[Business Impact Analysis](case-study.md)** - Detailed analysis of how this system supported $1.55M in revenue over 6 years, including operational efficiency gains and design library cache effects
-
-### Migration Documentation
-
-Historical upgrade documentation (archived for reference):
-
-- **[MySQL 8 Migration](migration/mysql8-upgrade.md)** - Upgrading from MySQL 5 to MySQL 8
-- **[Rails 4.2 Compatibility](migration/rails-4.2-fixes.md)** - Compatibility fixes for Rails 4.2
-- **[Upgrade Notes](migration/upgrade-notes.md)** - General upgrade documentation
+- **[Business Impact Analysis](case-study.md)** - Concise summary of operational improvements, time savings, and revenue impact
+- **[Forensic Data Analysis](../doc/forensic_data_analysis.md)** - Complete technical analysis with all queries, methodologies, and data verification
+- **[Revenue Analysis](../doc/revenue_analysis.md)** - Detailed revenue calculations and growth modeling
 
 ## Quick Reference
 
@@ -81,9 +75,10 @@ docs/
 ├── README.md           # This file - documentation index
 ├── development.md      # Development workflow and commands
 ├── architecture.md     # Technical design and architecture
-├── case-study.md       # Business impact analysis
-└── migration/          # Historical migration docs
-    ├── mysql8-upgrade.md
-    ├── rails-4.2-fixes.md
-    └── upgrade-notes.md
+└── case-study.md       # Business impact summary
+
+doc/
+├── images/             # Screenshots for main README
+├── forensic_data_analysis.md  # Complete technical analysis
+└── revenue_analysis.md        # Revenue modeling details
 ```

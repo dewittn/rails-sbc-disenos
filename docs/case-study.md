@@ -140,7 +140,10 @@ The business reportedly experienced approximately 3x revenue growth during the s
 4. **Scalability unlocked** - Setup was no longer the bottleneck
 5. **Reduced errors** - Consistent, up-to-date documentation
 
-For detailed revenue analysis, see the companion document: [Forensic Data Analysis](../doc/forensic_data_analysis.md)
+For detailed revenue analysis, see the companion documents:
+
+- [Forensic Data Analysis](../doc/forensic_data_analysis.md) - Complete technical analysis with all queries and methodologies
+- [Revenue Analysis](../doc/revenue_analysis.md) - Detailed revenue calculations and growth modeling
 
 ## Thread (Hilo) Analysis
 
